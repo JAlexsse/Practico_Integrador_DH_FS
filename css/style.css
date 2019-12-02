@@ -1,0 +1,43 @@
+/** Body **/
+.body-login1 {
+    background-image: url("../img/HEADERS DE SECCION/REPUESTOS.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+/** Form **/
+.login-container{
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+.login-form{
+    padding: 5%;
+    background: rgb(3,3,4,.8);
+    border: 2px solid white;
+    border-radius: 2rem;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-container form{
+    padding: 10%;
+}
+.login-form .btnSubmit{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+}
+.login-form .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.reset-pass a{
+    font-size: .8rem;
+    text-align: right;
+}
+.reset-pass a:hover{
+    color: rgb(252,216,22);
+}
+
+.btn:hover{
+    background-color: #d8d08f;
+}
