@@ -25,6 +25,10 @@
   float: left;
 }
 
-.carrousel-item{
+.slide-usuario{
   height: 400px;
+}
+
+.noe-yellow{
+  background-color: rgb(255, 217, 0);
 }
