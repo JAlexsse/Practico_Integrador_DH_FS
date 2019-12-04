@@ -1,0 +1,30 @@
+.header-usuario {
+ background: url('img/HEADERS DE SECCION/header principal.jpg') fixed center no-repeat;
+ background-size: cover;
+ height: 400px;
+}
+
+.usuario{
+  background-color: rgba(255, 255, 255);
+  height: 400px;
+}
+
+.user-image{
+  width: 60%;
+}
+
+.detalles li{
+  overflow: hidden;
+}
+
+.detalles h5{
+  float: left;
+}
+
+.detalles p{
+  float: left;
+}
+
+.carrousel-item{
+  height: 400px;
+}
