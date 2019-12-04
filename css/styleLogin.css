@@ -1,0 +1,70 @@
+
+
+/** Body **/
+.bg-logreg {
+    background-image: url("../img/HEADERS DE SECCION/REPUESTOS.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+/** Form **/
+.login-container{
+    padding-top: 4%;
+    margin-bottom: 4%;
+}
+@media (max-width: 400px) {
+.login-container{
+    margin-top: 40%;
+    margin-bottom: 50%;
+    }
+  }
+.login-form{
+    padding: 0% 10%;
+    background: rgb(3,3,4,.8);
+    box-shadow: 10px 10px rgba(252, 216, 22,.5);
+    min-width: 300px;
+}
+.login-form img{
+    width: 80%;
+    margin-bottom: 20px;
+}
+.login-container form{
+    padding: 10%;
+}
+.ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.reset-pass a{
+    font-size: 12px;
+    text-align: right;
+}
+.reset-pass a:hover{
+    color: rgb(252,216,22);
+}
+.btn:hover{
+    background-color: #d8d08f;
+}
+
+/** Form Registro **/
+
+.container-registro{
+    flex-direction: column;
+    height: 100vh;
+}
+
+.form-registro{
+    background-color:rgb(3,3,4,.8);
+    box-shadow: 10px 10px rgba(252, 216, 22,.5);
+    margin: 0 auto;
+    width: 60%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.label-aviso::after{
+    content:'*';
+    color: red;
+}

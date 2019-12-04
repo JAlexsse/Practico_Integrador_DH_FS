@@ -4,40 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+            
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styleLogin.css">
+            
+    <title>Login</title>
 </head>
 <body class="bg-logreg">
-    <!--nav -->
-    <div class="conteiner-fluid">
-        <div class="login-container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-6 login-form text-center">
-                    <form>
-                        <a href="#">
-                            <img src="img/LOGO/SVG/Recurso 11.svg" alt="Logo" >
-                        </a>
-                        <div class="form-group">
-                            <input type="inputEmail" class="form-control d-block" placeholder="Correo Electronico *" value="" required autofocus />
-                        </div>
-                        <div class="form-group mb-0">
-                            <input type="inputPassword" class="form-control" placeholder="Contraseña *" value="" required />
-                        </div>
-                        <div class="form-group reset-pass d-flex justify-content-between">
-                            <a href="#" class="ForgetPwd" value="Login">Olvidaste tu contraseña?</a>
-                            <a href="registro.html" class="ForgetPwd">Registrarse</a>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-lg btn-light" value="Ingresar" />
-                        </div>
-                    </form>
+
+    <div class="container container-registro d-flex justify-content-center">
+        <form class="row form-registro justify-content-center">
+            <img src="img/LOGO/SVG/Recurso 11.svg" alt="Logo">
+            <div class="col-10 mt-1" style="padding: 0 15%;">
+                <input type="email" class="form-control my-4" required placeholder="Correo Electronico *">
+                <input type="password" class="form-control" required placeholder="Contraseña *">
+                <div class="form-group reset-pass d-flex justify-content-between">
+                    <a href="#" class="ForgetPwd" value="Login">Olvidaste tu contraseña?</a>
+                    <a href="registro.html" class="ForgetPwd">Registrarse</a>
                 </div>
             </div>
-        </div>
-    </div> 
+            <div class="col-12 py-1 text-center">
+                    <input type="submit" class="btn btn-lg btn-light" value="Ingresar" />
+            </div>
+        </form>
+    </div>
+
 
     <!--Script Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
