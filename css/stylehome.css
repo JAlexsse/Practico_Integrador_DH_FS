@@ -1,0 +1,90 @@
+/** Body **/
+.body-login1 {
+    background-image: url("../img/HEADERS DE SECCION/REPUESTOS.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+/** Form **/
+.login-container{
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+.login-form{
+    padding: 5%;
+    background: rgb(3,3,4,.8);
+    border: 2px solid white;
+    border-radius: 2rem;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-container form{
+    padding: 10%;
+}
+.login-form .btnSubmit{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+}
+.login-form .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.reset-pass a{
+    font-size: .8rem;
+    text-align: right;
+}
+.reset-pass a:hover{
+    color: rgb(252,216,22);
+}
+
+.btn:hover{
+    background-color: #d8d08f;
+}
+
+/***** HOME *****/
+
+/*** body ***/
+body {
+    background-image: url("../img/HEADERS DE SECCION/header\ principal.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+/*** Header ***/
+.header-section {
+    height: 104px;
+    padding-top: 15px;
+    padding-bottom: 24px;
+    padding-left: 0px;
+    padding-right: 45px;
+}
+
+.header-section .container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*** nav ***/
+    
+a.nav-link {
+    font-size: 16px;
+    inline-size: auto;
+    color: #1e1e1e;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+    line-height: 42px;
+}
+.navbar {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*** seccion productos ***/
+.section-productos{
+background-color: #fff;
+}
+
