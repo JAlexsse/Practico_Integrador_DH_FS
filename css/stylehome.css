@@ -45,42 +45,50 @@
 /***** HOME *****/
 
 /*** body ***/
-body {
-    background-image: url("../img/HEADERS DE SECCION/header\ principal.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-}
+
+
 /*** Header ***/
-.header-section {
-    height: 104px;
+.header-builder {
     padding-top: 15px;
     padding-bottom: 24px;
-    padding-left: 0px;
-    padding-right: 45px;
+    
 }
 
-.header-section .container-fluid {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+
+#menu-top.nav {
+    overflow: hidden;
+}
+.links-nav{
+    float: left;
+    display: inline-block;
+    line-height: 25px;
+}
+.links-nav a{
+    text-decoration: none;
+    color:#9999;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0 5px;
+    text-transform: uppercase;
 }
 
 /*** nav ***/
     
-a.nav-link {
-    font-size: 16px;
+.header-nav-top a.nav-link {
+    font-size: 0.7em;
     inline-size: auto;
-    color: #1e1e1e;
-    font-weight: 500;
-    display: inline-block;
+    color: #9999;
+    font-weight: normal;
     position: relative;
-    line-height: 42px;
+    line-height: 35px;
+    padding: 8px;
+    text-transform: uppercase;
 }
 .navbar {
     background-color: rgba(255, 255, 255, 0.5);
+}
+a.search , a.bag {
+    padding: 5px;
 }
 
 /*** seccion productos ***/
