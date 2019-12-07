@@ -10,23 +10,30 @@
             
     <title>Login</title>
 </head>
-<body class="bg-logreg">
+<body>
+    <div class="container-fluid container-registro d-flex justify-content-center align-items-center vh-100 bg-logreg">
+        <div class="row vw-100 justify-content-center">
+            <div class="col-12 col-sm-10 col-md-5">
+                <!--Formulario-->
+                <form class="row form-registro justify-content-center">
+                    <div class="col-6 p-md-0 form-min">
+                        <img src="img/LOGO/SVG/Recurso 11.svg" alt="Logo" class="img-fluid">
+                    </div>
+                    <div class="col-7 mt-1 form-min">
+                        <input type="email" class="form-control my-4" required placeholder="Correo Electronico *">
+                        <input type="password" class="form-control" required placeholder="Contraseña *">
+                        <div class="form-group reset-pass d-flex justify-content-between">
+                            <a href="#" class="ForgetPwd" value="Login">Olvidaste tu contraseña?</a>
+                            <a href="registro.html" class="ForgetPwd">Registrarse</a>
+                        </div>
+                    </div>
+                    <div class="col-12 py-1 text-center">
+                            <input type="submit" class="btn btn-lg btn-light" value="Ingresar" />
+                    </div>
+                </form>
 
-    <div class="container container-registro d-flex justify-content-center">
-        <form class="row form-registro justify-content-center">
-            <img src="img/LOGO/SVG/Recurso 11.svg" alt="Logo">
-            <div class="col-10 mt-1" style="padding: 0 15%;">
-                <input type="email" class="form-control my-4" required placeholder="Correo Electronico *">
-                <input type="password" class="form-control" required placeholder="Contraseña *">
-                <div class="form-group reset-pass d-flex justify-content-between">
-                    <a href="#" class="ForgetPwd" value="Login">Olvidaste tu contraseña?</a>
-                    <a href="registro.html" class="ForgetPwd">Registrarse</a>
-                </div>
             </div>
-            <div class="col-12 py-1 text-center">
-                    <input type="submit" class="btn btn-lg btn-light" value="Ingresar" />
-            </div>
-        </form>
+        </div>
     </div>
 
 
