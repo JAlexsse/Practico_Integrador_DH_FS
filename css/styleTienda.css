@@ -1,4 +1,4 @@
-.card, .card-header{
+﻿.card, .card-header{
     border:none;
     background-color: white;
 }
@@ -9,7 +9,7 @@
 }
 
 .card-header{
-    border-bottom: 1px solid black;
+    padding:.6rem;
 }
 
 .card-header a:before{
@@ -20,4 +20,12 @@
 
 .page-link{
     border:none;
+}
+
+.produc .card:hover{
+	border: 1px solid rgb(235,235,235);
+}
+
+.produc .card .card-header{
+	border:none;
 }
