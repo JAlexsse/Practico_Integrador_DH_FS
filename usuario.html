@@ -4,24 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style_usuario.css">
+
     <title>Mi Usuario</title>
   </head>
   <body>
     <div class="container col-md-12">
       <div class="overflow-hidden">
-        <div class="container float-left col-md-6">
+        <div class="float-left logo-navbar pl-3">
           <a class="navbar-brand" href="index.html">
-            <img src="img/LOGO/SVG/logo.svg" alt="logo-header" class="col-md-8 mx-auto d-block">
+            <img src="img/LOGO/SVG/logo.svg" width="100" height="100" alt="logo-header" class="d-inline-block align-top">
           </a>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white col-md-4 float-right mt-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white float-right">
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler m-4" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -34,7 +36,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   SHOP
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu enlaces-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">ACCESORIOS</a>
                   <a class="dropdown-item" href="#">CUBIERTAS</a>
                   <a class="dropdown-item" href="#">REPUESTOS</a>
@@ -61,7 +63,7 @@
     </div>
     <header>
       <div class="jumbotron header-usuario">
-        <div class="row container col-md-12 h-100 justify-content-center">
+        <div class="row container col-md-12 h-100 justify-content-center m-0">
 
           <h2 class="text-white my-auto">
             <strong>
@@ -74,114 +76,51 @@
     </header>
 
     <main>
-      <div class="container col-md-12 h-100 usuario overflow-hidden p-5">
-        <div class="foto col-md-4 float-left p-5">
-          <img src="img/ICONOS/Maria-Sharapova.jpg" alt="user-image" class="user-image">
-        </div>
-        <div class="informacion col-md-4 float-left p-5">
-          <div class="descripcion">
-            <h3 class="align-center">
+      <div class="container col-md-12 h-100 usuario overflow-hidden p-0">
+        <div class="row">
+
+          <div class="d-flex foto float-left bg-white  justify-content-center col-lg-4 usuario_col align-items-center">
+            <img src="img/ICONOS/Maria-Sharapova.jpg" width="200" height="200" alt="user-image" class="user-image">
+          </div>
+          <div class="informacion float-left p-5  col-lg-4 usuario_col">
+            <div class="descripcion">
+              <h4>
+                <strong>
+                  Maria Sharapova
+                </strong>
+              </h4>
+              <p>I am a person who is positive about every aspect of life.</p>
+              <p>There are many things I like to do, to see, and to experience.
+              I like to read, I like to write; I like to think, I like to dream;
+              I like to talk, I like to listen.
+              </p>
+            </div>
+          </div>
+          <div class="detalles float-left noe-yellow text-white p-5 col-lg-4 usuario_col">
+            <h4 class="align-center">
               <strong>
-                Maria Sharapova
+                Informacion Personal
               </strong>
-            </h3>
-            <p>I am a person who is positive about every aspect of life.</p>
-            <p>There are many things I like to do, to see, and to experience.
-            I like to read, I like to write; I like to think, I like to dream;
-            I like to talk, I like to listen.
-            </p>
-            <p> I like to see the sunrise in the morning, I like to see the
-              moonlight at night; I like to feel the music flowing on my face,
-              I like to smell the wind coming from the ocean. </p>
+            </h4>
+            <ul class="p-0 row align-items-start">
+              <li class="col-md-12">
+                <h5 class="col-md-4">Email</h5><p class="col-md-8">maria_sharapova@email.com</p>
+              </li>
+              <li class="col-md-12">
+                <h5 class="col-md-4">Sexo</h5><p class="col-md-8">Femenino</p>
+              </li>
+              <li class="col-md-12">
+                <h5 class="col-md-4">Fecha de nacimiento</h5><p class="col-md-8">13/11</p>
+              </li>
+              <li class="col-md-12">
+                <h5 class="col-md-4">Wishlist</h5><a href="Lista de deseos" class="col-md-8">Lista de deseos</a>
+              </li>
+            </ul>
 
           </div>
-        </div>
-        <div class="detalles col-md-4 float-left p-5">
-          <ul class="pt-5">
-            <li>
-              <h5 class="col-md-6">Email</h5><p>maria_sharapova@email.com</p>
-            </li>
-            <li>
-              <h5 class="col-md-6">Sexo</h5><p>Femenino</p>
-            </li>
-            <li>
-              <h5 class="col-md-6">Fecha de nacimiento</h5><p>13/11</p>
-            </li>
-            <li>
-              <h5 class="col-md-6">Wishlist</h5><a href="Lista de deseos">Lista de deseos</a>
-            </li>
-          </ul>
-
         </div>
       </div>
     </main>
-    <div class="overflow-hidden">
-      <div class="jumbotron col-md-6 text-white m-0 noe-yellow float-left">
-        <div class="row justify-content-center">
-          <h3 class="my-auto">
-            <strong>
-                      MY BIKING STYLE
-            </strong>
-          </h3>
-        </div>
-        <div class="jumbotron overflow-hidden noe-yellow m-0">
-          <div class="col-md-6 float-left overflow-hidden detalles m-0 noe-yellow">
-            <ul>
-              <li>
-                <h5 class="col-md-6">Estilo</h5><p class="col-md-6">Carretera</p>
-              </li>
-              <li>
-                <h5 class="col-md-6">Paisaje</h5><p class="col-md-6">Montaña</p>
-              </li>
-              <li>
-                <h5 class="col-md-6">Preferencias</h5><a href="#" class="col-md-6">Tektro Brake Kit</a>
-              </li>
-              <li>
-                <p class="col-md-12">I like long road trips! Just enjoying the air, and to wander</p>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-6 float-left">
-            <a href="#"> <img src="img\PRODUCTOS\BICICLETAS\carretera.jpg" alt="" class="user-image"> </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 float-left">
-        <div id="carouselExampleControls" class="carousel slide float-left" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="img\ICONOS\slider1.jpg" alt="First slide">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Montañas</h5>
-                <p>Mi viaje a ...</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img\ICONOS\slider2.jpg" alt="Second slide">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Montañas</h5>
-                <p>Mi viaje a ...</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="img\ICONOS\slider3.jpg" alt="Third slide">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Montañas</h5>
-                <p>Mi viaje a ...</p>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-
   </div>
 
     <footer class="page-footer font-small unique-color-dark pt-4">

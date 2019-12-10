@@ -1,16 +1,22 @@
 .header-usuario {
  background: url('img/HEADERS DE SECCION/header principal.jpg') fixed center no-repeat;
  background-size: cover;
- height: 400px;
+ height: 30vh;
 }
 
 .usuario{
   background-color: rgba(255, 255, 255);
-  height: 400px;
+  height: 40vh;
 }
 
-.user-image{
-  width: 60%;
+.foto{
+  background-image: url("img/ICONOS/huella.svg");
+  background-repeat: round;
+}
+
+
+.descripcion p{
+  font-size: 1rem;
 }
 
 .detalles li{
@@ -26,9 +32,39 @@
 }
 
 .slide-usuario{
-  height: 400px;
+  height: 40vh;
 }
 
 .noe-yellow{
   background-color: rgb(255, 217, 0);
+}
+
+@media (max-width:640px) and (orientation: landscape) {
+  .header-usuario {
+   height: 50vh;
+  }
+  .usuario{
+    height: 20vh;
+  }
+  .usuario_col{
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width:1024px) and (orientation: landscape) {
+  .header-usuario {
+   height: 50vh;
+  }
+  .usuario_col{
+    width: 100%;
+  }
+}
+
+@media (max-width:768px){
+  .logo-navbar{
+  }
+  .header-usuario {
+   height: 30vh;
+  }
 }
