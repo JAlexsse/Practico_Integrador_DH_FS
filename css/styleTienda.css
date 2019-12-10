@@ -1,0 +1,23 @@
+.card, .card-header{
+    border:none;
+    background-color: white;
+}
+
+.card a, .card-header a{
+    text-decoration: none;
+    color: #161616;
+}
+
+.card-header{
+    border-bottom: 1px solid black;
+}
+
+.card-header a:before{
+    content:'▼';
+    display: inline;
+    color: rgb(252,216,22);
+}
+
+.page-link{
+    border:none;
+}

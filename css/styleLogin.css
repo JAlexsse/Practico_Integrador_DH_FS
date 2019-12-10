@@ -5,6 +5,23 @@
     background-size: cover;
     height: 100vh;
 }
+/** Header **/
+.header-nav-top a.nav-link {
+    font-size: 0.7em;
+    inline-size: auto;
+    color: #9999;
+    font-weight: normal;
+    position: relative;
+    line-height: 35px;
+    padding: 0px 8px;
+    text-transform: uppercase;
+}
+/**** NAV ****/
+.nav-link , a.dropdown-toggle{
+    text-transform: uppercase;
+    text-decoration: none;
+
+}
 
 /** Form **/
 

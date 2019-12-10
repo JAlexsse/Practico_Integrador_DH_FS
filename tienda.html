@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styleLogin.css">
+    <link rel="stylesheet" href="css/styleTienda.css">
+            
+    <title>Tienda</title>
+</head>
+<body>
+    <header> 
+                <div class="header-nav-top">
+                  <ul class="nav float-left">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"></a>
+                    </li>
+                  </ul>
+                  <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="faq.html">preguntas frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">contactanos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="login.html">Ingresar a mi cuenta</a>
+                    </li>
+                  </ul>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <a class="navbar-brand" href="#"> <img src="img/LOGO/SVG/Recurso 11.svg" alt="logo" width="40%"></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ">
+                      <li class="nav-item active">
+                        <div class="dropdown">
+                          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Bicicletas
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Accesorios</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Repuestos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Cubiertas</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"> ! Sale !</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="navbar d-flex justify-content-end" id="navbar-iconos">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="search" href="#"><img src="img/iconos/search.png" alt=""></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="bag" href="#"><img src="img/iconos/bag.png" alt=""></a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            
+          <div class="col-2  m-2 text-left">
+              <h3>Categorias</h3>
+
+              <div id="acordion" role="tablist" aria-multiselectable="true">
+
+                <div class="card">
+                    <div class="card-header" role="tab" id="heading1">
+                        <h5 class="mb-0">
+                            <a href="#collapse1" data-toggle="collapse" data-parent="#acordion" aria-expanded="true" aria-controls="collapse1">
+                              Bicicletas
+                            </a>
+                        </h5>
+                    </div><!--fin div card-header -->
+
+                    <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1">
+                        <div class="card-block">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                  <a class="nav-link active" href="#">Adventure</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Road</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">City</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Cruisers</a>
+                                </li>
+                              </ul>
+                        </div>
+
+                    </div>
+                </div><!--fin div card -->
+
+                <div class="card">
+                    <div class="card-header" role="tab" id="heading2">
+                        <h5 class="mb-0">
+                            <a href="#collapse2" data-toggle="collapse" data-parent="#acordion" aria-expanded="true" aria-controls="collapse2">
+                                Accesorio
+                            </a>
+                        </h5>
+                    </div><!--fin div card-header -->
+
+                    <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading2">
+                        <div class="card-block">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                  <a class="nav-link active" href="#">Protector Bicicletas</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Guardabarros</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">City</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Cruisers</a>
+                                </li>
+                              </ul>
+                        </div>
+
+                    </div>
+                </div><!-- Accesorios -->
+
+                <div class="card">
+                    <div class="card-header" role="tab" id="heading3">
+                        <h5 class="mb-0">
+                            <a href="#collapse3" data-toggle="collapse" data-parent="#acordion" aria-expanded="true" aria-controls="collapse3">
+                                Repuestos
+                            </a>
+                        </h5>
+                    </div><!--fin div card-header -->
+
+                    <div id="collapse3" class="collapse show" role="tabpanel" aria-labelledby="heading3">
+                        <div class="card-block">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                  <a class="nav-link active" href="#">Adventure</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Road</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">City</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Cruisers</a>
+                                </li>
+                              </ul>
+                        </div>
+
+                    </div>
+                </div><!--fin div card -->
+
+                <div class="card">
+                    <div class="card-header" role="tab" id="heading4">
+                        <h5 class="mb-0">
+                            <a href="#collapse4" data-toggle="collapse" data-parent="#acordion" aria-expanded="true" aria-controls="collapse4">
+                                Cubiertas
+                            </a>
+                        </h5>
+                    </div><!--fin div card-header -->
+
+                    <div id="collapse4" class="collapse show" role="tabpanel" aria-labelledby="heading4">
+                        <div class="card-block">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                  <a class="nav-link active" href="#">Adventure</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Road</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">City</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Cruisers</a>
+                                </li>
+                              </ul>
+                        </div>
+
+                    </div>
+                </div><!--fin div card -->
+
+            </div>                  
+          </div> <!-- Filtros -->
+
+          <div class="col">
+            <div class="row">
+              <div class="col-12">
+                <h4>Bicicletas</h4>
+                <hr>
+              </div>
+              <div class="col-12">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <p>Articulos 1-12 de 30</p>
+                  </div> <!-- Cantidad de Articulos -->
+                  <div class="col">
+                    
+                    <ul class="pagination justify-content-end">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+
+                  </div> <!-- Navegacion entre paginas -->
+                </div>
+                <hr>
+              </div>
+              <div class="col">
+
+              </div><!-- Productos de la tienda -->
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+
+
+
+<!--Script Bootstrap-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
