@@ -44,16 +44,17 @@
 
 /***** HOME *****/
 
-/*** Header ***/
-    
+
+/*** nav ***/
+
 .header-nav-top a.nav-link {
     font-size: 0.7em;
     inline-size: auto;
     color: #9999;
     font-weight: normal;
     position: relative;
-    line-height: 35px;
-    padding: 0px 8px;
+    line-height: 25px;
+    padding: 0px 6px 0px 0px;
     text-transform: uppercase;
 }
 /**** NAV ****/
@@ -67,12 +68,49 @@
     padding-top: 0%;
 }
 a.search , a.bag {
-    padding: 10px;
+    padding: 0px 15px;
 }
 
 /*** seccion productos ***/
 .section-productos{
 background-color: #fff;
-padding-top: 30px;
+padding-top: 15px;
+padding-bottom: 30px;
+}
+.nuestras-bicis {
+    padding-bottom: 20px;
+    margin: auto;
+}
+.estilos-bici{
+    background-color: rgba(255, 217, 0, 0.73) ;
+    color: black;
 }
 
+h3 {
+    font-size: medium;
+}
+/*** footer ***/
+footer {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+footer h4 {
+    color: black;
+    font-size: large;
+}
+.atencion-clientes li a, .atencion-clientes ul, .redes, .redes ul, li, .btn {
+text-decoration: none;
+color: black;
+list-style: none;
+}
+
+footer .row{
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+.atencion-clientes {
+    line-height: 2;
+}
+.redes a{
+    padding: 10px;
+}
