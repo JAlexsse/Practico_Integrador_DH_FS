@@ -29,3 +29,39 @@
 .produc .card .card-header{
 	border:none;
 }
+
+.hov-bici:hover:after{
+    content:'';
+    height: 1.5rem;
+    width: 1.5rem;
+    background: url(../img/ICONOS/SVG/SVG/Recurso\ 5.svg) no-repeat;
+    position: absolute ;
+    margin-left: 1rem;
+}
+
+.hov-acce:hover:after{
+    content:'';
+    height: 1.5rem;
+    width: 1.5rem;
+    background: url(../img/ICONOS/SVG/SVG/Recurso\ 10.svg) no-repeat;
+    position: absolute ;
+    margin-left: 1rem;
+}
+
+.hov-part:hover:after{
+    content:'';
+    height: 1.5rem;
+    width: 1.5rem;
+    background: url(../img/ICONOS/SVG/SVG/Recurso\ 4.svg) no-repeat;
+    position: absolute ;
+    margin-left: 1rem;
+}
+
+.hov-cubrt:hover:after{
+    content:'';
+    height: 1.5rem;
+    width: 1.5rem;
+    background: url(../img/ICONOS/SVG/SVG/Recurso\ 9.svg) no-repeat;
+    position: absolute ;
+    margin-left: 1rem;
+}
