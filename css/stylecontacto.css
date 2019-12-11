@@ -1,0 +1,81 @@
+
+/*
+#parrafo1{
+    background-color: #blue;
+}
+
+.azul{
+    color: blue;
+}
+
+
+
+.jumbotron {
+    margin-bottom: 0px;
+     background-image: url("../img/HEADERS DE SECCION//header principal.jpg");
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+*/
+.header{
+    background-color:white;/*rgb(255, 217, 0);*/
+}
+
+
+.header-contacto {
+ /*background: url("../img/HEADERS DE SECCION//header principal.jpg") fixed center no-repeat;*/
+ background: url("../img/HEADERS DE SECCION/AGUA.jpeg") fixed center no-repeat;
+ background-size: cover;
+ height: 30vh;
+}
+
+section.servicios {
+background-color:white;/*rgb(255, 217, 0);*/
+
+}
+
+section.servicios .elServicio{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color:white;/*rgb(255, 217, 0);*/
+    margin-bottom: 20px;
+}
+.btn{
+    background-color: rgb(255, 217, 0);
+}
+
+@media (max-width:640px) and (orientation: landscape) {
+  .header-usuario {
+   height: 50vh;
+  }
+  .usuario{
+    height: 20vh;
+  }
+  .usuario_col{
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width:1024px) and (orientation: landscape) {
+  .header-usuario {
+   height: 50vh;
+  }
+  .usuario_col{
+    width: 100%;
+  }
+}
+
+@media (max-width:768px){
+  .logo-navbar{
+  }
+  .header-usuario {
+   height: 30vh;
+  }
+}
