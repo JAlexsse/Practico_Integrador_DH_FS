@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="style_item.css">
+  <link rel="stylesheet" href="css/style_item.css">
 
 
 </head>
@@ -25,7 +25,7 @@
     <div class="overflow-hidden">
       <div class="float-left logo-navbar pl-3">
         <a class="navbar-brand" href="index.html">
-          <img src="img/LOGO/SVG/logo.svg" width="100" height="100" alt="logo-header" class="d-inline-block align-top">
+          <img src="img/LOGO/SVG/Recurso 11.svg" width="100" height="100" alt="logo-header" class="d-inline-block align-top">
         </a>
       </div>
       <nav class="navbar navbar-expand-lg navbar-light bg-white float-right">
@@ -71,7 +71,7 @@
 
   <div class="container justify-content-center ml-3">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-md-12">
             <div class="input-group mb-3"> <input type="text" class="form-control input-text" placeholder="Buscar producto...." aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append noe-yellow">
                   <button class="btn btn-lg" type="button"><i class="fa fa-search"></i></button>
@@ -80,22 +80,74 @@
         </div>
     </div>
     </div>
+    <div class="col-md-12 overflow-hidden">
+      <div class="row col-md-9 m-0 float-left">
+        <div class="card col-md-12 producto p-0">
+        	<div class="row no-gutters">
+        		<aside class="col-md-6">
+              <article class="gallery-wrap">
+                <div class="img-big-wrap overflow-hidden img-principal-producto">
+                  <div> <a href="#"><img src="img\PRODUCTOS\BICICLETAS\carretera.jpg"></a></div>
+                </div>
+                <div class="thumbs-wrap thumb-nail-producto ml-1">
+                  <a href="#" class="item-thumb"> <img src="img\PRODUCTOS\BICICLETAS\1 velocidad.jpg"></a>
+                  <a href="#" class="item-thumb"> <img src="img\PRODUCTOS\BICICLETAS\1 velocidad.jpg"></a>
+                  <a href="#" class="item-thumb"> <img src="img\PRODUCTOS\BICICLETAS\1 velocidad.jpg"></a>
+                </div>
+              </article>
+        		</aside>
+        <main class="col-md-6 border-left p-1">
+        <article class="content-body">
 
-    <div class="row col-md-12 m-0">
-      <div class="col-md-8 float-left">
+        <h2 class="title">Bicicleta de carretera</h2>
 
-        <div class="card producto mt-4">
-          <img class="card-img-top img-fluid" src="img\PRODUCTOS\BICICLETAS\carretera.jpg" alt="">
-          <div class="card-body">
-            <h3 class="card-title">Product Name</h3>
-            <h4>$24.99</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars
+        <div class="rating-wrap my-3 overflow-hidden">
+          <div class="float-left ml-1">
+            <small class="text-black">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
           </div>
+        	<p class="text-muted float-left ml-1">132 reviews</p>
+        	<p class="text-success float-left ml-1"></i> 154 orders </p>
         </div>
 
-        <div class="card producto my-4">
+        <div class="mb-3">
+        	<var class="price h4">$18150.00</var>
+        </div>
+
+        <p>Virgil Abloh’s Off-White is a streetwear-inspired collection that continues to break away from the conventions of mainstream fashion. Made in Italy, these black and brown Odsy-1000 low-top sneakers.</p>
+
+        <dl class="row">
+          <dt class="col-sm-3">Model</dt>
+          <dd class="col-sm-9">Odsy-1000</dd>
+
+          <dt class="col-sm-3">Color</dt>
+          <dd class="col-sm-9">Noe Yellow</dd>
+
+          <dt class="col-sm-3">Delivery</dt>
+          <dd class="col-sm-9">Russia, USA, and Europe </dd>
+        </dl>
+
+        <hr>
+        	<div class="form-row p-1">
+        		<div class="">
+        			<label>Cantidad</label>
+        			<div class="input-group mb-3 input-spinner">
+        			  <div class="input-group-prepend">
+        			    <button class="btn btn-dark" type="button" id="button-plus"> + </button>
+        			  </div>
+        			  <input type="text" class="form-control col-md-3" value="1">
+        			  <div class="input-group-append">
+        			    <button class="btn btn-dark" type="button" id="button-minus"> − </button>
+        			  </div>
+        			</div>
+              <a href="#" class="btn botones float-left"> Comprar </a>
+              <a href="#" class="btn botones float-left ml-1"> <span class="text">Agregar al carrito</span> <i class="fas fa-shopping-cart"></i>  </a>
+        		</div>
+        	</div>
+        </article>
+        		</main>
+        	</div>
+        </div>
+        <div class="card producto my-4 col-md-12 p-0">
           <div class="card-header noe-yellow text-white">
             <strong>Principales Comentarios</strong>
           </div>
@@ -109,13 +161,14 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
             <small class="text-muted">Posted by Anonymous on 3/1/17</small>
             <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+            <hr>
             <a href="#" class="btn noe-yellow">Deja un comentario!</a>
           </div>
         </div>
-
       </div>
-
-      <div class="col-md-4 float-left mt-4">
+      <div class="col-md-2 float-left">
         <div class="noe-yellow p-2">
           <h6 class="text-white">
             Productos Relacionados
@@ -130,7 +183,6 @@
                 <a href="#">Item One</a>
               </h4>
               <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
             </div>
             <div class="card-footer noe-yellow">
               <small class="text-black">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -146,7 +198,6 @@
                 <a href="#">Item Two</a>
               </h4>
               <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="card-footer noe-yellow">
               <small class="text-black">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -162,7 +213,6 @@
                 <a href="#">Item Three</a>
               </h4>
               <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
             </div>
             <div class="card-footer noe-yellow">
               <small class="text-black">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -171,20 +221,74 @@
         </div>
 
       </div>
-
     </div>
+    <footer class="font-small pt-4 noe-black">
+      <div class="container m-3 p-3 col-md-12">
+        <div class="row ">
+          <div class="float-left col-md-3">
+            <a class="" href="index.html">
+              <img src="img/LOGO/SVG/Recurso 11.svg" width="100" height="100" alt="logo-footer" class="">
+            </a>
+            <div class="text-white">
+              <p>
+                Encontra todo lo que necesitas para tu bicicleta, en Noe Bicicletas S.R.L
+              </p>
 
-    <footer class="page-footer font-small unique-color-dark pt-4">
-      <div class="container">
-        <ul class="list-unstyled list-inline text-center py-2">
-          <li class="list-inline-item">
-            <h5 class="mb-1">Registrate!</h5>
-          </li>
-          <li class="list-inline-item">
-            <a href="#!" class="btn btn-outline-white btn-rounded">Sign up!</a>
-          </li>
-        </ul>
+            </div>
+          </div>
+          <div class="float-left col-md-3 noe-footer">
+            <h5 class="text-white">
+              <strong>
+                PRODUCTOS
+              </strong>
+            </h5>
+            <ul class="p-0">
+              <li>
+                <a href="#">Accesorios</a>
+              </li>
+              <li>
+                <a href="#">Bicicletas</a>
+              </li>
+              <li>
+                <a href="#">Cubiertas</a>
+              </li>
+              <li>
+                <a href="#">Repuestos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="float-left col-md-3 noe-footer">
+            <ul>
+              <li class="mb-1">
+                <a href="#">
+                  <img src="img\ICONOS\facebook.svg" width="30" alt="">
+                  Facebook
+                </a>
+              </li>
+              <li class="mb-1">
+                <a href="#">
+                  <img src="img\ICONOS\twitter.svg" width="30" alt="">
+                  Twitter
+                </a>
+              </li>
+              <li class="mb-1">
+                <a href="#">
+                  <img src="img\ICONOS\youtube.svg" width="30" alt="">
+                  Youtube
+                </a>
+              </li>
+              <li class="mb-1">
+                <a href="#">
+                  <img src="img\ICONOS\instagram.svg" width="30" alt="">
+                  Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="float-left col-md-3">
 
+          </div>
+        </div>
       </div>
     </footer>
 </body>
