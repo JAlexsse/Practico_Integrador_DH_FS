@@ -1,32 +1,12 @@
 
-/*
-#parrafo1{
-    background-color: #blue;
-}
 
-.azul{
-    color: blue;
-}
-
-
-
-.jumbotron {
-    margin-bottom: 0px;
-     background-image: url("../img/HEADERS DE SECCION//header principal.jpg");
-    background-position: 0% 25%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
-    text-shadow: black 0.3em 0.3em 0.3em;
-}
-*/
 .header{
     background-color:white;/*rgb(255, 217, 0);*/
 }
 
 
 .header-contacto {
- /*background: url("../img/HEADERS DE SECCION//header principal.jpg") fixed center no-repeat;*/
+
  background: url("../img/HEADERS DE SECCION/AGUA.jpeg") fixed center no-repeat;
  background-size: cover;
  height: 30vh;
@@ -46,6 +26,26 @@ section.servicios .elServicio{
     background-color:white;/*rgb(255, 217, 0);*/
     margin-bottom: 20px;
 }
+
+#mapa {
+    margin-top: 50px;
+    position: relative;
+    padding-bottom: 51%;
+    height: 0;
+    overflow: hidden;
+    }
+
+#mapa iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    }
+#formulario{
+
+}
+
 .btn{
     background-color: rgb(255, 217, 0);
 }
