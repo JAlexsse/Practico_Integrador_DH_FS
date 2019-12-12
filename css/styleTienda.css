@@ -65,3 +65,18 @@
     position: absolute ;
     margin-left: 1rem;
 }
+
+/** Footer**/
+
+footer ul li{
+    list-style-type:none;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color:white;
+}
+
+.ul-redes li{
+    display: inline;
+}
