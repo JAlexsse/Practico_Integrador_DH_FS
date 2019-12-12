@@ -7,116 +7,41 @@ body{
 margin:0;*/
 
 
+
 margin:0;
 }
-header{
 
 
 
-}
-nav.navbar {
-    /*background-color: #white;
-    color: #black;*/
+.header-contacto {
 
-}
+ /*background: url("../img/HEADERS DE SECCION/AGUA.jpeg") fixed center no-repeat;*/
+ /*background: url("https://www.cube-bikes.ca/uploads/4/5/2/6/45264105/253100-d-3_orig.jpg") fixed center no-repeat;*/
+ background: url(" http://bombtrack.com/wp-content/uploads/2019/09/Bombtrack_20201186.jpg") fixed center no-repeat;
 
-nav.navbar img{
-    height: 60px;
-    width: 150px;
-
-}
-
-
-
-/*article.imagen {
-    text-align: right;
-
-    max-width: 900px;
-    height: 200px;
-    max-width: 900px;
-    margin: 0 auto;
-
-    background-image: url("../img/HEADERS DE SECCION/CUBIERTAS.jpg");
-
-
-    background-position: center center;
-    background-size: cover;
-
-
-
-}*/
-article.imagen{
- background-image: url("../img/HEADERS DE SECCION/CUBIERTAS.jpg");
- background-attachment: fixed;
- background-position: center;
  background-size: cover;
- max-width: 1080px;
- height: 200px;
-
- margin: 0 auto;
-
-
+ height: 30vh;
 }
 
 
 
 
 
-article.imagen h2{
+.card-block {
 
-    text-align: left;
-    font-weight:bold;
-
-
+    text-align: center;
+    padding: 15px;
 }
-
 
 
 article h2{
     text-align: center;
-    color: #black;    /*#E9531D*/
+    color: black;    /*#E9531D*/
     /*#FFD900*/
 
 }
 
 
-
-
-
-div.container a{
-
-    color: black;
-
-}
-
-.titulo{
-    /*margin-top: 60px;
-
-
-}
-
-
-
-.card{
-    opacity: 0.8;
-
-}
-
-/*#acordion{
-    border: #FFD900 5px solid;
-
-}*/
-
-div.card{
-    margin-bottom: 5px;
-
-
-}
-
-.card-block{
-    text-align: center;
-    background-color: #e4e4e4 ;
-}
 
 .card-header a{
     color: black;
