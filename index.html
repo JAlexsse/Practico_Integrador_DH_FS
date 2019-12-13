@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css\fonts.css">
   <link rel="stylesheet" href="css\stylehome.css">
   <title>HOME </title>
 </head>
@@ -23,7 +24,7 @@
             </li>
           </ul>
         </div>
-        <div class="nav-nosotros float-right d-none d-md-block">
+        <div class="nav-nosotros float-right d-none d-md-block"> <!--oculto en mobile-->
           <ul class="nav">
             <li class="nav-item">
               <a class="nav-link active" href="contacto.html">sobre nosotros</a>
@@ -40,7 +41,7 @@
           </ul>
         </div>
       </div>
-      <nav class="navbar navbar-expand-md navbar-dark noe-black col-12">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
         <a class="navbar-brand" href="index.html"> <img src="img/LOGO/SVG/logo_blanco.svg" alt="logo" height="35"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
           <span class="navbar-toggler-icon"></span>
@@ -48,31 +49,31 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav ">
             <li class="nav-item">
-              <a class="nav-link" href="tienda.html #">Bicicletas <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="tienda.html">Bicicletas <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tienda.html #">Equipo y Accesorios</a>
+              <a class="nav-link" href="tienda.html">Equipo y Accesorios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tienda.html #">Repuestos</a>
+              <a class="nav-link" href="tienda.html">Repuestos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tienda.html #">Cubiertas</a>
+              <a class="nav-link" href="tienda.html">Cubiertas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tienda.html #">Sale !</a>
+              <a class="nav-link" href="tienda.html">Sale !</a>
             </li>
           </ul>
         </div>
-        <div class="nav-item d-block d-md-none">
+        <div class="nav-item d-block d-md-none"> <!--visible en mobile-->
           <a class="nav-link" href="login.html">Ingresar</a>
         </div>
         <div class="navbar d-flex justify-content-end" id="navbar-iconos">
-          <a class="search" href="#"><img src="img/iconos/search.png" alt=""></a>
-          <a class="bag" href="#"><img src="img/iconos/utilidad amarillos/bolsa.svg" alt=""></a>
+          <a class="search" href="tienda.html"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
+          <a class="bag" href="usuario.html"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
         </div>
       </nav>
-      <div class="nav-menu-nosostros d-block d-md-none">
+      <div class="nav-menu-nosostros d-block d-md-none"> <!--visible en mobile-->
         <div class="row w-100" style="margin: 0%; padding: 0%;">
           <div class="nav-menu col-6">
             <a class="nav-link" href="faq.html">preguntas frecuentes</a>
@@ -97,19 +98,19 @@
           <div class="carousel-item active">
             <img src="img/carousel/PROMO 1-100.jpg" class="d-block w-100 col-12" alt="imagen-repuestosS">
             <div class="carousel-caption">
-
+              
             </div>
           </div>
           <div class="carousel-item">
             <img src="img/carousel/PROMO 2-100.jpg" class="d-block w-100 col-12" alt="imagen-accesorios" >
             <div class="carousel-caption">
-
+              
             </div>
           </div>
           <div class="carousel-item">
             <img src="img/carousel/PROMO 3-100.jpg" class="d-block w-100 col-12" alt="bicicletas" >
             <div class="carousel-caption">
-
+              
             </div>
           </div>
         </div>
@@ -127,20 +128,24 @@
       <div class="productos d-flex justify-content-center align-items-end w-100">
         <div class="row">
           <div class="col-6 col-md-3 text-center" id="bicicletas">
-            <img src="img/ICONOS/SVG/SVG/Recurso 5.svg" alt="Bicicletas" width="20%" height="50">
+           <a href="tienda.html"><img src="img/ICONOS/SVG/SVG/Recurso 5.svg" alt="Bicicletas" width="20%" height="50">
             <h3>Bicicletas</h3>
+           </a>
           </div>
           <div class="col-6 col-md-3 text-center" id="accesorios">
-            <img src="img/ICONOS/SVG/SVG/Recurso 6.svg" alt="Accesorios" width="20%" height="50">
+            <a href="tienda.html"><img src="img/ICONOS/SVG/SVG/Recurso 6.svg" alt="Accesorios" width="20%" height="50">
             <h3>Accesorios</h3>
+            </a>
           </div>
           <div class="col-6 col-md-3 text-center" id="cubiertas">
-            <img src="img/ICONOS/SVG/SVG/Recurso 9.svg" alt="Cubiertas" width="20%" height="50">
+            <a href="tienda.html"><img src="img/ICONOS/SVG/SVG/Recurso 9.svg" alt="Cubiertas" width="20%" height="50">
             <h3>Cubiertas</h3>
+            </a>
           </div>
           <div class="col-6 col-md-3 text-center" id="repuestos">
-            <img src="img/ICONOS/SVG/SVG/Recurso 10.svg" alt="Repuestos" width="20%" height="50">
+            <a href="tienda.html"><img src="img/ICONOS/SVG/SVG/Recurso 10.svg" alt="Repuestos" width="20%" height="50">
             <h3>Repuestos</h3>
+            </a>
           </div>
         </div>
       </div>
@@ -149,128 +154,116 @@
       <div class="productos d-flex justify-content-center align-items-end w-100">
         <div class="row">
           <div class="col-md-6 p-2">
-            <img src="img/ICONOS/SVG/slider1.jpg" alt="" height="280" width="100%">
-            <div class="estilos-bici d-flex p-2 bd-highlight"> Montaña </div>
+            <a href="tienda.html"><img src="img/HEADERS DE SECCION/CIUDAD-100.jpg" alt="" width="100%"></a>
           </div>
           <div class="col-md-6 p-2">
-            <img src="img/ICONOS/SVG/slider2.jpg" alt="" height="280" width="100%">
-            <div class="estilos-bici d-flex p-2 bd-highlight">Ruta</div>
+            <a href="tienda.html"><img src="img/HEADERS DE SECCION/RUTA-100.jpg" alt="" width="100%"></a>
           </div>
           <div class="col-md-6 p-2">
-            <img src="img/ICONOS/SVG/slider1.jpg" alt="" height="280" width="100%">
-            <div class="estilos-bici d-flex p-2 bd-highlight"> Ciudad</div>
+            <a href="tienda.html"><img src="img/HEADERS DE SECCION/MONTAÑA-100.jpg" alt="" width="100%"></a> 
           </div>
           <div class="col-md-6 p-2">
-            <img src="img/ICONOS/SVG/slider2.jpg" alt="" height="280" width="100%">
-            <div class="estilos-bici d-flex p-2 bd-highlight">Niños</div>
+            <a href="tienda.html"><img src="img/HEADERS DE SECCION/FIXED-100.jpg" alt="" width="100%"></a>
           </div>
         </div>
       </div>
     </section>
     <span class="border-top"></span>
-    <footer>
-      <div class="row">
-        <div class="productos col-md-4">
-          <h4>Productos</h4>
-          <div>
-            <div id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Bicicletas
-                </button>
-              </h2>
+    <footer class="container-fluid bg-dark mt-3 pt-4">
+      <div class="row justify-content-around align-items-start">
+        <div class="col-7 col-lg-3 order-last order-lg-first">
+          <div class="row justify-content-center mt-2 mt-md-0 p-2 text-center">
+            <div class="col-8">
+              <a href="index.html">
+                <img src="img/LOGO/SVG/Recurso 11.svg" alt="Logo">
+              </a>
             </div>
-            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#headingOne">
-              <div class="body">
-                <ul>
-                  <li>Aventura</li>
-                  <li>Ciudad</li>
-                  <li>Velocidad</li>
-                  <li>Carretera</li>
-                </ul>
-              </div>
+            <div class="col-12">
+              <p class="text-white">Todo lo que necesitas para tu bicicleta</p>
+              <p class="text-muted">Noe Bicicletas S.R.L</p>
             </div>
           </div>
-          <div>
-            <div id="headingTwo">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Equipo y Accesorios
-                </button>
-              </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#headingTwo">
-              <div class="body">
-                <ul>
-                  <li>Cascos</li>
-                  <li>Camisetas y Jerseys</li>
-                  <li>Protecciones</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div id="headingThree">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Repuestos
-                </button>
-              </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#headingThree">
-              <div class="body">
-                <ul>
-                  <li>Cascos</li>
-                  <li>Camisetas y Jerseys</li>
-                  <li>Protecciones</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div id="headingFour">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  Cubiertas
-                </button>
-              </h2>
-            </div>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#headingFour">
-              <div class="body">
-                <ul>
-                  <li>Cascos</li>
-                  <li>Camisetas y Jerseys</li>
-                  <li>Protecciones</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="atencion-clientes col-md-4">
-          <h4>Atención al cliente</h4>
-          <ul>
+        </div> <!-- Logo -->
+        <div class="col-5 col-md-3 col-lg-2 text-left">
+          <h5 class="text-white mb-3">Productos</h5>
+          <ul class="p-0">
             <li>
-              <a href="faq.html">FAQ</a>
+              <a href="#">Accesorios</a>
             </li>
             <li>
-              <a href="#contacto">Contacto</a>
+              <a href="#">Bicicletas</a>
             </li>
             <li>
-              <a href="registro.html">Regístrate</a>
+              <a href="#">Cubiertas</a>
+            </li>
+            <li>
+              <a href="#">Repuestos</a>
             </li>
           </ul>
-        </div>
-        <div class="redes col-md-4">
-          <h4> Síguenos</h4>
-          <a href="https://fb.com"><img src="img/ICONOS/facebook-brands.svg" alt="linkfacebook" height="20"></a>
-          <a href="https://instagram.com"><img src="img/ICONOS/instagram-brands.svg" alt="linkinstagram" height="20"></a>
-        </div>
+        </div> <!-- Productos -->
+        <div class="col-5 col-md-3 col-lg-2 text-left">
+          <h5 class="text-white mb-3">Atencion al Cliente</h5>
+          <ul class="p-0">
+            <li>
+              <a href="#">Faq</a>
+            </li>
+            <li>
+              <a href="#">Contacto</a>
+            </li>
+            <li>
+              <a href="#">Registrate</a>
+            </li>
+          </ul>
+        </div> <!-- Atencion Al Cliente -->
+        <div class="col-5 col-md-3 col-lg-2 text-left">
+          <h5 class="text-white mb-3">Seguinos</h5>
+          <ul class="ul-redes p-0">
+            <li>
+              <a href="#">
+                <img src="img\ICONOS\facebook.svg" width="30" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img\ICONOS\twitter.svg" width="30" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img\ICONOS\youtube.svg" width="30" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img\ICONOS\instagram.svg" width="30" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/ICONOS/ubicacion.svg" width="30" alt="">
+              </a>
+            </li>
+          </ul>
+        </div> <!-- redes -->
+        <div class="col-5 col-md-3 col-lg-2 text-white">
+          <div class="row justify-content-center text-left text-md-center">
+            <div class="col-12">
+              <h5>Newsletter</h5>
+              <p>Enterate antes que nadie de las últimas novedades y promociones.</p>
+            </div>
+            <form class="col-12 d-flex" action="">
+              <input type="email" class="form-control form-control-sm" placeholder="Email">
+              <button class="btn btn-warning btn-sm m-0">></button>
+            </form>
+          </div>
+        </div> <!-- Newsletter -->
       </div>
     </footer>
+    
   </div>
-
-
-
+  
+  
+  
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
