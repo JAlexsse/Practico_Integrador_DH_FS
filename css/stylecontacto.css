@@ -1,5 +1,70 @@
 
 
+/*** nav ***/
+
+.header-nav-top a.nav-link {
+    font-size: 0.7em;
+    inline-size: auto;
+    color: #777272c7;
+    font-weight: normal;
+    position: relative;
+    line-height: 25px;
+    padding: 0px 20px 0px 0px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+.nav-link , a.dropdown-toggle{
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 6px 0px 6px 0px;
+}
+
+ul.navbar-nav li a{
+    margin-left: 17px;
+    font-family: 'Bebas Neue';
+}
+
+a.search , a.bag {
+    padding: 0px 5px;
+}
+
+
+a.navbar-brand{
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+#navbar-iconos {
+    background-color: #343a40;
+}
+
+/*** nav visible solo mobile y tablet***/
+.nav-menu-nosostros{
+    background-color: #ffeb3bde;
+}
+.nav-menu{
+    padding: 0%;
+}
+
+.nav-menu a{
+    color: black;
+    padding: 0%;
+    font-size: 0.7em;
+    text-align: center;
+    font-weight: 600;
+}
+
+.nav-item a{
+    color: darkgray;
+}
+
+/*header*/
+
+
 .header{
     background-color:white;/*rgb(255, 217, 0);*/
 }
@@ -15,6 +80,10 @@
  background-size: cover;
  height: 30vh;
 }
+
+
+
+/*servicios*/
 
 section.servicios {
 background-color:white;/*rgb(255, 217, 0);*/
@@ -45,10 +114,8 @@ section.servicios .elServicio{
     text-decoration:none;
 }
 
-
-
-
 #mapa {
+    border: black 3px solid;
     margin-top: 50px;
     position: relative;
     padding-bottom: 70%;
@@ -63,9 +130,7 @@ section.servicios .elServicio{
     width: 100% !important;
     height: 100% !important;
     }
-#formulario{
 
-}
 
 .btn{
     background-color: rgb(255, 217, 0);
