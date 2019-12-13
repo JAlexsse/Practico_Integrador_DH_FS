@@ -8,7 +8,9 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bitter|Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css\fonts.css">
   <link rel="stylesheet" href="css/styleTienda.css">
 
   <title>Tienda</title>
@@ -20,16 +22,14 @@
       <div class="nav-contacto float-left">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link active" href="tel:543516999999" target="_blank"> <img src="img/ICONOS/telefono.svg"
-                alt="" height="16"> +54 3516 999 999</a>
+            <a class="nav-link active" href="tel:543516999999" target="_blank"> <img src="img/ICONOS/telefono.svg" alt="" height="16"> +54 3516 999 999</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="mailto:info@bicisnoe.com.ar" target="_blank"> <img src="img/ICONOS/mail.svg"
-                alt="" height="16"> info@bicisnoe.com.ar</a>
+            <a class="nav-link" href="mailto:info@bicisnoe.com.ar" target="_blank"> <img src="img/ICONOS/mail.svg" alt="" height="16"> info@bicisnoe.com.ar</a>
           </li>
         </ul>
       </div>
-      <div class="nav-nosotros float-right d-none d-md-block">
+      <div class="nav-nosotros float-right d-none d-md-block"> <!--oculto en mobile-->
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link active" href="contacto.html">sobre nosotros</a>
@@ -48,38 +48,37 @@
     </div>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
       <a class="navbar-brand" href="index.html"> <img src="img/LOGO/SVG/logo_blanco.svg" alt="logo" height="35"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav ">
           <li class="nav-item">
-            <a class="nav-link" href="tienda.html #">Bicicletas <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="tienda.html">Bicicletas <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tienda.html #">Equipo y Accesorios</a>
+            <a class="nav-link" href="tienda.html">Equipo y Accesorios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tienda.html #">Repuestos</a>
+            <a class="nav-link" href="tienda.html">Repuestos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tienda.html #">Cubiertas</a>
+            <a class="nav-link" href="tienda.html">Cubiertas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tienda.html #">Sale !</a>
+            <a class="nav-link" href="tienda.html">Sale !</a>
           </li>
         </ul>
       </div>
-      <div class="nav-item d-block d-md-none">
+      <div class="nav-item d-block d-md-none"> <!--visible en mobile-->
         <a class="nav-link" href="login.html">Ingresar</a>
       </div>
       <div class="navbar d-flex justify-content-end" id="navbar-iconos">
-        <a class="search" href="#"><img src="img/iconos/search.png" alt=""></a>
-        <a class="bag" href="#"><img src="img/iconos/utilidad amarillos/bolsa.svg" alt=""></a>
+        <a class="search" href="tienda.html"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
+        <a class="bag" href="usuario.html"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
       </div>
     </nav>
-    <div class="nav-menu-nosostros d-block d-md-none">
+    <div class="nav-menu-nosostros d-block d-md-none"> <!--visible en mobile-->
       <div class="row w-100" style="margin: 0%; padding: 0%;">
         <div class="nav-menu col-6">
           <a class="nav-link" href="faq.html">preguntas frecuentes</a>
@@ -98,17 +97,17 @@
     <div class="row justify-content-center">
 
       <div class="col-12 bg-light text-center py-2 border">
-        <h4>Tienda</h4>
+        <h6 class="titulos-importantes">Tienda</h6>
       </div> <!-- Titulo -->
 
-      <div class="col-12 col-lg-2  m-2 text-left border-lg-right">
-        <h3 class="mt-2">Categorias</h3>
+      <div class="col-12 col-lg-2  m-2 text-left border-right ">
+        <h3 class="mt-2 titulos-medio">Categorias</h3>
 
         <div id="acordion" role="tablist" aria-multiselectable="true">
 
           <div class="card p-0">
             <div class="card-header" role="tab" id="heading1">
-              <h5 class="mb-0">
+              <h5 class="mb-0 titulos-categorias-tienda">
                 <a href="#collapse1" data-toggle="collapse" data-parent="#acordion" aria-expanded="true"
                   aria-controls="collapse1">
                   Bicicletas
@@ -121,16 +120,16 @@
               <div class="card-block">
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link active hov-bici" href="#">Adventure</a>
+                    <a class="nav-link active hov-bici categorias-tienda" href="#">Adventure</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-bici" href="#">Road</a>
+                    <a class="nav-link hov-bici categorias-tienda" href="#">Road</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-bici" href="#">City</a>
+                    <a class="nav-link hov-bici categorias-tienda" href="#">City</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-bici" href="#">Cruisers</a>
+                    <a class="nav-link hov-bici categorias-tienda" href="#">Cruisers</a>
                   </li>
                 </ul>
               </div>
@@ -141,7 +140,7 @@
 
           <div class="card">
             <div class="card-header" role="tab" id="heading2">
-              <h5 class="mb-0">
+              <h5 class="mb-0 titulos-categorias-tienda">
                 <a href="#collapse2" data-toggle="collapse" data-parent="#acordion" aria-expanded="true"
                   aria-controls="collapse2">
                   Accesorios
@@ -154,16 +153,16 @@
               <div class="card-block">
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link active hov-acce" href="#">Protector Bicicletas</a>
+                    <a class="nav-link active hov-acce categorias-tienda" href="#">Protector Bicicletas</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-acce" href="#">Guardabarros</a>
+                    <a class="nav-link hov-acce categorias-tienda" href="#">Guardabarros</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-acce" href="#">Botellas</a>
+                    <a class="nav-link hov-acce categorias-tienda" href="#">Botellas</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-acce" href="#">Luces</a>
+                    <a class="nav-link hov-acce categorias-tienda" href="#">Luces</a>
                   </li>
                 </ul>
               </div>
@@ -173,7 +172,7 @@
 
           <div class="card">
             <div class="card-header" role="tab" id="heading3">
-              <h5 class="mb-0">
+              <h5 class="mb-0 titulos-categorias-tienda">
                 <a href="#collapse3" data-toggle="collapse" data-parent="#acordion" aria-expanded="true"
                   aria-controls="collapse3">
                   Partes
@@ -186,16 +185,16 @@
               <div class="card-block">
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link active hov-part" href="#">Pedales</a>
+                    <a class="nav-link active hov-part categorias-tienda" href="#">Pedales</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-part" href="#">Asientos</a>
+                    <a class="nav-link hov-part categorias-tienda" href="#">Asientos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-part" href="#">Cuadro</a>
+                    <a class="nav-link hov-part categorias-tienda" href="#">Cuadro</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-part" href="#">Frenos</a>
+                    <a class="nav-link hov-part categorias-tienda" href="#">Frenos</a>
                   </li>
                 </ul>
               </div>
@@ -206,7 +205,7 @@
 
           <div class="card">
             <div class="card-header" role="tab" id="heading4">
-              <h5 class="mb-0">
+              <h5 class="mb-0 titulos-categorias-tienda">
                 <a href="#collapse4" data-toggle="collapse" data-parent="#acordion" aria-expanded="true"
                   aria-controls="collapse4">
                   Cubiertas
@@ -219,16 +218,16 @@
               <div class="card-block">
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link active hov-cubrt" href="#">Adventure</a>
+                    <a class="nav-link active hov-cubrt categorias-tienda" href="#">Adventure</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-cubrt" href="#">Road</a>
+                    <a class="nav-link hov-cubrt categorias-tienda" href="#">Road</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-cubrt" href="#">City</a>
+                    <a class="nav-link hov-cubrt categorias-tienda" href="#">City</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hov-cubrt" href="#">Cruisers</a>
+                    <a class="nav-link hov-cubrt categorias-tienda" href="#">Cruisers</a>
                   </li>
                 </ul>
               </div>
