@@ -9,6 +9,11 @@
   font-size: 2rem;
 }
 
+.titulos-header{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.5rem;
+}
+
 .subtitulos{
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
