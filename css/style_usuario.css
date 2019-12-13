@@ -1,7 +1,9 @@
-.header-usuario {
- background: url("../img/HEADERS DE SECCION/header principal.jpg") fixed center no-repeat;
- background-size: cover;
- height: 30vh;
+.noe-black{
+  background-color: rgb(20, 20, 20);
+}
+
+.header-usuario img{
+  width: 100%,
 }
 
 .usuario{
@@ -10,8 +12,9 @@
 }
 
 .foto{
-  background-image: url("../img/ICONOS/huella.svg");
-  background-repeat: round;
+  background-image: url("../img/ICONOS/huella_2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 
@@ -40,7 +43,21 @@
 }
 
 .noe-black{
-  background-color: rgb(0, 0, 0)
+  background-color: rgb(20, 20, 20)
+}
+
+
+footer ul li{
+    list-style-type:none;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color:white;
+}
+
+.ul-redes li{
+    display: inline;
 }
 
 @media (max-width:640px) and (orientation: landscape) {

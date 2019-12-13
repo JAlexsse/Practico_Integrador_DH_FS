@@ -1,0 +1,25 @@
+.titulos-importantes{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+}
+
+.titulos-medio{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+}
+
+.subtitulos{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.botones-texto{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.texto-parrafo{
+  font-family: 'Bitter', serif;
+  font-size: 1rem;
+}

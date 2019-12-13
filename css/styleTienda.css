@@ -26,6 +26,17 @@
 	border: 1px solid rgb(235,235,235);
 }
 
+.fav{
+    display: none;
+}
+.fav:hover {
+    color:red;
+}
+.produc .card:hover .fav{
+	display: inline-block;
+}
+
+
 .produc .card .card-header{
 	border:none;
 }
@@ -64,4 +75,19 @@
     background: url(../img/ICONOS/SVG/SVG/Recurso\ 9.svg) no-repeat;
     position: absolute ;
     margin-left: 1rem;
+}
+
+/** Footer**/
+
+footer ul li{
+    list-style-type:none;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color:white;
+}
+
+.ul-redes li{
+    display: inline;
 }
