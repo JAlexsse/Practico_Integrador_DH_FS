@@ -15,6 +15,7 @@ header {
     line-height: 25px;
     padding: 0px 20px 0px 0px;
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }
 .nav-link , a.dropdown-toggle{
     text-transform: uppercase;
@@ -24,12 +25,20 @@ header {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 6px 0px 6px 0px;
 }
+ ul.navbar-nav li a{
+     margin-left: 17px;
+     font-family: 'Bebas Neue';
+ }
 a.search , a.bag {
     padding: 0px 5px;
 }
 a.navbar-brand {
     padding: 0%;
     margin: 0%;
+}
+a.navbar-brand{
+    padding-left: 5px;
+    padding-bottom: 5px;
 }
 #navbar-iconos {
     background-color: #343a40;
@@ -51,12 +60,12 @@ a.navbar-brand {
 .nav-item a{
     color: darkgray;
 }
-/*** main ***/
+/*** MAIN ***/
 #carouselExampleCaptions {
     padding-top: 10px;
 }
 
-/*** seccion productos ***/
+/*** SECCION PRODUCTOS ***/
 .section-productos{
 background-color: #fff;
 padding-top: 15px;
@@ -67,7 +76,7 @@ padding-bottom: 30px;
     margin: auto;
 }
 .estilos-bici{
-    background-color: rgba(255, 217, 0, 0.73) ;
+    background-color: rgb(255, 217, 0) ;
     color: black;
 }
 
@@ -75,29 +84,20 @@ h3 {
     font-size: small;
     font-variant: small-caps;
     text-decoration: overline;
+    color: black;
+    font-family: 'Bebas Neue';
+    letter-spacing: 0.05rem;
+    font-weight: 600;
 }
 /*** footer ***/
-footer {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-footer h4 {
-    color: black;
-    font-size: large;
-}
-.atencion-clientes li a, .atencion-clientes ul, .redes, .redes ul, li, .btn {
-text-decoration: none;
-color: black;
-list-style: none;
+footer ul li{
+    list-style-type:none;
 }
 
-footer .row{
-    margin: auto;
-    padding-top: 50px;
-    padding-bottom: 30px;
+footer ul li a{
+    text-decoration: none;
+    color:white;
 }
-.atencion-clientes {
-    line-height: 2;
-}
-.redes a{
-    padding: 10px;
-}
+
+.ul-redes li{
+    display: inline;
