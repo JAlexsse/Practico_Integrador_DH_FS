@@ -1,7 +1,16 @@
+body{
 
+margin:0;
+}
 
 /*** nav ***/
 
+body{
+
+margin:0;
+}
+
+/*navbar*/
 .header-nav-top a.nav-link {
     font-size: 0.7em;
     inline-size: auto;
@@ -61,7 +70,6 @@ a.navbar-brand{
 .nav-item a{
     color: darkgray;
 }
-
 /*header*/
 
 
@@ -136,35 +144,7 @@ section.servicios .elServicio{
     background-color: rgb(255, 217, 0);
 }
 
-@media (max-width:640px) and (orientation: landscape) {
-  .header-usuario {
-   height: 50vh;
-  }
-  .usuario{
-    height: 20vh;
-  }
-  .usuario_col{
-    align-items: center;
-    justify-content: center;
-  }
-}
 
-@media (max-width:1024px) and (orientation: landscape) {
-  .header-usuario {
-   height: 50vh;
-  }
-  .usuario_col{
-    width: 100%;
-  }
-}
-
-@media (max-width:768px){
-  .logo-navbar{
-  }
-  .header-usuario {
-   height: 30vh;
-  }
-}
 
 /** Footer**/
 
