@@ -9,7 +9,7 @@ header {
 .header-nav-top a.nav-link {
     font-size: 0.7em;
     inline-size: auto;
-    color: #9999;
+    color: #777272c7;
     font-weight: normal;
     position: relative;
     line-height: 25px;
@@ -30,6 +30,9 @@ a.search , a.bag {
 a.navbar-brand {
     padding: 0%;
     margin: 0%;
+}
+#navbar-iconos {
+    background-color: #343a40;
 }
 /*** header visible solo mobile y tablet***/
 .nav-menu-nosostros{
