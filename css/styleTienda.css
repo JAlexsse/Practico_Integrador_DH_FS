@@ -26,6 +26,17 @@
 	border: 1px solid rgb(235,235,235);
 }
 
+.fav{
+    display: none;
+}
+.fav:hover {
+    color:red;
+}
+.produc .card:hover .fav{
+	display: inline-block;
+}
+
+
 .produc .card .card-header{
 	border:none;
 }
