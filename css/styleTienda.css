@@ -97,9 +97,10 @@ a.navbar-brand{
 .fav:hover {
     color:red;
 }
-/* .produc .item:hover .fav{
-	display: inline-block;
-} */
+.produc .item:hover .fav{
+    display: inline-block;
+    color:red;
+}
 
 .hov-bici:hover:after{
     content:'';
