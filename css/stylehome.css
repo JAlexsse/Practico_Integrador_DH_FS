@@ -1,49 +1,8 @@
-/** Body **/
-.body-login1 {
-    background-image: url("../img/HEADERS DE SECCION/REPUESTOS.jpg");
-    background-position: center center;
-    background-size: cover;
-}
-
-/** Form **/
-.login-container{
-    margin-top: 4%;
-    margin-bottom: 4%;
-}
-.login-form{
-    padding: 5%;
-    background: rgb(3,3,4,.8);
-    border: 2px solid white;
-    border-radius: 2rem;
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-.login-container form{
-    padding: 10%;
-}
-.login-form .btnSubmit{
-    font-weight: 600;
-    color: #0062cc;
-    background-color: #fff;
-}
-.login-form .ForgetPwd{
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-}
-.reset-pass a{
-    font-size: .8rem;
-    text-align: right;
-}
-.reset-pass a:hover{
-    color: rgb(252,216,22);
-}
-
-.btn:hover{
-    background-color: #d8d08f;
-}
-
 /***** HOME *****/
-
+/*** header ***/
+header {
+    font-size: small;
+}
 
 /*** nav ***/
 
@@ -54,21 +13,44 @@
     font-weight: normal;
     position: relative;
     line-height: 25px;
-    padding: 0px 6px 0px 0px;
+    padding: 0px 20px 0px 0px;
     text-transform: uppercase;
 }
-/**** NAV ****/
 .nav-link , a.dropdown-toggle{
     text-transform: uppercase;
     text-decoration: none;
-
 }
 .navbar {
     background-color: rgba(255, 255, 255, 0.5);
-    padding-top: 0%;
+    padding: 6px 0px 6px 0px;
 }
 a.search , a.bag {
-    padding: 0px 15px;
+    padding: 0px 5px;
+}
+a.navbar-brand {
+    padding: 0%;
+    margin: 0%;
+}
+/*** header visible solo mobile y tablet***/
+.nav-menu-nosostros{
+    background-color: #ffeb3bde;
+}
+.nav-menu{
+    padding: 0%;
+}
+.nav-menu a{
+    color: black;
+    padding: 0%;
+    font-size: 0.7em;
+    text-align: center;
+    font-weight: 600;
+}
+.nav-item a{
+    color: darkgray;
+}
+/*** main ***/
+#carouselExampleCaptions {
+    padding-top: 10px;
 }
 
 /*** seccion productos ***/
@@ -87,7 +69,9 @@ padding-bottom: 30px;
 }
 
 h3 {
-    font-size: medium;
+    font-size: small;
+    font-variant: small-caps;
+    text-decoration: overline;
 }
 /*** footer ***/
 footer {
