@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styleLogin.css">
+
   <link rel="stylesheet" href="css/styleTienda.css">
 
   <title>Tienda</title>
@@ -77,11 +77,16 @@
       </div>
     </nav>
   </header>
-  <div class="container-fluid mt-3">
+
+  <div class="container-fluid my-3">
     <div class="row">
 
-      <div class="col-12 col-lg-2  m-2 text-left">
-        <h3>Categorias</h3>
+      <div class="col-12 bg-light text-center py-2 border-top border-bottom">
+        <h4>Tienda</h4>
+      </div> <!-- Titulo -->
+
+      <div class="col-12 col-lg-2  m-2 text-left border-right">
+        <h3 class="mt-2">Categorias</h3>
 
         <div id="acordion" role="tablist" aria-multiselectable="true">
 
@@ -221,17 +226,201 @@
 
       <div class="col">
         <div class="row">
+          <div class="col produc">
+            <div class="row ">
+
+              <div class="col-10 col-md-4 text-center p-3 mb-3">
+                <div class="card">
+                  <div class="row card-header justify-content-between align-items-center px-0 m-0">
+                    <div class="col-2">
+                      <span class="badge badge-success">Stock</span>
+                    </div>
+                    <a class="col-2 fav">
+                        <img src="img/ICONOS/heart.svg" alt="Favorito">
+                    </a>
+                  </div>
+                  <a href="item.html">
+                    <img src="img/carousel/of11.jpg" class="card-img-top" alt="...">
+                    <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
+                      <label class="col-2 btn btn-secondary active" style="background-color: #88280a;">
+                        <input type="radio" name="options" id="option1" checked>
+                      </label>
+                      <label class="col-2 btn btn-secondary" style="background-color: #000;">
+                        <input type="radio" name="options" id="option2">
+                      </label>
+                    </div>
+                      <div class="card-body">
+                        <h1 class="h5">Bicicleta 1</h1>
+                        <h6>$999</h6>
+                      </div>
+                  </a>
+
+
+                </div>
+              </div> <!-- bicis 1 -->
+
+              <div class="col-10 col-md-4  text-center p-3 mb-3">
+                <div class="card">
+                  <a href="#">
+                    <div class="card-header">
+                      <h1 class="h5">Bicicleta 2</h1>
+                    </div>
+                    <img src="img/carousel/of22.jpg" class="card-img-top" alt="...">
+                  </a>
+                  <h5>$999</h5>
+                  <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
+                    <label class="col-2 btn btn-secondary active" style="background-color: #42016d;">
+                      <input type="radio" name="options" id="option1" checked>
+                    </label>
+                  </div>
+                </div>
+              </div> <!-- bicis 2 -->
+
+              <div class="col-10 col-md-4 text-center p-3 mb-3">
+                <div class="card">
+                  <a href="#">
+                    <div class="card-header">
+                      <h1 class="h5">Bicicleta 3</h1>
+                    </div>
+                    <img src="img/carousel/of33.jpg" class="card-img-top" alt="...">
+                  </a>
+                  <h5>$999</h5>
+                  <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
+                    <label class="col-2 btn btn-secondary active" style="background-color: #000;">
+                      <input type="radio" name="options" id="option1" checked>
+                    </label>
+                    <label class="col-2 btn btn-secondary" style="background-color: #9c9c9c;">
+                      <input type="radio" name="options" id="option2">
+                    </label>
+                  </div>
+                </div>
+              </div> <!-- bicis 3 -->
+
+              <div class="col-10 col-md-4 text-center p-3 mb-3">
+                <div class="card">
+                  <a href="#">
+                    <div class="card-header">
+                      <h1 class="h5">Casco 1</h1>
+                    </div>
+                    <img src="img/PRODUCTOS/EQUIPO Y ACCESORIOS/casco1.jpg" class="card-img-top" alt="...">
+                  </a>
+                  <h5>$999</h5>
+                  <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
+
+                    <label class="col-2 btn btn-secondary active" style="background-color: rgb(160, 137, 7);">
+                      <input type="radio" name="options" id="option1" checked>
+                    </label>
+
+                    <label class="col-2 btn btn-secondary" style="background-color: #1d2450;">
+                      <input type="radio" name="options" id="option2">
+                    </label>
+
+                    <label class="col-2 btn btn-secondary" style="background-color: #000000;">
+                      <input type="radio" name="options" id="option2">
+                    </label>
+                  </div>
+                </div>
+              </div> <!-- casco1 -->
+
+              <div class="col-10 col-md-4 text-center p-3 mb-3">
+                <div class="card">
+                  <a href="#">
+                    <div class="card-header">
+                      <h1 class="h5">Casco 2</h1>
+                    </div>
+                    <img src="img/PRODUCTOS/EQUIPO Y ACCESORIOS/casco2.jpg" class="card-img-top" alt="...">
+                  </a>
+                  <h5>$999</h5>
+                  <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
+                    <label class="col-2 btn btn-secondary active" style="background-color: #000;">
+                      <input type="radio" name="options" id="option1" checked>
+                    </label>
+                    <label class="col-2 btn btn-secondary" style="background-color: #ffffff;">
+                      <input type="radio" name="options" id="option2">
+                    </label>
+                  </div>
+                </div>
+              </div> <!--  casco2 -->
+
+              <div class="col-10 col-md-4 text-center p-3 mb-3">
+                <div class="card">
+                  <a href="#">
+                    <div class="card-header">
+                      <h1 class="h5">Bicicleta 3</h1>
+                    </div>
+                    <img src="img/PRODUCTOS/EQUIPO Y ACCESORIOS/casco3.jpg" class="card-img-top" alt="...">
+                  </a>
+                  <h5>$999</h5>
+                  <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
+                    <label class="col-2 btn btn-secondary active" style="background-color: rgb(231, 209, 8);">
+                      <input type="radio" name="options" id="option1" checked>
+                    </label>
+                  </div>
+                </div>
+              </div> <!-- Casco3 -->
+
+              <div class="col-10 col-md-4 text-center p-3 mb-3">
+                <div class="card">
+                  <a href="#">
+                    <div class="card-header">
+                      <h1 class="h5">Pedal 1</h1>
+                    </div>
+                    <img src="img/PRODUCTOS/REPUESTOS/Pedal1.jpg" class="card-img-top" alt="...">
+                  </a>
+                  <h5>$999</h5>
+                  <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
+                    <label class="col-2 btn btn-secondary active" style="background-color: rgb(20, 20, 20);">
+                      <input type="radio" name="options" id="option1" checked>
+                    </label>
+                  </div>
+                </div>
+              </div> <!-- Pedal -->
+
+              <div class="col-10 col-md-4 text-center p-3 mb-3">
+                <div class="card">
+                  <a href="#">
+                    <div class="card-header">
+                      <h1 class="h5">Asiento</h1>
+                    </div>
+                    <img src="img/PRODUCTOS/REPUESTOS/Asiento.jpeg" class="card-img-top" alt="...">
+                  </a>
+                  <h5>$999</h5>
+                  <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
+                    <label class="col-2 btn btn-secondary active" style="background-color: rgb(219, 158, 25);">
+                      <input type="radio" name="options" id="option1" checked>
+                    </label>
+                  </div>
+                </div>
+              </div> <!-- Asiento -->
+
+              <div class="col-10 col-md-4 text-center p-3 mb-3">
+                <div class="card">
+                  <a href="#">
+                    <div class="card-header">
+                      <h1 class="h5">Cubierta Golden</h1>
+                    </div>
+                    <img src="img/PRODUCTOS/CUBIERTAS/WheelSet_Gold_700c_40_3rd_web_1200x.jpg" class="card-img-top"
+                      alt="...">
+                  </a>
+                  <h5>$999</h5>
+                  <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
+                    <label class="col-2 btn btn-secondary active" style="background-color: rgb(219, 168, 26);">
+                      <input type="radio" name="options" id="option1" checked>
+                    </label>
+                  </div>
+                </div>
+              </div> <!-- Cubierta -->
+
+            </div>
+          </div> <!-- Productos -->
+
           <div class="col-12">
-            <h4>Bicicletas</h4>
             <hr>
-          </div> <!-- Titulo -->
-          <div class="col-12">
             <div class="row justify-content-between align-items-center">
               <div class="col">
                 <p>Articulos 1-12 de 30</p>
               </div> <!-- Cantidad de Articulos -->
               <div class="col">
-
                 <ul class="pagination justify-content-end">
                   <li class="page-item disabled">
                     <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -243,71 +432,107 @@
                     <a class="page-link" href="#">Next</a>
                   </li>
                 </ul>
-
               </div> <!-- Navegacion entre paginas -->
             </div>
-            <hr>
-          </div> <!-- Paginas -->
-          <div class="col produc">
-            <div class="row justify-content-around">
-              <div class="card col-10 col-md-6 col-lg-4 text-center">
-                <a href="item.html">
-                  <div class="card-header">
-                    <h1 class="h5">Bicicleta 1</h1>
-                  </div>
-                  <img src="img/carousel/of11.jpg" class="card-img-top" alt="...">
-                </a>
-                <h5>$999</h5>
-                <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
-                  <label class="col-2 btn btn-secondary active" style="background-color: #88280a;">
-                    <input type="radio" name="options" id="option1" checked> 
-                  </label>
-                  <label class="col-2 btn btn-secondary"  style="background-color: #000;">
-                    <input type="radio" name="options" id="option2"> 
-                  </label>
-                </div>
 
-              </div>
-              <div class="card col-10 col-md-4  text-center">
-                <a href="#">
-                  <div class="card-header">
-                    <h1 class="h5">Bicicleta 2</h1>
-                  </div>
-                  <img src="img/carousel/of22.jpg" class="card-img-top" alt="...">
-                </a>
-                <h5>$999</h5>
-                <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
-                    <label class="col-2 btn btn-secondary active" style="background-color: #42016d;">
-                      <input type="radio" name="options" id="option1" checked> 
-                    </label>
-                  </div>
-              </div>
-              <div class="card col-10 col-md-4 text-center">
-                <a href="#">
-                  <div class="card-header">
-                    <h1 class="h5">Bicicleta 3</h1>
-                  </div>
-                  <img src="img/carousel/of33.jpg" class="card-img-top" alt="...">
-                </a>
-                <h5>$999</h5>
-                <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
-                    <label class="col-2 btn btn-secondary active" style="background-color: #000;">
-                      <input type="radio" name="options" id="option1" checked> 
-                    </label>
-                    <label class="col-2 btn btn-secondary"  style="background-color: #9c9c9c;">
-                      <input type="radio" name="options" id="option2"> 
-                    </label>
-                </div>
-              </div>
-              </div>
-          </div>
+          </div> <!-- Navegacion -->
+
         </div>
       </div> <!-- Productos -->
 
-    </div> <!-- row -->
-
+    </div> 
   </div> <!-- container -->
 
+  <footer class="container-fluid bg-dark mt-3 pt-4">
+    <div class="row justify-content-around align-items-lg-start">
+      <div class="col-md-5 col-lg-2">
+        <div class="row justify-content-center p-2 text-center">
+          <div class="col-8">
+            <a href="index.html">
+              <img src="img/LOGO/SVG/Recurso 11.svg" alt="Logo">
+            </a>
+          </div>
+          <div class="col-12">
+            <p class="text-white">Todo lo que necesitas para tu bicicleta</p>
+            <p class="text-muted">Noe Bicicletas S.R.L</p>
+          </div>
+        </div>
+      </div> <!-- Logo -->
+      <div class="col-md-4 col-lg-2 text-left">
+        <h5 class="text-white mb-3">Productos</h5>
+        <ul class="p-0">
+          <li>
+            <a href="#">Accesorios</a>
+          </li>
+          <li>
+            <a href="#">Bicicletas</a>
+          </li>
+          <li>
+            <a href="#">Cubiertas</a>
+          </li>
+          <li>
+            <a href="#">Repuestos</a>
+          </li>
+        </ul>
+      </div> <!-- Productos -->
+      <div class="col-md-4 col-lg-2 text-left">
+        <h5 class="text-white mb-3">Atencion al Cliente</h5>
+        <ul class="p-0">
+          <li>
+            <a href="#">Faq</a>
+          </li>
+          <li>
+            <a href="#">Contacto</a>
+          </li>
+          <li>
+            <a href="#">Registrate</a>
+          </li>
+        </ul>
+      </div> <!-- Atencion Al Cliente -->
+      <div class="col-md-4 col-lg-2 text-left">
+        <h5 class="text-white mb-3">Seguinos</h5>
+        <ul class="ul-redes p-0">
+          <li>
+            <a href="#">
+              <img src="img\ICONOS\facebook.svg" width="30" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img\ICONOS\twitter.svg" width="30" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img\ICONOS\youtube.svg" width="30" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img\ICONOS\instagram.svg" width="30" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img\ICONOS\instagram.svg" width="30" alt="">
+            </a>
+          </li>
+        </ul>
+      </div> <!-- redes -->
+      <div class="col-md-4 col-lg-2 text-white">
+        <div class="row justify-content-center text-center">
+          <div class="col-12">
+            <h5>Newsletter</h5>
+            <p>Enterate antes que nadie de las últimas novedades y promociones.</p>
+          </div>
+          <form class="col-12 d-flex" action="">
+            <input type="email" class="form-control form-control-sm" placeholder="Email">
+            <button class="btn btn-warning btn-sm m-0">></button>
+          </form>
+        </div>
+      </div> <!-- Newsletter -->
+    </div>
+  </footer>
 
 
   <!--Script Bootstrap-->
