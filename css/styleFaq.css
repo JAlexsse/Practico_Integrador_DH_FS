@@ -1,31 +1,81 @@
 body{
 
-    /*background-image: url("../img/HEADERS DE SECCION/CUBIERTAS.jpg");
-    background-position: center center;
-    background-size: cover;
-
-margin:0;*/
-
-
-
 margin:0;
 }
 
+/*navbar*/
+.header-nav-top a.nav-link {
+    font-size: 0.7em;
+    inline-size: auto;
+    color: #777272c7;
+    font-weight: normal;
+    position: relative;
+    line-height: 25px;
+    padding: 0px 20px 0px 0px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+.nav-link , a.dropdown-toggle{
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 6px 0px 6px 0px;
+}
+
+ul.navbar-nav li a{
+    margin-left: 17px;
+    font-family: 'Bebas Neue';
+}
+
+a.search , a.bag {
+    padding: 0px 5px;
+}
 
 
-.header-contacto {
+a.navbar-brand{
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
 
- /*background: url("../img/HEADERS DE SECCION/AGUA.jpeg") fixed center no-repeat;*/
- /*background: url("https://www.cube-bikes.ca/uploads/4/5/2/6/45264105/253100-d-3_orig.jpg") fixed center no-repeat;*/
- background: url("../img/HEADERS DE SECCION/HeaderFaq.jpg") fixed center no-repeat;
+#navbar-iconos {
+    background-color: #343a40;
+}
 
- background-size: cover;
- height: 30vh;
+/*** nav visible solo mobile y tablet***/
+.nav-menu-nosostros{
+    background-color: #ffeb3bde;
+}
+.nav-menu{
+    padding: 0%;
+}
+
+.nav-menu a{
+    color: black;
+    padding: 0%;
+    font-size: 0.7em;
+    text-align: center;
+    font-weight: 600;
+}
+
+.nav-item a{
+    color: darkgray;
 }
 
 
 
 
+
+/*header*/
+
+.header-contacto {
+
+ background: url("../img/HEADERS DE SECCION/HeaderFaq.jpg") fixed center no-repeat;
+ background-size: cover;
+ height: 30vh;
+}
 
 .card-block {
 
@@ -33,14 +83,12 @@ margin:0;
     padding: 15px;
 }
 
-
 article h2{
     text-align: center;
     color: black;    /*#E9531D*/
     /*#FFD900*/
 
 }
-
 
 
 .card-header a{
