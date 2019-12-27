@@ -1,82 +1,20 @@
-﻿/*** header ***/
-header {
-    font-size: small;
-}
+﻿/**** Tienda ****/
 
-/*** nav ***/
-
-.header-nav-top a.nav-link {
-    font-size: 0.7em;
-    inline-size: auto;
-    color: #777272c7;
-    font-weight: normal;
-    position: relative;
-    line-height: 25px;
-    padding: 0px 20px 0px 0px;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-}
-.nav-link , a.dropdown-toggle{
-    text-transform: uppercase;
-    text-decoration: none;
-}
-.navbar {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 6px 0px 6px 0px;
-}
- ul.navbar-nav li a{
-     margin-left: 17px;
-     font-family: 'Bebas Neue';
- }
-a.search , a.bag {
-    padding: 0px 5px;
-}
-a.navbar-brand {
-    padding: 0%;
-    margin: 0%;
-}
-a.navbar-brand{
-    padding-left: 5px;
-    padding-bottom: 5px;
-}
-#navbar-iconos {
-    background-color: #343a40;
-}
-/*** header visible solo mobile y tablet***/
-.nav-menu-nosostros{
-    background-color: #ffeb3bde;
-}
-.nav-menu{
-    padding: 0%;
-}
-.nav-menu a{
-    color: black;
-    padding: 0%;
-    font-size: 0.7em;
-    text-align: center;
-    font-weight: 600;
-}
-.nav-item a{
-    color: darkgray;
-}
-
-
-
-.card, .card-header{
+.main-tienda .card, .card-header{
     border:none;
     background-color: white;
 }
 
-.card a, .card-header a{
+.main-tienda .card a, .card-header a{
     text-decoration: none;
     color: #161616;
 }
 
-.card-header{
+.main-tienda .card-header{
     padding:.6rem;
 }
 
-.card-header a:before{
+.main-tienda .card-header a:before{
     content:'▼';
     display: inline;
     color: rgb(252,216,22);
@@ -136,19 +74,4 @@ a.navbar-brand{
     background: url(../img/ICONOS/SVG/SVG/Recurso\ 9.svg) no-repeat;
     position: absolute ;
     margin-left: 1rem;
-}
-
-/** Footer**/
-
-footer ul li{
-    list-style-type:none;
-}
-
-footer ul li a{
-    text-decoration: none;
-    color:white;
-}
-
-.ul-redes li{
-    display: inline;
 }

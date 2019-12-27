@@ -10,90 +10,17 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bitter|Montserrat&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css\fonts.css">
-  <link rel="stylesheet" href="css/styleTienda.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/stylehome.css">
 
   <title>Tienda</title>
 </head>
 
 <body>
-  <header>
-    <div class="header-nav-top">
-      <div class="nav-contacto float-left">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="tel:543516999999" target="_blank"> <img src="img/ICONOS/telefono.svg" alt="" height="16"> +54 3516 999 999</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mailto:info@bicisnoe.com.ar" target="_blank"> <img src="img/ICONOS/mail.svg" alt="" height="16"> info@bicisnoe.com.ar</a>
-          </li>
-        </ul>
-      </div>
-      <div class="nav-nosotros float-right d-none d-md-block"> <!--oculto en mobile-->
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="contacto.html">sobre nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="faq.html">preguntas frecuentes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">contactanos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Ingresar a mi cuenta</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
-      <a class="navbar-brand" href="index.html"> <img src="img/LOGO/SVG/logo_blanco.svg" alt="logo" height="35"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav ">
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.html">BICICLETAS <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.html">EQUIPOS Y ACCESORIOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.html">REPUESTOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.html">CUBIERTAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.html">SALE !</a>
-          </li>
-        </ul>
-      </div>
-      <div class="nav-item d-block d-md-none"> <!--visible en mobile-->
-        <a class="nav-link" href="login.html">Ingresar</a>
-      </div>
-      <div class="navbar d-flex justify-content-end" id="navbar-iconos">
-        <a class="search" href="tienda.html"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
-        <a class="bag" href="usuario.html"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
-      </div>
-    </nav>
-    <div class="nav-menu-nosostros d-block d-md-none"> <!--visible en mobile-->
-      <div class="row w-100" style="margin: 0%; padding: 0%;">
-        <div class="nav-menu col-6">
-          <a class="nav-link" href="faq.html">preguntas frecuentes</a>
-        </div>
-        <div class="nav-menu col-3">
-          <a class="nav-link" href="contacto.html">contactanos</a>
-        </div>
-        <div class="nav-menu col-3">
-          <a class="nav-link" href="registro.html">Registrate</a>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <main class="container-fluid my-3">
+  <?php include 'php/header.php'; ?>
+
+  <main class="container-fluid my-3 main-tienda">
     <div class="row justify-content-center">
 
       <div class="col-12 bg-light text-center py-2 border">
@@ -260,7 +187,7 @@
 
                   <div class="col-12">
                     <a href="item.html">
-                      <img src="img/carousel/of11.jpg" class="card-img-top" alt="...">
+                      <img src="img/PRODUCTOS/BICICLETAS/ciudad.jpg" class="card-img-top" alt="...">
                       <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
                         <label class="col-2 btn btn-secondary active" style="background-color: #88280a;">
                           <input type="radio" name="options" id="option1" checked>
@@ -296,7 +223,7 @@
 
                   <div class="col-12">
                     <a href="item.html">
-                      <img src="img/carousel/of22.jpg" class="card-img-top" alt="...">
+                      <img src="img/PRODUCTOS/BICICLETAS/carretera.jpg" class="card-img-top" alt="...">
                       <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
                         <label class="col-2 btn btn-secondary active" style="background-color: #42016d;">
                           <input type="radio" name="options" id="option1" checked>
@@ -330,7 +257,7 @@
 
                   <div class="col-12">
                     <a href="">
-                      <img src="img/carousel/of33.jpg" class="card-img-top" alt="...">
+                      <img src="img/PRODUCTOS/BICICLETAS/aventura.jpg" class="card-img-top" alt="...">
                       <div class="row btn-group btn-group-toggle justify-content-center pb-2" data-toggle="buttons">
                         <label class="col-2 btn btn-secondary active" style="background-color: #000;">
                           <input type="radio" name="options" id="option1" checked>
@@ -599,96 +526,8 @@
     </div>
   </main> <!-- container -->
 
-  <footer class="container-fluid bg-dark mt-3 pt-4">
-    <div class="row justify-content-around align-items-start">
-      <div class="col-7 col-lg-3 order-last order-lg-first">
-        <div class="row justify-content-center mt-2 mt-md-0 p-2 text-center">
-          <div class="col-8">
-            <a href="index.html">
-              <img src="img/LOGO/SVG/Recurso 11.svg" alt="Logo">
-            </a>
-          </div>
-          <div class="col-12">
-            <p class="text-white subtitulos">Todo lo que necesitas para tu bicicleta</p>
-            <p class="text-muted subtitulos">Noe Bicicletas S.R.L</p>
-          </div>
-        </div>
-      </div> <!-- Logo -->
-      <div class="col-5 col-md-3 col-lg-2 text-left">
-        <h5 class="text-white mb-3 titulos-categorias-tienda">Productos</h5>
-        <ul class="p-0 subtitulos">
-          <li>
-            <a href="#">Accesorios</a>
-          </li>
-          <li>
-            <a href="#">Bicicletas</a>
-          </li>
-          <li>
-            <a href="#">Cubiertas</a>
-          </li>
-          <li>
-            <a href="#">Repuestos</a>
-          </li>
-        </ul>
-      </div> <!-- Productos -->
-      <div class="col-5 col-md-3 col-lg-2 text-left">
-        <h5 class="text-white mb-3 titulos-categorias-tienda">Atencion al Cliente</h5>
-        <ul class="p-0 subtitulos">
-          <li>
-            <a href="#">Faq</a>
-          </li>
-          <li>
-            <a href="#">Contacto</a>
-          </li>
-          <li>
-            <a href="#">Registrate</a>
-          </li>
-        </ul>
-      </div> <!-- Atencion Al Cliente -->
-      <div class="col-5 col-md-3 col-lg-2 text-left">
-        <h5 class="text-white mb-3 titulos-categorias-tienda">Seguinos</h5>
-        <ul class="ul-redes p-0">
-          <li>
-            <a href="#">
-              <img src="img\ICONOS\facebook.svg" width="30" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="img\ICONOS\twitter.svg" width="30" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="img\ICONOS\youtube.svg" width="30" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="img\ICONOS\instagram.svg" width="30" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="img/ICONOS/ubicacion.svg" width="30" alt="">
-            </a>
-          </li>
-        </ul>
-      </div> <!-- redes -->
-      <div class="col-5 col-md-3 col-lg-2 text-white">
-        <div class="row justify-content-center text-left text-md-center">
-          <div class="col-12 categorias-tienda">
-            <h5>Newsletter</h5>
-            <p>Enterate antes que nadie de las últimas novedades y promociones.</p>
-          </div>
-          <form class="col-12 d-flex" action="">
-            <input type="email" class="form-control form-control-sm" placeholder="Email">
-            <button class="btn btn-warning btn-sm m-0">></button>
-          </form>
-        </div>
-      </div> <!-- Newsletter -->
-    </div>
-  </footer>
+  <?php include 'php/footer.php'; ?>
+
 
 
   <!--Script Bootstrap-->

@@ -1,0 +1,33 @@
+♦ Correcciones sprint 1
+
+- Uso de GIT
+	- Ordenar archivos y carpetas(img, css, json y php)
+
+- Unificar stylos css (falta usuarios y item)
+
+- Correjir pagina de items
+	Vista
+	- De listado de productos
+	- Detalle de productos
+	- De posteos
+	- De admin de preguntas y respuestas
+	- Alta, baja y modificación de preguntas
+
+- Crear pagina de carrito
+
+- Correjir Login  (hecho)
+
+- Mejorar perfil de usuario
+
+- Preguntar navegacion fluida
+
+♦ Sprint 2
+- Validacion de Login y Registro (en proceso)
+
+- Archivo JSON (en proceso)
+
+- Login funcional
+	- Verificacion y validacion de logeon (en proceso)
+	- Interaccion con nav al estar logeado
+	
+- Recordar Usuario

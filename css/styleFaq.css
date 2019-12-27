@@ -68,13 +68,11 @@ a.navbar-brand{
 
 
 
-/*header*/
-
-.header-contacto {
-
- background: url("../img/HEADERS DE SECCION/HeaderFaq.jpg") fixed center no-repeat;
+/****  Faq  ****/
+.header-faq {
+ background: url("../img/IMAGENES/HeaderFaq.jpg") fixed center no-repeat;
  background-size: cover;
- height: 30vh;
+ height: 40vh;
 }
 
 .card-block {
