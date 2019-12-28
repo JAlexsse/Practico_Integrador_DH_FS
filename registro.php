@@ -1,9 +1,23 @@
 <?php
     $conta=0;
     if ($_POST){
+
+        // Validaciones
+
+        foreach($_POST as $nombre => $datos)
+        {
+            if (strlen($datos) == 0)
+            {
+                echo ('falta completar '. $nombre);
+                return;
+            }
+        }
+        if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false){
+            return "El campo no es un email";
+        }
+        
         $usuariosJson = json_decode(file_get_contents("json/usuarios.json"), true);
         foreach ($usuariosJson as $usuario ) {  
-            $conta= $conta+1;
             foreach ($usuario as $atributo["email"] => $value) {
                 if ($value == $_POST["email"]){
                     echo("el email existe");
@@ -11,6 +25,15 @@
                 }
             }
         }
+        
+        if ($_POST["password"] != $_POST["passwordC"])
+        {
+            echo( "Las contraseñas no coincide");
+            return;
+        }
+
+        // Fin Validaciones 
+
         $usuarioNuevo = [
             "nombre" => $_POST["nombre"],
             "apellido" => $_POST["apellido"],
@@ -19,7 +42,6 @@
         ];
         $usuariosJson[] = $usuarioNuevo;
         file_put_contents("json/usuarios.json",json_encode($usuariosJson));
-        setcookie("emailRegistrado", $_POST["email"]);
         header('location: login.php');
     }
     
@@ -66,6 +88,8 @@
                         <input type="email" name="email" class="form-control" required placeholder="Email*">
                         <label for="" class="text-white label-aviso mt-1">Contraseña</label>
                         <input type="password" name="password" class="form-control" required placeholder="Contraseña*">
+                        <label for="" class="text-white label-aviso mt-1">Confirmar Contraseña</label>
+                        <input type="password" name="passwordC" class="form-control" required placeholder="Confirmar Contraseña*">
                     </div>
                     <div class="col-12 py-3 text-center botones-texto">
                         <input type="submit" class="btn btn-lg btn-light" value="Registrar" />

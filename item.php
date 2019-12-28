@@ -1,3 +1,14 @@
+<?php
+
+  if($_COOKIE){
+    if ($_COOKIE["conectado"]==true)
+    {
+      echo("conectado");
+      return;
+    }
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +39,7 @@
 
       <div class="row justify-content-around">
         <!-- PRODUCTO + COMENTARIOS -->
-        <div class="col-9">
+        <div class="col-10 col-md-9">
           <div class="row">
             
             <!-- Card de producto -->
@@ -169,7 +180,7 @@
         </div>
 
         <!-- COLUMNA DE PRODUCTOS RELACIONADOS -->
-        <div class="col-2">
+        <div class="col-12 col-md-2">
 
           <div class="row">
 
@@ -178,11 +189,11 @@
             </div> <!-- fin titulo -->
 
             <div class="col-12">
-              <div class="row">
+              <div class="row justify-content-around">
 
-                <div class="card producto mb-3 col-12 p-0">
-                  <a href="" class="img-fluid p-3">
-                    <img src="img/PRODUCTOS/CUBIERTAS/gold_wheel_set.jpg" class="card-img-top " alt="..." style="height: 9rem;">
+                <div class="card producto mb-3 col-10 p-0">
+                  <a href="" class="text-center p-3">
+                    <img src="img\PRODUCTOS\CUBIERTAS\mavic-ksyrium-elite-wts-red-shimano.jpg" class="card-img-top img-fluid" alt="..." style="max-width: 13rem;">
                   </a>
                   <div class="card-body botones-texto my-0 py-0">
                     <a href="#">
@@ -200,9 +211,9 @@
                   </div>
                 </div>
 
-                <div class="card producto mb-3 col-12 p-0">
+                <div class="card producto mb-3 col-10 p-0">
                   <a href="" class="text-center p-3">
-                    <img src="img\PRODUCTOS\CUBIERTAS\mavic-ksyrium-elite-wts-red-shimano.jpg" class="card-img-top" alt="..." style="height: 9rem;">
+                    <img src="img\PRODUCTOS\CUBIERTAS\mavic-ksyrium-elite-wts-red-shimano.jpg" class="card-img-top img-fluid" alt="..." style="max-width: 13rem;">
                   </a>
                   <div class="card-body botones-texto my-0 py-0">
                     <a href="#">
@@ -220,9 +231,9 @@
                   </div>
                 </div>
 
-                <div class="card producto mb-3 col-12 p-0">
+                <div class="card producto mb-3 col-10 p-0">
                   <a href="" class="text-center p-3">
-                    <img src="img\PRODUCTOS\CUBIERTAS\mavic-ksyrium-elite-wts-red-shimano.jpg" class="card-img-top" alt="..." style="height: 9rem;">
+                    <img src="img\PRODUCTOS\CUBIERTAS\mavic-ksyrium-elite-wts-red-shimano.jpg" class="card-img-top img-fluid" alt="..." style="max-width: 13rem;">
                   </a>
                   <div class="card-body botones-texto my-0 py-0">
                     <a href="#">
@@ -240,9 +251,9 @@
                   </div>
                 </div>
 
-                <div class="card producto mb-3 col-12 p-0">
+                <div class="card producto mb-3 col-10 p-0">
                   <a href="" class="text-center p-3">
-                    <img src="img\PRODUCTOS\CUBIERTAS\mavic-ksyrium-elite-wts-red-shimano.jpg" class="card-img-top" alt="..." style="height: 9rem;">
+                    <img src="img\PRODUCTOS\CUBIERTAS\mavic-ksyrium-elite-wts-red-shimano.jpg" class="card-img-top img-fluid" alt="..." style="max-width: 13rem;">
                   </a>
                   <div class="card-body botones-texto my-0 py-0">
                     <a href="#">

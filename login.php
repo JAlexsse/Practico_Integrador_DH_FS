@@ -1,25 +1,29 @@
 <?php
     include ("php/funciones.php");
 
-    $emailP=NULL;
-
-    if (isset($_COOKIE["emailRegistrado"]))
-    {
-        $emailP = $_COOKIE["emailRegistrado"];
-    }
-
     if($_POST)
     {
-        $usuariosJson = json_decode(file_get_contents("json/usuarios.json"), true);
-        validarEmail($usuariosJson);
-        validarPassword($usuariosJson);
-        if(validarEmail($usuariosJson) && validarPassword($usuariosJson) ){
-            header('location: usuario.php');
+
+        if(isset($_POST["conectado"]))
+        {
+            setcookie("conectado", true);
+            setcookie("emailLog",$POST["email"]);
+            setcookie("passLog",password_hash($_POST["password"])) ;
         }else{
-            echo("todo mal");
+            setcookie("conectado",null);
+        }
+
+        $usuariosJson = json_decode(file_get_contents("json/usuarios.json"), true);
+
+        if(!validarEmail($usuariosJson)){
+            echo("el email ingresado no esta registrado");
+        } elseif (!validarPassword($usuariosJson) ){
+            echo("el password no coincide"); 
+        }else{
+            header('location: usuario.php');
         }
     }
-
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,11 +54,15 @@
                         </a>
                     </div>
                     <div class="col-7 mt-1 form-min">
-                        <input type="email" class="form-control my-4" required value='<?=$emailP?>' name="email" placeholder="Correo Electronico *">
+                        <input type="email" class="form-control my-4" required value="" name="email" placeholder="Correo Electronico *">
                         <input type="password" class="form-control" required placeholder="Contraseña *" name="password">
                         <div class="form-group reset-pass d-flex justify-content-between subtitulos">
                             <a href="#" class="ForgetPwd" value="Login">Olvidaste tu contraseña?</a>
                             <a href="registro.php" class="ForgetPwd">Registrarse</a>
+                        </div>
+                        <div class="form-group reset-pass  subtitulos">
+                            <label for="conectado" class="text-white">Recordar</label>
+                            <input type="checkbox" class="" name="conectado">
                         </div>
                     </div>
                     <div class="col-12 py-1 text-center botones-texto">

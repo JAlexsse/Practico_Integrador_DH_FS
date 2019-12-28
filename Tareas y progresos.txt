@@ -1,7 +1,7 @@
-♦ Correcciones sprint 1
+﻿♦ Correcciones sprint 1
 
 - Uso de GIT
-	- Ordenar archivos y carpetas(img, css, json y php)
+	- Ordenar archivos y carpetas(img, css, json y php) (en progreso)
 
 - Unificar stylos css (falta usuarios y item)
 
