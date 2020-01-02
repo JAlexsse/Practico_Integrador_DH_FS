@@ -1,10 +1,10 @@
 /***colores-background***/
 .noe-yellow{
-  background-color: rgb(255, 217, 0);
+  background-color: rgb(255, 217, 0) !important;
 }
 
 .noe-black{
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(30, 30, 30) !important;
 }
 /*** header ***/
 header {
@@ -28,7 +28,6 @@ header {
     text-decoration: none;
 }
 .navbar {
-    background-color: rgba(255, 255, 255, 0.5);
     padding: 6px 0px 6px 0px;
 }
  ul.navbar-nav li a{
@@ -46,9 +45,7 @@ a.navbar-brand{
     padding-left: 5px;
     padding-bottom: 5px;
 }
-#navbar-iconos {
-    background-color: #343a40;
-}
+
 /*** header visible solo mobile y tablet***/
 .nav-menu-nosostros{
     background-color: #ffeb3bde;
@@ -69,50 +66,9 @@ a.navbar-brand{
 
 /***HEADER-FIN***/
 
-/***ITEM***/
-.btn:hover {
-    color: #fff
-}
-
-.input-text:focus {
-    box-shadow: 0px 0px 0px;
-    border-color: rgb(0, 0, 0);
-    outline: 0px
-}
-
-.form-control {
-    border: 1px solid rgb(255, 217, 0)
-}
-
-.producto{
-  border-color: none;
-}
-
-.producto a{
-  color:inherit;
-}
-
-.card{
-  border-radius: 0;
-}
-
-.card-header:first-child{
-  border-radius: 0;
-}
-
-.thumb-nail-producto img{
-  width: 20%;
-}
-
-.img-principal-producto img{
-  width: 100%;
-}
-
-/***FIN ITEM***/
 
 /***FOOTER***/
 
-/***footer***/
 
 footer ul li{
     list-style-type:none;

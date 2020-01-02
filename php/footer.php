@@ -1,4 +1,4 @@
-<footer class="container-fluid bg-dark pt-4">
+<footer class="container-fluid pt-4" style="background-color: rgb(30, 30, 30)">
     <div class="row justify-content-around align-items-start">
       <div class="col-7 col-lg-3 order-last order-lg-first">
         <div class="row justify-content-center mt-2 mt-md-0 p-2 text-center">

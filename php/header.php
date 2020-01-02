@@ -1,8 +1,10 @@
-
+<head>
+  <link rel="stylesheet" href="..css/header_footer.css">
+</head>
 <header>
     <div class="header-nav-top">
       <div class="nav-contacto float-left">
-        <ul class="nav">
+        <ul class="nav ml-2">
           <li class="nav-item">
             <a class="nav-link active" href="tel:543516999999" target="_blank"> <img src="img/ICONOS/telefono.svg" alt="" height="16"> +54 3516 999 999</a>
           </li>
@@ -28,7 +30,7 @@
         </ul>
       </div>
     </div>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
+    <nav class="navbar navbar-expand-md col-12 pl-2" style="background-color: rgb(30, 30, 30)">
       <a class="navbar-brand" href="index.php"> <img src="img/ICONOS/LOGO/logo_blanco.svg" alt="logo" height="35"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
         <span class="navbar-toggler-icon"></span>
@@ -55,7 +57,7 @@
       <div class="nav-item d-block d-md-none"> <!--visible en mobile-->
         <a class="nav-link" href="login.php">Ingresar</a>
       </div>
-      <div class="navbar d-flex justify-content-end" id="navbar-iconos">
+      <div class="navbar d-flex justify-content-end" style="background-color: rgb(30, 30, 30)" id="navbar-iconos">
         <a class="search" href="tienda.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
         <a class="bag" href="usuario.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
       </div>
