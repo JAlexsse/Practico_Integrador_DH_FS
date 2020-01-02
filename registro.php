@@ -1,6 +1,19 @@
 <?php
-    $conta=0;
+    $vName ="";
+    $vApellido ="";
+    $vEmail ="";
+    $vPassword="";
+    $vPasswordC="";
+
     if ($_POST){
+
+        // Persistencia
+
+        $vName = $_POST["nombre"];
+        $vApellido = $_POST["apellido"];
+        $vEmail = $_POST["email"];
+        $vPassword= $_POST["password"];
+        $vPasswordC= $_POST["passwordC"];
 
         // Validaciones
 
@@ -9,11 +22,10 @@
             if (strlen($datos) == 0)
             {
                 echo ('falta completar '. $nombre);
-                return;
             }
         }
         if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false){
-            return "El campo no es un email";
+            echo("El campo no es un email");
         }
         
         $usuariosJson = json_decode(file_get_contents("json/usuarios.json"), true);
@@ -21,7 +33,6 @@
             foreach ($usuario as $atributo["email"] => $value) {
                 if ($value == $_POST["email"]){
                     echo("el email existe");
-                    return;
                 }
             }
         }
@@ -29,20 +40,20 @@
         if ($_POST["password"] != $_POST["passwordC"])
         {
             echo( "Las contraseñas no coincide");
-            return;
+        }else{
+            $usuarioNuevo = [
+                "nombre" => $_POST["nombre"],
+                "apellido" => $_POST["apellido"],
+                "email" => $_POST["email"],
+                "password" => password_hash($_POST["password"], PASSWORD_DEFAULT)
+            ];
+            $usuariosJson[] = $usuarioNuevo;
+            file_put_contents("json/usuarios.json",json_encode($usuariosJson));
+            header('location: login.php');
         }
 
         // Fin Validaciones 
 
-        $usuarioNuevo = [
-            "nombre" => $_POST["nombre"],
-            "apellido" => $_POST["apellido"],
-            "email" => $_POST["email"],
-            "password" => password_hash($_POST["password"], PASSWORD_DEFAULT)
-        ];
-        $usuariosJson[] = $usuarioNuevo;
-        file_put_contents("json/usuarios.json",json_encode($usuariosJson));
-        header('location: login.php');
     }
     
 ?>
@@ -68,11 +79,11 @@
 
     <?php include 'php/header.php'; ?>
 
-    <div class="container-fluid container-registro d-flex justify-content-center align-items-center vh-100 bg-logreg">
+    <div class="container-fluid container-registro d-flex justify-content-center align-items-center bg-logreg">
         <div class="row vw-100 justify-content-center">
-            <div class="col-12 col-sm-10 col-md-5">
+            <div class="col-12 col-sm-10 col-md-5 my-3">
                 <!--Formulario-->
-                <form action="registro.php" method="POST" class="row form-registro justify-content-center py-3">
+                <form action="registro.php" method="POST" class="row form-registro justify-content-center py-3 ">
                     <div class="col-6 p-md-0 form-min">
                         <img src="img/ICONOS/LOGO/Recurso 11.svg" alt="Logo" class="img-fluid">
                     </div>
@@ -81,15 +92,15 @@
                     </div>
                     <div class="col-9 my-2 form-min subtitulos">
                         <label for="" class="text-white label-aviso">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" required placeholder="Nombre*">
+                        <input type="text" name="nombre" class="form-control" required placeholder="Nombre*" value=<?=$vName?>>
                         <label for="" class="text-white label-aviso mt-1">Apellido</label>
-                        <input type="text" name="apellido" class="form-control" required placeholder="Apellido*">
+                        <input type="text" name="apellido" class="form-control" required placeholder="Apellido*" value=<?=$vApellido?>> 
                         <label for="" class="text-white label-aviso mt-1">Email</label>
-                        <input type="email" name="email" class="form-control" required placeholder="Email*">
+                        <input type="email" name="email" class="form-control" required placeholder="Email*" value=<?=$vEmail?>>
                         <label for="" class="text-white label-aviso mt-1">Contraseña</label>
-                        <input type="password" name="password" class="form-control" required placeholder="Contraseña*">
+                        <input type="password" name="password" class="form-control" required placeholder="Contraseña*" value=<?=$vPassword?>>
                         <label for="" class="text-white label-aviso mt-1">Confirmar Contraseña</label>
-                        <input type="password" name="passwordC" class="form-control" required placeholder="Confirmar Contraseña*">
+                        <input type="password" name="passwordC" class="form-control" required placeholder="Confirmar Contraseña*" value=<?=$vPasswordC?>>
                     </div>
                     <div class="col-12 py-3 text-center botones-texto">
                         <input type="submit" class="btn btn-lg btn-light" value="Registrar" />
