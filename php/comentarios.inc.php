@@ -23,11 +23,14 @@ function getComentarios($conn){
   $sql = "SELECT * FROM comments";
   $result = $conn->query($sql);
   while($row = mysqli_fetch_assoc($result)){
-    echo "<div>";
-    echo $row["uid"]." ";
-    echo $row["date"]."<br>";
-    echo $row["message"]."<br><br>";
-    echo "</div>";
+    echo "<div><p class='texto-parrafo'>";
+
+      echo $row["uid"]."<br>";
+      echo $row["date"]."<br>";
+      echo $row["message"]."<br><br>";
+
+    echo "</p></div>";
+    echo "<hr>";
   }
 }
 ?>
