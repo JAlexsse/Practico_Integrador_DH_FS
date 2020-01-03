@@ -127,6 +127,11 @@ button:focus {
     float: right
 }
 
+.tab-pane {
+    padding-top: 149px;
+    padding-bottom: 149px;
+}
+
 @media screen and (max-width: 768px) {
    
     .card {
