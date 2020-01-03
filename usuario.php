@@ -25,8 +25,6 @@ if(count($errores)==0){
   $nombreArchivo = "foto-perfil_" .uniqid() ."." .$extension; 
 
   move_uploaded_file($archivoTemporal, $nuevaRuta . $nombreArchivo);
-  var_dump($nuevaRuta);
-  var_dump($nombreArchivo);
 }
 }
 
@@ -56,40 +54,40 @@ if(count($errores)==0){
     <!--DETALLE USUARIO-->
     <main>
       <!-- Header Main -->
-      <div class="header-usuario mb-3 row justify-content-center">
+      <div class="header-usuario mb-3 row justify-content-center px-0">
         <div class="col-lg-12 justify-content-center m-0">
           <img src="img/IMAGENES/HEADER_USUARIO-100.jpg" alt="" class="img-fluid" alt="Responsive image">
         </div>
       </div>
       <div class="container col-md-12 h-100 usuario overflow-hidden p-0">
         <!--fila-->
-        <div class="row">
+        <div class="row px-0">
           <!--imagen de usuario-->
           <div class="d-flex foto float-left bg-white  justify-content-center col-lg-4 usuario_col align-items-center">
-            <div class="row">
-            <div class="col-12 text-center"> 
-              <img src="archivos/<?php $nombreArchivo ?>" width="200" height="200" alt="foto-perfil" class="user-image"> 
-            </div>
-            <div class="col-12 text-center"> 
-              <form action="" method="post" enctype="multipart/form-data">
-                <span class="btn btn-file position-relative overflow-hidden">
-                  <label for="foto-perfil">Agregar/ Cambiar foto</label>
-                  <input type="file" class="position-absolute" name="foto-perfil">
-                </span>
-                <div class="col-12 py-3 text-center botones-texto">
-                        <input type="submit" class="btn btn-lg btn-light" value="Subir" />
-                </div> 
-              </form>
-            </div>
-            <div class="col-12 text-center">
-                 <?php 
-                   if(isset($errores['foto-perfil'])){
-                    foreach($errores['foto-perfil'] as $error){
-                        echo "<small class='text-danger'>".$error .'</small>';
+            <div class="row px-0">
+              <div class="col-12 text-center"> 
+                <img src="archivos/<?php echo($nombreArchivo) ?>" width="200" height="200" alt="foto-perfil" class="user-image"> 
+              </div>
+              <div class="col-12 text-center"> 
+                <form action="" method="post" enctype="multipart/form-data">
+                  <span class="btn btn-file position-relative overflow-hidden">
+                    <label for="foto-perfil">Agregar/ Cambiar foto</label>
+                    <input type="file" class="position-absolute" name="foto-perfil">
+                  </span>
+                  <div class="col-12 py-3 text-center botones-texto">
+                          <input type="submit" class="btn btn-lg btn-light" value="Subir" />
+                  </div> 
+                </form>
+              </div>
+              <div class="col-12 text-center">
+                  <?php 
+                    if(isset($errores['foto-perfil'])){
+                      foreach($errores['foto-perfil'] as $error){
+                          echo "<small class='text-danger'>".$error .'</small>';
+                      }
                     }
-                   }
-                  ?>
-            </div>
+                    ?>
+              </div>
           </div>
           </div>
           <!--descripcion del usuario-->
@@ -109,7 +107,7 @@ if(count($errores)==0){
           <!--informacion personal-->
           <div class="detalles float-left noe-black text-white p-5 col-lg-4 usuario_col">
             <h4 class="align-center titulos-medio">
-              <a href="">Informacion Personal</a> 
+              Informacion Personal 
             </h4>
             <!--lista con mail, sexo, fecha de nacimiento y link a wishlist-->
             <ul class="p-0 row align-items-start">
