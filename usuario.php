@@ -52,7 +52,7 @@
           </div>
 
           <!--informacion personal-->
-          <div class="detalles float-left text-white p-5 col-lg-4 usuario_col">
+          <div class="detalles float-left text-white p-5 col-lg-4 usuario_col noe-black">
             <h4 class="align-center titulos-medio">
                 Informacion Personal
             </h4>

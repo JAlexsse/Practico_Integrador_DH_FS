@@ -98,7 +98,7 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
         </ul>
       </div>
     </div>
-    <nav class="navbar navbar-expand-md navbar-dark col-12" style="background-color: rgb(30,30,30)">
+    <nav class="navbar navbar-expand-md navbar-dark col-12">
       <a class="navbar-brand" href="index.php"> <img src="img/ICONOS/LOGO/logo_blanco.svg" alt="logo" height="35"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
         <span class="navbar-toggler-icon"></span>
