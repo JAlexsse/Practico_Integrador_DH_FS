@@ -31,13 +31,17 @@ function getComentarios($conn){
       echo "<p class='texto-parrafo'>";
         echo nl2br($row["message"]);
       echo "</p>";
-      echo "<form method='post' action='editcomentarios.php'>
+      echo "<div class='overflow-hidden'><form class='float-left mr-1' method='post' action='".deleteComentarios($conn)."'>
+              <input type='hidden' name='cid' value='".$row["cid"]."'>
+              <button type='submit' class='btn btn-outline-dark' name='commentDelete'>Borrar</button>
+              </form>
+              <form class='float-left' method='post' action='editcomentarios.php'>
               <input type='hidden' name='cid' value='".$row["cid"]."'>
               <input type='hidden' name='uid' value='".$row["uid"]."'>
               <input type='hidden' name='date' value='".$row["date"]."'>
               <input type='hidden' name='message' value='".$row["message"]."'>
               <button class='btn btn-outline-dark' >Editar</button>
-            </form>";
+            </div></form>";
     echo "</div>";
     echo "<hr>";
   }
@@ -53,6 +57,17 @@ function editComentarios($conn) {
     $message = $_POST["message"];
 
     $sql = "UPDATE comments SET message='$message' WHERE cid='$cid'";
+    $result = $conn->query($sql);
+  }
+}
+
+function deleteComentarios($conn) {
+
+  if (isset($_POST["commentDelete"])) {
+
+    $cid = $_POST["cid"];
+
+    $sql = "DELETE FROM comments WHERE cid='$cid'";
     $result = $conn->query($sql);
   }
 }
