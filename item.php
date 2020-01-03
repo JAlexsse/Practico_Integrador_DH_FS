@@ -49,7 +49,7 @@
             <div class="card col-md-12 producto p-0">
               <div class="row no-gutters">
                 <!-- Galeria -->
-                <aside class="col-md-6">
+                <aside class="col-lg-6">
                   <div class="row">
                       <div class="preview-pic tab-content">
           						  <div class="tab-pane active" id="pic-1"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\aventura.jpg"></div>
@@ -69,7 +69,7 @@
                 </aside>
 
                 <!-- Descripcion del producto -->
-                <main class="col-md-6 border-left p-1">
+                <main class="col-lg-6 border-left p-1">
 
                   <article class="content-body">
                     <!-- Titulo -->

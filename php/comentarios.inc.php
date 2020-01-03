@@ -58,6 +58,7 @@ function editComentarios($conn) {
 
     $sql = "UPDATE comments SET message='$message' WHERE cid='$cid'";
     $result = $conn->query($sql);
+    header("Location:item.php");
   }
 }
 
