@@ -1,5 +1,5 @@
 .noe-black{
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(30, 30, 30);
 }
 
 /*** header ***/
@@ -75,7 +75,7 @@ a.navbar-brand{
 }
 
 .foto{
-  background-image: url("../img/ICONOS/huella_2.svg");
+  background-image: url("..img/ICONOS/huella_2.svg");
   background-repeat: no-repeat;
   background-position: center;
 }

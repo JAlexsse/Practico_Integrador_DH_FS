@@ -10,8 +10,10 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bitter|Montserrat&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/stylehome.css">
+  <link rel="stylesheet" href="css\styleusuario.css">
 
   <title>Mi usuario</title>
 </head>
@@ -50,7 +52,7 @@
           </div>
 
           <!--informacion personal-->
-          <div class="detalles float-left noe-black text-white p-5 col-lg-4 usuario_col">
+          <div class="detalles float-left text-white p-5 col-lg-4 usuario_col">
             <h4 class="align-center titulos-medio">
                 Informacion Personal
             </h4>
