@@ -27,20 +27,18 @@
         if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false){
             echo("El campo no es un email");
         }
-        
+
         $usuariosJson = json_decode(file_get_contents("json/usuarios.json"), true);
-        foreach ($usuariosJson as $usuario ) {  
+        foreach ($usuariosJson as $usuario ) {
             foreach ($usuario as $atributo["email"] => $value) {
                 if ($value == $_POST["email"]){
                     echo("el email existe");
                 }
             }
         }
-        
-        if ($_POST["password"] != $_POST["passwordC"])
+
+        if ($_POST["password"] == $_POST["passwordC"])
         {
-            echo( "Las contraseñas no coincide");
-        }else{
             $usuarioNuevo = [
                 "nombre" => $_POST["nombre"],
                 "apellido" => $_POST["apellido"],
@@ -52,10 +50,10 @@
             header('location: login.php');
         }
 
-        // Fin Validaciones 
+        // Fin Validaciones
 
     }
-    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,13 +92,44 @@
                         <label for="" class="text-white label-aviso">Nombre</label>
                         <input type="text" name="nombre" class="form-control" required placeholder="Nombre*" value=<?=$vName?>>
                         <label for="" class="text-white label-aviso mt-1">Apellido</label>
-                        <input type="text" name="apellido" class="form-control" required placeholder="Apellido*" value=<?=$vApellido?>> 
+                        <input type="text" name="apellido" class="form-control" required placeholder="Apellido*" value=<?=$vApellido?>>
                         <label for="" class="text-white label-aviso mt-1">Email</label>
                         <input type="email" name="email" class="form-control" required placeholder="Email*" value=<?=$vEmail?>>
+                        <small class="text-danger"><?php if ($_POST) {
+                            if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false){
+                            echo("El campo no es un email");
+                        }
+                            // code...
+                        }
+                            // code...
+                        ?></small>
+                        <br/>
+
+
+
+
+
+
+
+
                         <label for="" class="text-white label-aviso mt-1">Contraseña</label>
                         <input type="password" name="password" class="form-control" required placeholder="Contraseña*" value=<?=$vPassword?>>
                         <label for="" class="text-white label-aviso mt-1">Confirmar Contraseña</label>
                         <input type="password" name="passwordC" class="form-control" required placeholder="Confirmar Contraseña*" value=<?=$vPasswordC?>>
+
+                        <small class="text-danger"><?php if ($_POST) {
+                        if ($_POST["password"] != $_POST["passwordC"])
+                        {
+                            echo( "Las contraseñas no coinciden");
+                        }
+    // code...
+                        }
+                            // code...
+                        ?></small>
+                        <br/>
+
+
+
                     </div>
                     <div class="col-12 py-3 text-center botones-texto">
                         <input type="submit" class="btn btn-lg btn-light" value="Registrar" />

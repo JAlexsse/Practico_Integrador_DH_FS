@@ -1,14 +1,4 @@
-<?php
 
-  if(isset($_COOKIE["conectado"]))
-  {
-    if ($_COOKIE["conectado"] == true)
-    {
-      echo("conectado");
-    }
-  }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
