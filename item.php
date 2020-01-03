@@ -42,7 +42,7 @@
 
       <div class="row justify-content-around">
         <!-- PRODUCTO + COMENTARIOS -->
-        <div class="col-10 col-md-9">
+        <div class="col-10 col-lg-9">
           <div class="row">
 
             <!-- Card de producto -->
@@ -146,7 +146,7 @@
         </div>
 
         <!-- COLUMNA DE PRODUCTOS RELACIONADOS -->
-        <div class="col-12 col-md-2">
+        <div class="col-12 col-lg-2">
 
           <div class="row justify-content-center">
 
