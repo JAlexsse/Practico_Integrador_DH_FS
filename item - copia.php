@@ -1,7 +1,15 @@
 <?php
 
-  include "php\comentarios.inc.php";
-  include "php\databaseconnection.php";
+  if($_COOKIE){
+    if ($_COOKIE["conectado"]==true)
+    {
+      echo("conectado");
+      return;
+    }
+  }
+
+  date_default_timezone_set('America/Argentina/Cordoba');
+
 ?>
 
 
@@ -34,7 +42,7 @@
 
       <div class="row justify-content-around">
         <!-- PRODUCTO + COMENTARIOS -->
-        <div class="col-10 col-lg-9">
+        <div class="col-10 col-md-9">
           <div class="row">
 
             <!-- Card de producto -->
@@ -43,20 +51,50 @@
                 <!-- Galeria -->
                 <aside class="col-md-6">
                   <div class="row">
-                      <div class="preview-pic tab-content">
-          						  <div class="tab-pane active" id="pic-1"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\aventura.jpg"></div>
-          						  <div class="tab-pane" id="pic-2"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item1.jpg"></div>
-          						  <div class="tab-pane" id="pic-3"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item2.jpg"></div>
-                        <div class="tab-pane" id="pic-4"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item3.jpg"></div>
-                        <div class="tab-pane" id="pic-5"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item4.jpg"></div>
-          						</div>
-          						<ul class="preview-thumbnail nav overflow-hidden mb-3 mt-2">
-          						  <li class="active flaot-left col-3"><a data-target="#pic-1" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\aventura.jpg"></a></li>
-          						  <li class="float-left col-3"><a data-target="#pic-2" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item1.jpg"></a></li>
-          						  <li class="float-left col-3"><a data-target="#pic-3" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item2.jpg"></a></li>
-                        <li class="float-left col-3"><a data-target="#pic-4" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item3.jpg"></a></li>
-                        <li class="float-left col-3"><a data-target="#pic-5" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item4.jpg"></a></li>
-          						</ul>
+                    <div class="col-12">
+                      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" id="img1">
+                            <img src="img/PRODUCTOS/BICICLETAS/aventura.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/PRODUCTOS/BICICLETAS/carretera.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/PRODUCTOS/BICICLETAS/ciudad.jpg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-12 d-flex">
+                      <div class="row">
+                        <div class="col-3">
+                          <a href="" class="">
+                            <img src="img/PRODUCTOS/BICICLETAS/aventura.jpg" alt="" class="img-fluid">
+                          </a>
+                        </div>
+                        <div class="col-3 border-1">
+                          <a href="">
+                            <img src="img/PRODUCTOS/BICICLETAS/carretera.jpg" alt="" class="img-fluid">
+                          </a>
+                        </div>
+                        <div class="col-3 border-1">
+                          <a href="">
+                            <img src="img/PRODUCTOS/BICICLETAS/ciudad.jpg" alt="" class="img-fluid">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
                   </div> <!-- FIN ROW -->
                 </aside>
 
@@ -124,13 +162,12 @@
                 <p class="titulos-medio">Principales Comentarios</p>
               </div>
               <div class="card-body">
-                <<?php getComentarios($conn); ?>
                 <!-- boton para dejar comentarios -->
                 <a class="btn noe-yellow botones-texto mb-3" data-toggle="collapse" href="#collapseComentario" role="button" aria-expanded="false" aria-controls="collapseComentario">Deja un comentario!</a>
                 <!-- seccion para dejar comentarios -->
-                <form action='<?php setComentarios($conn);?>' method='post' class='collapse' id='collapseComentario'>
+                <form action='<?php include 'php/comentarios.inc.php';?>' method='post' class='collapse' id='collapseComentario'>
                   <input type="hidden" name="uid" value="Anonymous">
-                  <input type="hidden" name="date" value="<?php fecha(); ?>">
+                  <input type="hidden" name="date" value='".date('d/m/Y H:i:s')."'>
 
                   <textarea name="message" class="col-md-12"></textarea>
                   <button name="commentSubmit" type="submit" class="btn noe-yellow botones-texto"> Comenta! </button>
@@ -142,12 +179,12 @@
         </div>
 
         <!-- COLUMNA DE PRODUCTOS RELACIONADOS -->
-        <div class="col-12 col-lg-2">
+        <div class="col-12 col-md-2">
 
-          <div class="row justify-content-center">
+          <div class="row">
 
-            <div class="col-10 noe-black my-2">
-              <p class="titulos-header text-light ">Productos Relacionados</p>
+            <div class="col-12 text-noe-black my-2">
+              <p class="titulos-header text-noe-black">Productos Relacionados</p>
             </div> <!-- fin titulo -->
 
             <div class="col-12">

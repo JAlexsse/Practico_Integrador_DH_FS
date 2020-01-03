@@ -5,7 +5,7 @@ $errores=[];
 
 if(!empty($_FILES['foto-perfil'])){
   $maximobytes=3000000;
-  if($_FILES['foto-perfil']['size']>$maximobytes){
+  if($_FILES['foto-perfil']['size']>$maximobytes){ 
     $errores['foto-perfil'][]="El tamaño de la imagen debe ser menor a ...bytes";
   }
   $nombreArchivo= $_FILES['foto-perfil']['name'];
@@ -17,12 +17,12 @@ if(!empty($_FILES['foto-perfil'])){
 
 
 if(count($errores)==0){
-
+  
   $extension = pathinfo($_FILES['foto-perfil']['name'], PATHINFO_EXTENSION);
   $archivoTemporal = $_FILES['foto-perfil']['tmp_name'];
   $nuevaRuta = dirname(__file__);
   $nuevaRuta = $nuevaRuta . "/archivos/" ;
-  $nombreArchivo = "foto-perfil_" .uniqid() ."." .$extension;
+  $nombreArchivo = "foto-perfil_" .uniqid() ."." .$extension; 
 
   move_uploaded_file($archivoTemporal, $nuevaRuta . $nombreArchivo);
 }
@@ -48,7 +48,7 @@ if(count($errores)==0){
     <title>Mi Usuario</title>
   </head>
   <body>
-
+    
     <?php include 'php/header.php'; ?>
 
     <!--DETALLE USUARIO-->
@@ -60,31 +60,14 @@ if(count($errores)==0){
           <img src="img/IMAGENES/HEADER_USUARIO-100.jpg" alt="" class="img-fluid" alt="Responsive image">
         </div>
       </div>
-<<<<<<< HEAD
-      <div class="container col-md-12 h-100 usuario overflow-hidden p-0 mb-3">
-=======
       
-      <div class="container-fluid usuario overflow-hidden p-0">
->>>>>>> ece32d6bb911319dce220c45556dd7a8120eee54
+      <div class="container-fluid usuario overflow-hidden p-0 mb-3">
         <!--fila-->
         <div class="row px-0">
           <!--imagen de usuario-->
           <div class="d-flex foto float-left bg-white  justify-content-center col-lg-4 usuario_col align-items-center">
 
             <div class="row px-0">
-<<<<<<< HEAD
-              <div class="col-12 text-center">
-                <img src="archivos/<?php echo($nombreArchivo) ?>" width="200" height="200" alt="foto-perfil" class="user-image">
-              </div>
-              <div class="col-12 text-center">
-                <form action="" method="post" enctype="multipart/form-data">
-                  <span class="btn btn-file position-relative overflow-hidden">
-                    <label for="foto-perfil">Agregar/ Cambiar foto</label>
-                    <input type="file" class="position-absolute" name="foto-perfil">
-                  </span>
-                  <div class="col-12 py-3 text-center botones-texto">
-                          <input type="submit" class="btn btn-lg btn-light" value="Subir" />
-=======
 
               <div class="col-12 text-center"> 
                 <img src="archivos/<?php echo($nombreArchivo) ?>" width="200" height="200" alt="foto-perfil" class="user-image"> 
@@ -93,7 +76,7 @@ if(count($errores)==0){
               <div class="col-12 text-center">
                 <form action="" method="post" enctype="multipart/form-data">
                   <div class="row px-0">
-                    <div class="col-12"> 
+                    <div class="col-12 mb-2"> 
                       <span class="btn btn-file position-relative overflow-hidden">
                         <label for="foto-perfil">Agregar/ Cambiar foto</label>
                         <input type="file" class="position-absolute" name="foto-perfil">
@@ -102,13 +85,12 @@ if(count($errores)==0){
                     <div class="col-12 py-3 text-center botones-texto">
                       <input type="submit" class="btn btn-lg btn-light" value="Subir" />
                     </div> 
->>>>>>> ece32d6bb911319dce220c45556dd7a8120eee54
                   </div>
                 </form>
               </div>
 
               <div class="col-12 text-center">
-                  <?php
+                  <?php 
                     if(isset($errores['foto-perfil'])){
                       foreach($errores['foto-perfil'] as $error){
                           echo "<small class='text-danger'>".$error .'</small>';
@@ -136,9 +118,9 @@ if(count($errores)==0){
           </div>
 
           <!--informacion personal-->
-          <div class="detalles float-left text-white p-5 col-lg-4 usuario_col" style="background-color:rgb(30,30,30)">
+          <div class="detalles float-left noe-black text-white p-5 col-lg-4 usuario_col">
             <h4 class="align-center titulos-medio">
-              Informacion Personal
+              Informacion Personal 
             </h4>
             <!--lista con mail, sexo, fecha de nacimiento y link a wishlist-->
             <ul class="p-0 row align-items-start">
