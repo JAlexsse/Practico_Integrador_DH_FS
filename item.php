@@ -1,13 +1,5 @@
 <?php
 
-  if($_COOKIE){
-    if ($_COOKIE["conectado"]==true)
-    {
-      echo("conectado");
-      return;
-    }
-  }
-
   include "php\comentarios.inc.php";
   include "php\databaseconnection.php";
 ?>

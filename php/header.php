@@ -99,29 +99,29 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
       </div>
     </div>
     <nav class="navbar navbar-expand-md navbar-dark col-12" style="background-color:rgb(30,30,30)">
-      <a class="navbar-brand" href="index.php"> <img src="img/ICONOS/LOGO/logo_blanco.svg" alt="logo" height="35"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav ">
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.php">BICICLETAS <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.php">EQUIPOS Y ACCESORIOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.php">REPUESTOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.php">CUBIERTAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link titulos-header text-light" href="tienda.php">SALE !</a>
-          </li>
-        </ul>
-      </div>
+          <a class="navbar-brand" href="index.php"> <img src="img/ICONOS/LOGO/logo_blanco.svg" alt="logo" height="35"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link titulos-header text-light" href="tienda.php">BICICLETAS <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link titulos-header text-light" href="tienda.php">EQUIPOS Y ACCESORIOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link titulos-header text-light" href="tienda.php">REPUESTOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link titulos-header text-light" href="tienda.php">CUBIERTAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link titulos-header text-light" href="tienda.php">SALE !</a>
+              </li>
+            </ul>
+          </div>
       <div class="nav-item d-block d-md-none"> <!--visible en mobile-->
 
 
@@ -141,13 +141,15 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
 
 
       </div>
-      <div class="navbar d-flex justify-content-end" style="background-color:rgb(30,30,30)"> 
-        <form class="form-inline my-2 my-lg-0" method="GET" action="tienda.php">
+      <div class="navbar d-flex justify-content-end" style="background-color:rgb(30,30,30)">
+        <!-- <form class="form-inline my-2 my-lg-0" method="GET" action="tienda.php">
           <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="buscar">
           <button class="btn my-2 my-sm-0" type="submit"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></button>
-        </form>
+        </form> -->
+        <a href="carrito.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
         <a class="bag" href="carrito.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
       </div>
+    </nav>
     </nav>
     <div class="nav-menu-nosostros d-block d-md-none"> <!--visible en mobile-->
       <div class="row w-100" style="margin: 0%; padding: 0%;">
