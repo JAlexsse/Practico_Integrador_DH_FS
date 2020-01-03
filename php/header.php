@@ -141,7 +141,7 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
 
 
       </div>
-      <div class="navbar d-flex justify-content-end" id="navbar-iconos">
+      <div class="navbar d-flex justify-content-end" style="background-color:rgb(30,30,30)"> 
         <a class="search" href="tienda.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
         <a class="bag" href="usuario.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
       </div>

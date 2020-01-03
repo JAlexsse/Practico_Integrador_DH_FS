@@ -13,7 +13,9 @@
 
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/stylehome.css">
-  <link rel="stylesheet" href="css\styleusuario.css">
+  <link rel="stylesheet" href="css/styleusuario.css">
+
+
 
   <title>Mi usuario</title>
 </head>
@@ -25,15 +27,15 @@
     <main>
       <!-- Header Main -->
       <div class="header-usuario mb-3 row justify-content-center">
-        <div class="col-lg-12 justify-content-center m-0">
+        <div class="col-lg-12 foto justify-content-center m-0">
           <img src="img/IMAGENES/HEADER_USUARIO-100.jpg" alt="" class="img-fluid" alt="Responsive image">
         </div>
       </div>
-      <div class="container col-md-12 h-100 usuario overflow-hidden p-0">
+      <div class="container col-md-12 h-100 usuario overflow-hidden p-0 mb-5">
         <!--fila-->
         <div class="row">
           <!--imagen de usuario-->
-          <div class="d-flex foto float-left bg-white  justify-content-center col-lg-4 usuario_col align-items-center">
+          <div class="d-flex foto float-left bg-white justify-content-center col-lg-4 usuario_col align-items-center">
             <img src="img/ICONOS/Maria-Sharapova.jpg" width="200" height="200" alt="user-image" class="user-image">
           </div>
 
@@ -52,7 +54,7 @@
           </div>
 
           <!--informacion personal-->
-          <div class="detalles float-left text-white p-5 col-lg-4 usuario_col">
+          <div class="detalles float-left text-white p-5 col-lg-4 usuario_col" style="background-color: rgb(30, 30, 30)">
             <h4 class="align-center titulos-medio">
                 Informacion Personal
             </h4>

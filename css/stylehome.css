@@ -55,9 +55,6 @@ a.navbar-brand {
     padding-bottom: 5px;
 }
 
-#navbar-iconos {
-    background-color: #343a40;
-}
 
 /*** header visible solo mobile y tablet***/
 .nav-menu-nosostros {
@@ -339,9 +336,9 @@ section.servicios .elServicio {
 /** utilidades tienda **/
 .tooltipt {
     position: relative;
-    
+
   }
-  
+
   .tooltipt .tooltiptextt {
     visibility: hidden;
     width: 100px;
@@ -350,18 +347,18 @@ section.servicios .elServicio {
     text-align: center;
     border-radius: 2rem;
     padding: .2rem .1rem;
-    
+
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
     top: 150%;
-    
+
     margin-left: -3rem;
   }
-  
+
   .tooltipt:hover .tooltiptextt {
     visibility: visible;
   }
 
-  
+
 /***** FIN TIENDA *****/
