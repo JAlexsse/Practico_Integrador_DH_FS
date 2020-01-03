@@ -142,8 +142,11 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
 
       </div>
       <div class="navbar d-flex justify-content-end" style="background-color:rgb(30,30,30)"> 
-        <a class="search" href="tienda.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
-        <a class="bag" href="usuario.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
+        <form class="form-inline my-2 my-lg-0" method="GET" action="tienda.php">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="buscar">
+          <button class="btn my-2 my-sm-0" type="submit"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></button>
+        </form>
+        <a class="bag" href="carrito.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
       </div>
     </nav>
     <div class="nav-menu-nosostros d-block d-md-none"> <!--visible en mobile-->

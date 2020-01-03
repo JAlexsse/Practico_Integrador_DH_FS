@@ -53,13 +53,17 @@
                   <div class="row">
                       <div class="preview-pic tab-content">
           						  <div class="tab-pane active" id="pic-1"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\aventura.jpg"></div>
-          						  <div class="tab-pane" id="pic-2"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\carretera.jpg"></div>
-          						  <div class="tab-pane" id="pic-3"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\ciudad.jpg"></div>
+          						  <div class="tab-pane" id="pic-2"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item1.jpg"></div>
+          						  <div class="tab-pane" id="pic-3"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item2.jpg"></div>
+                        <div class="tab-pane" id="pic-4"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item3.jpg"></div>
+                        <div class="tab-pane" id="pic-5"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item4.jpg"></div>
           						</div>
-          						<ul class="preview-thumbnail nav overflow-hidden mb-3">
+          						<ul class="preview-thumbnail nav overflow-hidden mb-3 mt-2">
           						  <li class="active flaot-left col-3"><a data-target="#pic-1" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\aventura.jpg"></a></li>
-          						  <li class="float-left col-3"><a data-target="#pic-2" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\carretera.jpg"></a></li>
-          						  <li class="float-left col-3"><a data-target="#pic-3" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\ciudad.jpg"></a></li>
+          						  <li class="float-left col-3"><a data-target="#pic-2" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item1.jpg"></a></li>
+          						  <li class="float-left col-3"><a data-target="#pic-3" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item2.jpg"></a></li>
+                        <li class="float-left col-3"><a data-target="#pic-4" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item3.jpg"></a></li>
+                        <li class="float-left col-3"><a data-target="#pic-5" data-toggle="tab"><img class="col-12" src="img\PRODUCTOS\BICICLETAS\item4.jpg"></a></li>
           						</ul>
                   </div> <!-- FIN ROW -->
                 </aside>
