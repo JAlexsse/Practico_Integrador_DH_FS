@@ -53,32 +53,42 @@ if(count($errores)==0){
 
     <!--DETALLE USUARIO-->
     <main>
+
       <!-- Header Main -->
       <div class="header-usuario mb-3 row justify-content-center px-0">
         <div class="col-lg-12 justify-content-center m-0">
           <img src="img/IMAGENES/HEADER_USUARIO-100.jpg" alt="" class="img-fluid" alt="Responsive image">
         </div>
       </div>
-      <div class="container col-md-12 h-100 usuario overflow-hidden p-0">
+      
+      <div class="container-fluid usuario overflow-hidden p-0">
         <!--fila-->
         <div class="row px-0">
           <!--imagen de usuario-->
           <div class="d-flex foto float-left bg-white  justify-content-center col-lg-4 usuario_col align-items-center">
+
             <div class="row px-0">
+
               <div class="col-12 text-center"> 
                 <img src="archivos/<?php echo($nombreArchivo) ?>" width="200" height="200" alt="foto-perfil" class="user-image"> 
               </div>
-              <div class="col-12 text-center"> 
+
+              <div class="col-12 text-center">
                 <form action="" method="post" enctype="multipart/form-data">
-                  <span class="btn btn-file position-relative overflow-hidden">
-                    <label for="foto-perfil">Agregar/ Cambiar foto</label>
-                    <input type="file" class="position-absolute" name="foto-perfil">
-                  </span>
-                  <div class="col-12 py-3 text-center botones-texto">
-                          <input type="submit" class="btn btn-lg btn-light" value="Subir" />
-                  </div> 
+                  <div class="row px-0">
+                    <div class="col-12"> 
+                      <span class="btn btn-file position-relative overflow-hidden">
+                        <label for="foto-perfil">Agregar/ Cambiar foto</label>
+                        <input type="file" class="position-absolute" name="foto-perfil">
+                      </span>
+                    </div>
+                    <div class="col-12 py-3 text-center botones-texto">
+                      <input type="submit" class="btn btn-lg btn-light" value="Subir" />
+                    </div> 
+                  </div>
                 </form>
               </div>
+
               <div class="col-12 text-center">
                   <?php 
                     if(isset($errores['foto-perfil'])){
@@ -88,8 +98,11 @@ if(count($errores)==0){
                     }
                     ?>
               </div>
+            
+            </div>
+          
           </div>
-          </div>
+          
           <!--descripcion del usuario-->
           <div class="informacion float-left p-5  col-lg-4 usuario_col">
             <!--nombre de usuario-->
@@ -134,7 +147,9 @@ if(count($errores)==0){
             </ul>
           </div>
         </div>
+
       </div>
+
     </main>
 
     <?php include 'php/footer.php'; ?>
