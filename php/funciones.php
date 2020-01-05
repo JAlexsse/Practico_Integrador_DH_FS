@@ -1,10 +1,16 @@
-<?php 
+<?php
 
 // validar usuarios
 
     function validarEmail (array $jsonUsers){
-        foreach ($jsonUsers as $usuario ) {  
-            if ($usuario["email"] == $_POST["email"]){
+
+
+        foreach ($jsonUsers as $usuario) {
+            $usuarioFinal = json_decode($usuario, true);
+
+
+
+            if ($usuarioFinal["email"] == $_POST["email"]){
                 return true;
             }
         }
@@ -12,10 +18,12 @@
     }
 
     function validarPassword(array $jsonUsers){
-        foreach ($jsonUsers as $usuario ) {  
-            if (password_verify($_POST["password"],$usuario["password"]) && $usuario["email"] == $_POST["email"]){
+        foreach ($jsonUsers as $usuario ) {
+            $usuarioFinal = json_decode($usuario, true);
+
+            if (password_verify($_POST["password"],$usuarioFinal["password"]) && $usuarioFinal["email"] == $_POST["email"]){
                 return true;
-            } 
+            }
         }
         return false;
     }

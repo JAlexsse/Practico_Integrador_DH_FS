@@ -1,18 +1,25 @@
 
 
 
+
 <?php
 /*var_dump($_POST['nombre_del_boton']);
 var_dump($_COOKIE['conectado']);*/
 if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
 {
 
-    setcookie('conectado','',time()-100);
-    setcookie('emailLog','',time()-100);
-    setcookie('passLog','',time()-100);
+
+    session_start();
+    session_destroy();
+    setcookie('emailUsuario', null, time() -1);
+    setcookie('passUsuario', null, time() -1);
+    header("Location: index.php");
 
 
-}?>
+
+}
+
+?>
 
 
 <header>
@@ -44,12 +51,12 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
 
 
               <?php
-              if(isset($_COOKIE["conectado"]) && !isset($_POST['nombre_del_boton']))
+              if(isset($_SESSION["conectado"]) && !isset($_SESSION['nombre_del_boton']))
               {
-                  if ($_COOKIE["conectado"] == true)
+                  if ($_SESSION["conectado"] == true)
                   { ?>
 
-                                  <a href="" class= "nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="buttom" aria-expanded="false" ><?php echo $_COOKIE['emailLog'] ; ?>
+                                  <a href="" class= "nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="buttom" aria-expanded="false" ><?php echo $_SESSION["emailUsuario"] ; ?>
 
                                    <span class="glyphicon glyphicon-dashboard " aria-hidden="true" > </span>   <span class="caret"></span>
                                 </a>
@@ -98,36 +105,36 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
         </ul>
       </div>
     </div>
-    <nav class="navbar navbar-expand-md navbar-dark col-12" style="background-color:rgb(30,30,30)">
-          <a class="navbar-brand" href="index.php"> <img src="img/ICONOS/LOGO/logo_blanco.svg" alt="logo" height="35"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav ">
-              <li class="nav-item">
-                <a class="nav-link titulos-header text-light" href="tienda.php">BICICLETAS <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link titulos-header text-light" href="tienda.php">EQUIPOS Y ACCESORIOS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link titulos-header text-light" href="tienda.php">REPUESTOS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link titulos-header text-light" href="tienda.php">CUBIERTAS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link titulos-header text-light" href="tienda.php">SALE !</a>
-              </li>
-            </ul>
-          </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12">
+      <a class="navbar-brand" href="index.php"> <img src="img/ICONOS/LOGO/logo_blanco.svg" alt="logo" height="35"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="text-align:center;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link titulos-header text-light" href="tienda.php">BICICLETAS <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link titulos-header text-light" href="tienda.php">EQUIPOS Y ACCESORIOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link titulos-header text-light" href="tienda.php">REPUESTOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link titulos-header text-light" href="tienda.php">CUBIERTAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link titulos-header text-light" href="tienda.php">SALE !</a>
+          </li>
+        </ul>
+      </div>
       <div class="nav-item d-block d-md-none"> <!--visible en mobile-->
 
 
 
           <?php
-          if(!isset($_COOKIE["conectado"]) || isset($_POST['nombre_del_boton']))
+          if(!isset($_SESSION["conectado"]) || isset($_SESSION['nombre_del_boton']))
           {
               ?>
 
@@ -141,15 +148,10 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
 
 
       </div>
-      <div class="navbar d-flex justify-content-end" style="background-color:rgb(30,30,30)">
-        <!-- <form class="form-inline my-2 my-lg-0" method="GET" action="tienda.php">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="buscar">
-          <button class="btn my-2 my-sm-0" type="submit"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></button>
-        </form> -->
-        <a href="carrito.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
-        <a class="bag" href="carrito.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
+      <div class="navbar d-flex justify-content-end" id="navbar-iconos">
+        <a class="search" href="tienda.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
+        <a class="bag" href="usuario.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
       </div>
-    </nav>
     </nav>
     <div class="nav-menu-nosostros d-block d-md-none"> <!--visible en mobile-->
       <div class="row w-100" style="margin: 0%; padding: 0%;">
@@ -162,22 +164,28 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
         <div class="nav-menu col-5">
 
             <?php
-            if(isset($_COOKIE["conectado"]) && !isset($_POST['nombre_del_boton']))
+            if(isset($_SESSION["conectado"]) && !isset($_POST['nombre_del_boton']))
             {
-                if ($_COOKIE["conectado"] == true)
+                if ($_SESSION["conectado"] == true)
                 { ?>
 
-                    <!-- <a class="nav-link" href="registro.php"> <?php echo $_COOKIE['emailLog'] ; ?> </a>-->
 
 
-                             <a href="" class= "nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="buttom" aria-expanded="false" ><?php echo $_COOKIE['emailLog'] ; ?>
+
+                             <a href="" class= "nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="buttom" aria-expanded="false" ><?php echo $_SESSION['emailUsuario'] ; ?>
 
                                  <span class="glyphicon glyphicon-dashboard " aria-hidden="true" > </span>   <span class="caret"></span>
                               </a>
 
                               <ul class="dropdown-menu nav-menu-nosostros text-center text-uppercase font-weight-bold">
-                                  <li><a href="usuario.php">Perfil</a></li>
-                                  <li> <a href="carrito.php">Compras</a></li>
+                                  <li>
+
+                                      <a href="usuario.php">Perfil</a>
+
+                                  </li>
+                                  <li>
+                                      <a href="#">Compras</a>
+                                  </li>
 
                                   <li>
                                       <form name="form1" method="post" action="index.php">
