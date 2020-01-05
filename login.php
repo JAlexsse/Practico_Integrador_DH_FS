@@ -1,21 +1,50 @@
 <?php
-    include ("php/funciones.php");
-    if($_POST)
-    {
-        if(isset($_POST["conectado"]))
-        {
-            setcookie("conectado", true);
-            setcookie("emailLog",$_POST["email"]);
-            setcookie("passLog",password_hash($_POST["password"], PASSWORD_DEFAULT)) ;
-        }else{
-            setcookie("conectado",null);
-        }
-        $usuariosJson = json_decode(file_get_contents("json/usuarios.json"), true);
-        if(validarEmail($usuariosJson) && validarPassword($usuariosJson)){
 
-            header('location: index.php');
+
+session_start();
+
+require_once 'controladores/controladorValidacion.php';
+require_once 'controladores/controladorUsuario.php';
+require_once 'controladores/pre.php';
+require_once 'php/funciones.php';
+
+/*pre($_SESSION);
+pre($_COOKIE);
+*/
+
+
+
+$erroresLogin = "";
+
+if($_POST) {
+    $erroresLogin = validarFormulario($_POST);
+    if(count($erroresLogin) == 0) {
+        $usuariosGuardados = file_get_contents('json/usuarios.json');
+        $usuariosGuardados = explode(PHP_EOL, $usuariosGuardados);
+
+        array_pop($usuariosGuardados);
+        foreach($usuariosGuardados as $usuario) {
+            $usuarioFinal = json_decode($usuario, true);
+            if($usuarioFinal['email'] == $_POST['email']) {
+                if( password_verify($_POST['password'], $usuarioFinal['password']) ) {
+                    $_SESSION['emailUsuario'] = $usuarioFinal['email'];
+                    if(isset($_POST['recordarme']) && $_POST['recordarme'] == 'on') {
+                        // time() -----> Unix time
+                        setcookie('emailUsuario', $usuarioFinal['email'], time() + 60 * 60 * 24 * 7);
+                        setcookie('passUsuario', $usuarioFinal['password'], time() + 60 * 60 * 24 * 7);
+                    }
+                    header("Location: index.php");
+                    $_SESSION["conectado"]=true;
+                }
+            }
+
+
+
+
+            }
         }
     }
+
 
 ?>
 <!DOCTYPE html>
@@ -40,44 +69,73 @@
         <div class="row vw-100 justify-content-center">
             <div class="col-12 col-sm-10 col-md-5">
                 <!--Formulario-->
-                <form class="row form-registro justify-content-center" action="login.php" method="POST">
-                    <div class="col-6 p-md-0 form-min">
-                        <a href="index.html">
-                            <img src="img/ICONOS/LOGO/Recurso 11.svg" alt="Logo" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="col-7 mt-1 form-min">
-                        <input type="email" class="form-control my-4" required value="" name="email" placeholder="Correo Electronico *">
-                         <input type="password" class="form-control" required placeholder="Contraseña *" name="password">
 
 
-                        <small class="text-danger"><?php
-                                    if ($_POST) {
 
-                                        if(!validarEmail($usuariosJson)){
-                                            echo("el email ingresado no esta registrado");
-                                        } elseif (!validarPassword($usuariosJson) ){
-                                            echo("el password no coincide");
-                                        }else{
-                                            header('location: usuario.php');
-                                        }
-                                    }
-                        ?></small>
+        <form method="post" class="row form-registro justify-content-center" action="login.php">
+            <div class="col-6 p-md-0 form-min">
+                <a href="index.html">
+                    <img src="img/ICONOS/LOGO/Recurso 11.svg" alt="Logo" class="img-fluid">
+                </a>
+            </div>
+        <div class="form-group col-7 mt-1 ">
+            <label for="email"  class="text-white label-aviso">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="<?= persistirDato($erroresLogin, 'email') ?>">
+            <small class="text-danger"><?= isset($erroresLogin['email']) ? $erroresLogin['email'] : "" ?></small>
 
 
-                        <div class="form-group reset-pass d-flex justify-content-between subtitulos">
-                            <a href="#" class="ForgetPwd" value="Login">Olvidaste tu contraseña?</a>
-                            <a href="registro.php" class="ForgetPwd">Registrarse</a>
-                        </div>
-                        <div class="form-group reset-pass  subtitulos">
-                            <label for="conectado" class="text-white">Recordar</label>
-                            <input type="checkbox" class="" >
-                        </div>
-                    </div>
-                    <div class="col-12 py-1 text-center botones-texto">
-                            <input type="submit" class="btn btn-lg btn-light" name="conectado"value="Ingresar" />
-                    </div>
-                </form>
+
+        </div>
+
+
+
+        <div class=" form-group col-7 mt-1 ">
+            <label for="password"  class="text-white label-aviso">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password">
+            <small class="text-danger"><?= isset($erroresLogin['password']) ? $erroresLogin['password'] : "" ?></small>
+            <small class="text-danger"><?php
+            if ($_POST) {
+
+                $erroresLogin = validarFormulario($_POST);
+                if(count($erroresLogin) == 0) {
+                    $usuariosGuardados = file_get_contents('json/usuarios.json');
+                    $usuariosGuardados = explode(PHP_EOL, $usuariosGuardados);
+
+                    array_pop($usuariosGuardados);
+
+                if(!validarEmail($usuariosGuardados)){
+                    echo("el email ingresado no esta registrado");
+                } elseif (!validarPassword($usuariosGuardados) ){
+                    echo("el password no coincide");
+                }else{
+                    header('location: usuario.php');
+                }
+            }}
+
+            ?></small>
+
+
+        <div class="form-group reset-pass d-flex justify-content-between subtitulos">
+            <a href="#" class="ForgetPwd" value="Login">Olvidaste tu contraseña?</a>
+            <a href="registro.php" class="ForgetPwd">Registrarse</a>
+        </div>
+
+
+
+
+        </div>
+        <div class="form-group col-7 mt-1 ">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="recordarme" name="recordarme">
+                <label class="form-check-label" for="gridCheck">Recordarme como usuario</label>
+            </div>
+        </div>
+        <div class="col-12 py-1 text-center botones-texto">
+                <input type="submit" class="btn btn-lg btn-light" name="conectado"value="Ingresar" />
+        </div>
+    </form>
+
+
 
             </div>
         </div>

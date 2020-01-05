@@ -1,58 +1,22 @@
 <?php
-    $vName ="";
-    $vApellido ="";
-    $vEmail ="";
-    $vPassword="";
-    $vPasswordC="";
 
-    if ($_POST){
+session_start();
 
-        // Persistencia
+require_once 'controladores/controladorValidacion.php';
+require_once 'controladores/controladorUsuario.php';
 
-        $vName = $_POST["nombre"];
-        $vApellido = $_POST["apellido"];
-        $vEmail = $_POST["email"];
-        $vPassword= $_POST["password"];
-        $vPasswordC= $_POST["passwordC"];
+$erroresRegistro = "";
 
-        // Validaciones
-
-        foreach($_POST as $nombre => $datos)
-        {
-            if (strlen($datos) == 0)
-            {
-                echo ('falta completar '. $nombre);
-            }
-        }
-        if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false){
-            echo("El campo no es un email");
-        }
-
-        $usuariosJson = json_decode(file_get_contents("json/usuarios.json"), true);
-        foreach ($usuariosJson as $usuario ) {
-            foreach ($usuario as $atributo["email"] => $value) {
-                if ($value == $_POST["email"]){
-                    echo("el email existe");
-                }
-            }
-        }
-
-        if ($_POST["password"] == $_POST["passwordC"])
-        {
-            $usuarioNuevo = [
-                "nombre" => $_POST["nombre"],
-                "apellido" => $_POST["apellido"],
-                "email" => $_POST["email"],
-                "password" => password_hash($_POST["password"], PASSWORD_DEFAULT)
-            ];
-            $usuariosJson[] = $usuarioNuevo;
-            file_put_contents("json/usuarios.json",json_encode($usuariosJson));
-            header('location: login.php');
-        }
-
-        // Fin Validaciones
-
+if($_POST) {
+    $erroresRegistro = validarFormulario($_POST);
+    if(count($erroresRegistro) == 0) {
+        // Guardar en base de datos un array transformado a JSON
+        $elUsuario = armarArrayUsuario($_POST);
+        $elUsuario = json_encode($elUsuario);
+        file_put_contents('json/usuarios.json', $elUsuario . PHP_EOL, FILE_APPEND);
+        header("Location: login.php");
     }
+}
 
 ?>
 <!DOCTYPE html>
@@ -80,61 +44,53 @@
     <div class="container-fluid container-registro d-flex justify-content-center align-items-center bg-logreg">
         <div class="row vw-100 justify-content-center">
             <div class="col-12 col-sm-10 col-md-5 my-3">
-                <!--Formulario-->
-                <form action="registro.php" method="POST" class="row form-registro justify-content-center py-3 ">
-                    <div class="col-6 p-md-0 form-min">
-                        <img src="img/ICONOS/LOGO/Recurso 11.svg" alt="Logo" class="img-fluid">
-                    </div>
-                    <div class="col-10 text-left text-white titulos-categorias-tienda">
-                        <h4>Registrarse</h4>
-                    </div>
-                    <div class="col-9 my-2 form-min subtitulos">
-                        <label for="" class="text-white label-aviso">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" required placeholder="Nombre*" value=<?=$vName?>>
-                        <label for="" class="text-white label-aviso mt-1">Apellido</label>
-                        <input type="text" name="apellido" class="form-control" required placeholder="Apellido*" value=<?=$vApellido?>>
-                        <label for="" class="text-white label-aviso mt-1">Email</label>
-                        <input type="email" name="email" class="form-control" required placeholder="Email*" value=<?=$vEmail?>>
-                        <small class="text-danger"><?php if ($_POST) {
-                            if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false){
-                            echo("El campo no es un email");
-                        }
-                            // code...
-                        }
-                            // code...
-                        ?></small>
-                        <br/>
 
 
+                <form method="post" action="" class="row form-registro justify-content-center py-3 ">
+
+            <div class="col-6 p-md-0 form-min">
+                <img src="img/ICONOS/LOGO/Recurso 11.svg" alt="Logo" class="img-fluid">
+            </div>
+            <div class="col-10 text-left text-white titulos-categorias-tienda">
+                    <h4>Registrarse</h4>
+            </div>
 
 
+        <div class="form-group col-9 my-2 form-min subtitulos">
+            <label for="nombre" class="text-white label-aviso">Nombre</label>
+            <!-- (CONDICION) ? A : B -->
+            <input type="text" class="form-control" id="nombre" name="nombre" value="<?= persistirDato($erroresRegistro, 'nombre') ?>">
+            <small class="text-danger"><?= isset($erroresRegistro['nombre']) ? $erroresRegistro['nombre'] : "" ?></small>
+        </div>
+        <div class="form-group col-9 my-2 form-min subtitulos">
+            <label for="nombre" class="text-white label-aviso">Apellido</label>
+            <!-- (CONDICION) ? A : B -->
+            <input type="text" class="form-control" id="apellido" name="apellido" value="<?= persistirDato($erroresRegistro, 'apellido') ?>">
+            <small class="text-danger"><?= isset($erroresRegistro['apellido']) ? $erroresRegistro['apellido'] : "" ?></small>
+        </div>
+
+        <div class="form-group col-9 my-2 form-min subtitulos">
+            <label for="email" class="text-white label-aviso">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="<?= persistirDato($erroresRegistro, 'email') ?>">
+            <small class="text-danger"><?= isset($erroresRegistro['email']) ? $erroresRegistro['email'] : "" ?></small>
+        </div>
+        <div class="form-group col-9 my-2 form-min subtitulos">
+            <label for="password" class="text-white label-aviso">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password">
+            <small class="text-danger"><?= isset($erroresRegistro['password']) ? $erroresRegistro['password'] : "" ?></small>
+        </div>
+        <div class="form-group col-9 my-2 form-min subtitulos">
+            <label for="repassword" class="text-white label-aviso">Repetir contraseña</label>
+            <input type="password" class="form-control" id="repassword" name="repassword">
+            <small class="text-danger"><?= isset($erroresRegistro['repassword']) ? $erroresRegistro['repassword'] : "" ?></small>
+        </div>
+
+        <div class="col-12 py-3 text-center botones-texto">
+        <button type="submit" class="btn btn-lg btn-light ">Registrarse</button>
+        </div>
+    </form>
 
 
-
-
-                        <label for="" class="text-white label-aviso mt-1">Contraseña</label>
-                        <input type="password" name="password" class="form-control" required placeholder="Contraseña*" value=<?=$vPassword?>>
-                        <label for="" class="text-white label-aviso mt-1">Confirmar Contraseña</label>
-                        <input type="password" name="passwordC" class="form-control" required placeholder="Confirmar Contraseña*" value=<?=$vPasswordC?>>
-
-                        <small class="text-danger"><?php if ($_POST) {
-                        if ($_POST["password"] != $_POST["passwordC"])
-                        {
-                            echo( "Las contraseñas no coinciden");
-                        }
-    // code...
-                        }
-                            // code...
-                        ?></small>
-                        <br/>
-
-
-
-                    </div>
-                    <div class="col-12 py-3 text-center botones-texto">
-                        <input type="submit" class="btn btn-lg btn-light" value="Registrar" />
-                    </div>
-                </form>
             </div>
         </div>
     </div>
