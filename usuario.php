@@ -1,5 +1,8 @@
 <?php
 
+require_once 'controladores/controladorHeader.php';
+
+
 //
 
 
@@ -7,6 +10,7 @@
 
 
 // Foto perfil //
+
 
 $errores=[];
 

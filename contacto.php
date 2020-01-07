@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php 
+
+ require_once 'controladores/controladorHeader.php';
+ 
+ 
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

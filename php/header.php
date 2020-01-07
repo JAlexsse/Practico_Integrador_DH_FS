@@ -1,23 +1,3 @@
-<?php
-/*var_dump($_POST['nombre_del_boton']);
-var_dump($_COOKIE['conectado']);*/
-if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
-{
-
-
-    session_start();
-    session_destroy();
-    setcookie('emailUsuario', null, time() -1);
-    setcookie('passUsuario', null, time() -1);
-    header("Location: index.php");
-
-
-
-}
-
-?>
-
-
 <header>
 
   <div class="header-nav-top">
@@ -46,62 +26,32 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
           <a class="nav-link" href="contacto.php">contactanos</a>
         </li>
         <li class="nav-item">
-
-
-
-          <?php
-              if(isset($_COOKIE["conectado"]) && !isset($_POST['nombre_del_boton']))
-              {
-                  if ($_SESSION["conectado"] == true)
-                  { ?>
+        <?php if(isset($_COOKIE['log']) && $_COOKIE['log'] == true) : ?>
 
           <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="buttom"
-            aria-expanded="false"><?php echo $_COOKIE['emailLog'] ; ?>
-
+            aria-expanded="false"><?php echo $_SESSION['emailUsuario']; ?>
             <span class="glyphicon glyphicon-dashboard " aria-hidden="true"> </span> <span class="caret"></span>
           </a>
-
           <ul class="dropdown-menu header-nav-top text-center text-uppercase font-weight-bold">
             <li>
-
               <a href="usuario.php">Perfil</a>
-
             </li>
             <li>
               <a href="tienda.php">Compras</a>
             </li>
-
             <li>
-              <form name="form1" method="post" action="index.php">
+              <form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
                 <input type="submit" name="nombre_del_boton"
                   class="nav-menu-nosostros btn-sm btn btn-link text-dark list-unstyled small text-uppercase font-weight-bold "
                   id="nombre_del_boton" value="Salir">
               </form>
-
-
             </li>
-
-
           </ul>
-
-
-
-
-          <?php
-                  }
-
-              }
-
-              else {
-                  ?>
-
+          <?php else : ?>
 
           <a class="nav-link" href="login.php">Ingresar a mi cuenta</a>
 
-          <?php
-
-              } ?>
-
+          <?php endif; ?>
 
         </li>
       </ul>
@@ -122,10 +72,45 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
 
       <div class="col-2 col-md-auto order-md-last navbar justify-content-end" style="background-color:rgb(30,30,30)">
         <form class="form-inline d-none d-md-block" method="GET" action="tienda.php">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="buscar">
-            <button class="btn my-2 my-sm-0" type="submit"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></button>
-        </form> 
-        <a class="d-md-none" href="carrito.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="buscar">
+          <button class="btn my-2 my-sm-0" type="submit"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt=""
+              height="18"></button>
+        </form>
+
+        <?php if(isset($_COOKIE['log']) && $_COOKIE['log'] == true) : ?>
+        
+          <div class="btn-group dropleft d-md-none">
+            <a href="#" role="button" class="nav-link p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt="" height="18"></a>
+            <div class="dropdown-menu header-nav-top text-center text-uppercase font-weight-bold">
+              <ul class="nav flex-column p-1">
+                <li class="nav-item text-muted">
+                <?php echo $_SESSION['emailUsuario']; ?>
+                </li>
+                <li class="nav-item">
+                  <a href="usuario.php">Perfil</a>
+                </li>
+                <li class="nav-item">
+                  <a href="tienda.php">Compras</a>
+                </li>
+                <li>
+                  <form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+                    <input type="submit" name="nombre_del_boton"
+                      class="nav-menu-nosostros btn-sm btn btn-link text-dark list-unstyled small text-uppercase font-weight-bold "
+                      id="nombre_del_boton" value="Salir">
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        <?php else : ?>
+
+          <a class="d-md-none" href="login.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/busqueda.svg" alt=""
+            height="18"></a>
+            
+        <?php endif; ?>
+
         <a class="bag" href="carrito.php"><img src="img/ICONOS/UTILIDAD AMARILLOS/bolsa.svg" alt="" height="20"></a>
       </div> <!-- Iconos -->
 

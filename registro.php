@@ -1,7 +1,6 @@
 <?php
 
-session_start();
-
+require_once 'controladores/controladorHeader.php';
 require_once 'controladores/controladorValidacion.php';
 require_once 'controladores/controladorUsuario.php';
 

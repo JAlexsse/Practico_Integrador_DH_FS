@@ -1,8 +1,6 @@
 <?php
 
-
-session_start();
-
+require_once 'controladores/controladorHeader.php';
 require_once 'controladores/controladorValidacion.php';
 require_once 'controladores/controladorUsuario.php';
 require_once 'controladores/pre.php';
@@ -29,10 +27,11 @@ if($_POST) {
                 if( password_verify($_POST['password'], $usuarioFinal['password']) ) {
                     $_SESSION['emailUsuario'] = $usuarioFinal['email'];
                     if(isset($_POST['recordarme']) && $_POST['recordarme'] == 'on') {
-                        $_SESSION['emailUsuario'] = $usuarioFinal['email'];
-                        $_SESSION['passUsuario'] = $usuarioFinal['password'];
                         $_SESSION["conectado"]=true;
                     }
+                    setcookie("log", true);
+                    $_SESSION['emailUsuario'] = $usuarioFinal['email'];
+                    $_SESSION['passUsuario'] = $usuarioFinal['password'];
                     header("Location: index.php");
                 }
             }

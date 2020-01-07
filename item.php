@@ -1,7 +1,9 @@
 <?php
 
+  require_once 'controladores/controladorHeader.php';
   include "php\comentarios.inc.php";
   include "php\databaseconnection.php";
+  
 ?>
 
 
