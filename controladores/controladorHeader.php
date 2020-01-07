@@ -13,7 +13,7 @@ if(isset($_COOKIE['log']) && $_COOKIE['log'] == true){
 }
 
 if(!isset($_COOKIE['log']) ){
-    if (strpos($_SERVER["PHP_SELF"], 'carrito') ){
+    if (strpos($_SERVER["PHP_SELF"], 'carrito') || strpos($_SERVER["PHP_SELF"], 'usuario') ){
         header('location: login.php');
     }
 }
