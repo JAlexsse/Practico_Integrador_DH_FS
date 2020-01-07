@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if(isset($_SESSION["conectado"]))
+    { 
+      if ($_SESSION["conectado"] == true) 
+      
+      { ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -186,14 +196,6 @@
   </div>
 
 
-
-
-
-
-
-
-
-
   <?php include 'php/footer.php'; ?>
 
   <!--Script Bootstrap-->
@@ -210,3 +212,12 @@
 </body>
 
 </html>
+
+<?php
+        }
+
+      } else { 
+          
+        header("Location: login.php");
+
+              } ?>

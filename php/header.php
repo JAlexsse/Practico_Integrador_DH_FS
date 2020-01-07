@@ -4,12 +4,18 @@ var_dump($_COOKIE['conectado']);*/
 if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
 {
 
-    setcookie('conectado','',time()-100);
-    setcookie('emailLog','',time()-100);
-    setcookie('passLog','',time()-100);
+
+    session_start();
+    session_destroy();
+    setcookie('emailUsuario', null, time() -1);
+    setcookie('passUsuario', null, time() -1);
+    header("Location: index.php");
 
 
-}?>
+
+}
+
+?>
 
 
 <header>
@@ -46,7 +52,7 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
           <?php
               if(isset($_COOKIE["conectado"]) && !isset($_POST['nombre_del_boton']))
               {
-                  if ($_COOKIE["conectado"] == true)
+                  if ($_SESSION["conectado"] == true)
                   { ?>
 
           <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="buttom"
@@ -169,7 +175,7 @@ if(isset($_POST['nombre_del_boton']) && $_POST['nombre_del_boton'] == "Salir"  )
         <?php
             if(isset($_COOKIE["conectado"]) && !isset($_POST['nombre_del_boton']))
             {
-                if ($_COOKIE["conectado"] == true)
+                if ($_SESSION["conectado"] == true)
                 { ?>
 
         <!-- <a class="nav-link" href="registro.php"> <?php echo $_COOKIE['emailLog'] ; ?> </a>-->

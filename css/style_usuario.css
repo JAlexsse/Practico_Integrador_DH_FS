@@ -80,18 +80,10 @@ a.navbar-brand{
   background-position: center;
 }
 
-
-.detalles li{
-  overflow: hidden;
+a.wishlist{
+  cursor: pointer;
 }
-
-.detalles h5{
-  float: left;
-}
-
-.detalles p{
-  float: left;
-}
+  
 
 /***fin usuario***/
 
