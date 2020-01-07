@@ -29,12 +29,11 @@ if($_POST) {
                 if( password_verify($_POST['password'], $usuarioFinal['password']) ) {
                     $_SESSION['emailUsuario'] = $usuarioFinal['email'];
                     if(isset($_POST['recordarme']) && $_POST['recordarme'] == 'on') {
-                        // time() -----> Unix time
-                        setcookie('emailUsuario', $usuarioFinal['email'], time() + 60 * 60 * 24 * 7);
-                        setcookie('passUsuario', $usuarioFinal['password'], time() + 60 * 60 * 24 * 7);
+                        $_SESSION['emailUsuario'] = $usuarioFinal['email'];
+                        $_SESSION['passUsuario'] = $usuarioFinal['password'];
+                        $_SESSION["conectado"]=true;
                     }
                     header("Location: index.php");
-                    $_SESSION["conectado"]=true;
                 }
             }
 
