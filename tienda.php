@@ -1,4 +1,6 @@
 <?php
+session_start();
+
   include ("php/funciones.php");
 
   $producto = json_decode(file_get_contents("json/tienda.json"), true);
