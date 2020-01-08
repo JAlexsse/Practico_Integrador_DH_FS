@@ -1,8 +1,13 @@
 <?php
 
-require_once 'controladores/controladorHeader.php';
+session_start();
+if(isset($_SESSION["conectado"]))
+    { 
+      if ($_SESSION["conectado"] == true) 
+      
+      { ?>
 
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
