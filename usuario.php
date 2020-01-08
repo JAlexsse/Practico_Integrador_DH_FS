@@ -131,29 +131,29 @@ if(count($errores)==0){
             <h4 class="titulos-medio px-3">Informacion Personal </h4>
             <!--lista con mail, sexo, fecha de nacimiento y link a wishlist-->
             <div class="row pt-3">
-              <div class="col-12">
-                <h5 class="col-md-4 texto-parrafo">
+              <div class="col-12 row p-2">
+                <h5 class="col-md-4 texto-parrafo px-4">
                   <strong>Email</strong>
                 </h5>
-                <p class="col-md-8 texto-parrafo">maria_sharapova@email.com</p>
+                <p class="col-md-8 texto-parrafo px-4">maria_sharapova@email.com</p>
               </div>
-              <div class="col-12">
-                <h5 class="col-md-4 texto-parrafo">
+              <div class="col-12 row p-2">
+                <h5 class="col-md-4 texto-parrafo px-4">
                   <strong>Sexo</strong>
                 </h5>
-                <p class="col-md-8 texto-parrafo">Femenino</p>
+                <p class="col-md-8 texto-parrafo px-4">Femenino</p>
               </div>
-              <div class="col-12">
-                <h5 class="col-md-4 texto-parrafo">
+              <div class="col-12 row p-2">
+                <h5 class="col-md-4 texto-parrafo px-4">
                   <strong>Fecha de Nacimiento</strong>
                 </h5>
-                <p class="col-md-8 texto-parrafo">13/11</p>
+                <p class="col-md-8 texto-parrafo px-4">13/11</p>
               </div>
-              <div class="col-12">
-                <h5 class="col-md-4 texto-parrafo">
+              <div class="col-12 row p-2">
+                <h5 class="col-md-4 texto-parrafo px-4">
                   <strong>Wishlist</strong>
                 </h5>
-                <a href="carrito.php#nav-guardados-tab" class="col-md-8 texto-parrafo text-white wishlist">
+                <a href="carrito.php#nav-guardados-tab" class="col-md-8 texto-parrafo px-4 text-white wishlist">
                   Lista de deseos
                 </a>
               </div>
