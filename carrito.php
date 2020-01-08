@@ -1,12 +1,8 @@
 <?php
 
-session_start();
-if(isset($_SESSION["conectado"]))
-    { 
-      if ($_SESSION["conectado"] == true) 
-      
-      { ?>
+require_once 'controladores/controladorHeader.php';
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -213,11 +209,3 @@ if(isset($_SESSION["conectado"]))
 
 </html>
 
-<?php
-        }
-
-      } else { 
-          
-        header("Location: login.php");
-
-              } ?>
