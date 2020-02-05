@@ -366,3 +366,68 @@ ALTER TABLE usuarios add column id_persona INTEGER,
 add foreign key (id_persona) references persona(id_persona);
 ALTER TABLE usuarios ADD COLUMN id_favoritos INTEGER,
 ADD FOREIGN KEY (id_favoritos) references favoritos(id_favoritos);
+create table usuarios (
+id_usuario INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR(100),
+tipo_usuario VARCHAR(100),
+descripcion TEXT
+);
+ALTER TABLE favoritos ADD COLUMN id_usuario INTEGER,
+ADD FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario);
+ALTER TABLE usuarios ADD COLUMN id_persona INTEGER,
+ADD FOREIGN KEY (id_persona) REFERENCES persona(id_persona);
+CREATE TABLE Productos_Por_Color (
+id_Productos_Por_Color INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id_producto INTEGER,
+FOREIGN KEY (id_producto) REFERENCES productos(id_producto),
+id_color INTEGER,
+FOREIGN KEY (id_color) REFERENCES color(id_color)
+);
+CREATE TABLE Detalle_de_Producto(
+id_detalle_Producto INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id_productos_por_color INTEGER,
+FOREIGN KEY (id_productos_por_color) REFERENCES productos_por_color(id_Productos_Por_Color),
+id_detalle_de_venta INTEGER,
+cantidad INTEGER NOT NULL,
+precio_unitario DOUBLE(6,2),
+subtotal DOUBLE(6,2)
+);
+CREATE TABLE detalle_de_venta(
+id_detalle_de_venta INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id_usuario INTEGER,
+fecha datetime,
+id_forma_de_pago INTEGER,
+cantidad_de_cuotas INTEGER,
+recargo FLOAT(4,2),
+descuento FLOAT(4,2),
+id_envio INTEGER,
+total DOUBLE (6,2)
+);
+CREATE TABLE forma_de_pago(
+id_forma_de_pago INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id_entidad INTEGER,
+numero_tarjeta INTEGER,
+estado VARCHAR(50)
+);
+alter table usuarios
+add column id_localidad INTEGER,
+add foreign key (id_localidad) references localidad(id_localidad);
+alter table detalle_de_venta
+add foreign key (id_forma_de_pago) references forma_de_pago(id_forma_de_pago);
+alter table detalle_de_venta
+add foreign key (id_usuario) references usuarios(id_usuario);
+alter table detalle_de_venta
+add foreign key (id_detalle_producto) references detalle_de_producto(id_detalle_producto);
+create table envio(
+id_envio INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id_localidad INTEGER,
+foreign key (id_localidad) REFERENCES localidad(id_localidad),
+costo_envio DOUBLE (4,2)
+);
+alter table detalle_de_producto
+drop column id_detalle_de_venta;
+alter table detalle_de_venta
+add column id_detalle_producto INTEGER,
+add foreign key (id_detalle_producto) references detalle_de_producto(id_detalle_producto);
+alter table detalle_de_venta
+add foreign key (id_envio) references envio(id_envio);
