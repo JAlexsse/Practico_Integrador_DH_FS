@@ -8,6 +8,14 @@ class DetalleProducto{
    private $precioUnitario;
    private $subTotal;
 
+    public function __construct($id=null, $ProductosPorColor, $DetalleVenta, $cantidad, $precioUnitario){
+        $this->id = $id;
+        $this->ProductosPorColor = $ProductosPorColor;
+        $this->DetalleVenta = $DetalleVenta;
+        $this->cantidad = $cantidad;
+        $this->precioUnitario = $precioUnitario;
+    }
+
     public function getCantidad(){
         return $this->cantidad;
     }
@@ -23,8 +31,8 @@ class DetalleProducto{
     private function subtotalPrecioPorCantidad(){
         return $this->precioUnitario * $this->cantidad;
     }
-    public function agregarProducto(){
-
+    public function agregarProducto($ProductosPorColor){
+        $ProductosPorColor[]=$ProductosPorColor;
     }
     public function eliminarProducto(){
         

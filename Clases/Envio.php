@@ -12,13 +12,7 @@ class Envio{
     private function setId($id){
         $this->id =$id;
     }
-    private function getCodigoPosta(){
-        return $this->codigoPostal;
-    }
-    private function setCodigoPostal($codigoPostal){
-        $this->codigoPostal =$codigoPostal;
-    }
-    private function getCodigoPosta(){
+    private function getCodigoPostal(){
         return $this->codigoPostal;
     }
     private function setCodigoPostal($codigoPostal){

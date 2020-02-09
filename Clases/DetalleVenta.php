@@ -20,6 +20,9 @@ public function setId($id){
 public function getPersonas(){
     return $this->Personas;
 }
+public function setPersonas(){
+     $this->Personas = $Personas;
+}
 public function getFecha(){
     return $this->fecha;
 }
@@ -42,16 +45,13 @@ public function setDescuento($descuento){
      $this->descuento= $descuento;
 }
 private function calcularDescuento(){
-
+    
 }
 public function getEnvio(){
     return $this->Envio;
 }
 public function setEnvio($Envio){
      $this->Envio= $Envio;
-}
-private function calcularSubtotal(){
-
 }
 private function calcularTotal(){
 
