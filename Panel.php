@@ -1,19 +1,24 @@
 <?php
   include ("Clases/Productos.php");
-  include ("Clases/Galeria.php");
   include ("Clases/Marcas.php");
+  include ("Clases/Categorias.php");
   include ("pdo.php");
   
   $producto = new Productos();
 
   if ($_POST){
-      if ($_POST["nuevoProducto"]){
+      if (isset($_POST["nuevoProducto"])){
             $nombre = $_POST["nombre"];
             $precio = $_POST["precio"];
             $stock = $_POST["stock"];
+            $marca = new Marcas($_POST["marcaP"]);
+            $catego = new Categorias($_POST["idCategoria"]);
             $descripcion = $_POST["descripcion"];
-            $productoNuevo = new Productos(null,$nombre,$descripcion,$precio,$stock,null,null,null,TRUE);
+            $productoNuevo = new Productos(null,$nombre,$descripcion,$precio,$stock,null,$catego,$marca,TRUE);
             $productoNuevo->agregar_productos($db);
+      } 
+      if(isset($_POST["actualizar"])){
+
       }
   }
 
@@ -45,7 +50,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/stylehome.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 
     <title>Panel de Control</title>
 </head>
@@ -56,7 +62,7 @@
 
     <main class="container-fluid">
 
-        <div class="row justify-content-center vh-100">
+        <div class="row justify-content-center ">
 
             <div class="col-12 col-lg-2 text-left bg-dark pt-3">
 
@@ -76,7 +82,7 @@
             </div> <!-- Nav Panel de Control -->
 
             <div class="col-10 py-2">
-                    
+
                 <?php if(isset($_GET["estado"]) && $_GET["estado"] == "update"){
                             
                             $sql=" select * from productos where id_producto = ".$_GET["id"];
@@ -89,18 +95,67 @@
                     <div class="col-4 mx-auto">
                         <h3 class="text-muted text-center">Actualizar Producto</h3>
                         <div class="card card-body">
-                            <form action="Panel.php?id=<?php echo $_GET["id"]?>" method="POST">
+                            <form action="Panel.php" method="POST">
                                 <div class="form-group">
+                                    <label for="nombre" class=""> Id </label>
+                                    <input type="text" disabled name="id" value="<?php echo $productoUpda["id_producto"] ?>"
+                                        class="form-control" placeholder="Colocar Nombre">
                                     <label for="nombre" class=""> Nombre </label>
-                                    <input type="text" name="nombre" value="<?php echo $productoUpda["nombre"] ?>" class="form-control" placeholder="Colocar Nombre">
+                                    <input type="text" name="nombre" value="<?php echo $productoUpda["nombre"] ?>"
+                                        class="form-control" placeholder="Colocar Nombre">
                                     <label for="Precio" class=""> Precio $</label>
-                                    <input type="text" name="precio" value="<?php echo $productoUpda["precio"] ?>" class="form-control" placeholder="Colocar Precio">
+                                    <input type="text" name="precio" value="<?php echo $productoUpda["precio"] ?>"
+                                        class="form-control" placeholder="Colocar Precio">
                                     <label for="Stock" class=""> Stock </label>
-                                    <input type="text" name="stock" value="<?php echo $productoUpda["stock"] ?>" class="form-control" placeholder="Colocar Stock">
+                                    <input type="text" name="stock" value="<?php echo $productoUpda["stock"] ?>"
+                                        class="form-control" placeholder="Colocar Stock">
                                 </div>
                                 <div class="form-group">
                                     <label for="descripcion" class=""> Descripcion </label>
-                                    <textarea class="form-control" placeholder="Actualizar Descripcion" name="descripcion" rows="3"><?php echo $productoUpda["descripcion"] ?></textarea>
+                                    <textarea class="form-control" placeholder="Actualizar Descripcion"
+                                        name="descripcion"
+                                        rows="3"><?php echo $productoUpda["descripcion"] ?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="marca">Seleccione una Marca</label>
+                                    <select id="marca" name="marcaP">
+                                    <?php 
+                                        $marca = new Marcas();
+                                        $marcas = $marca->getMarcas($db);
+                                        foreach ($marcas as $key):
+                                            if($productoUpda['id_marca']==$key['id_marca']) {
+                                                echo "<option selected value='".$key['id_marca']."'>".$key['nombre']."</option>";
+                                            } else {
+                                                echo "<option value='".$key['id_marca']."'>".$key['nombre']."</option>";
+                                            }          
+                                    endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <?php 	$Categoria = new Categorias();
+						                        $categoriaPadre = $Categoria->getPadres($db);
+						                        $categoriaHijo = $Categoria->getAllCategoria($db);
+						                        foreach($categoriaPadre as $keyP): ?>
+
+                                        <div class="col-6">
+                                            <div class="card card-body">
+                                                <h5 class="card-title"><?php echo $keyP["nombre_categoria"] ?></h5>
+                                                <?php 
+								                foreach ($categoriaHijo as $keyH) : 
+									                if ($keyH["id_categoria_padre"] == $keyP["id_categoria"]):
+								                ?>
+                                                <label for=""><?=$keyH['nombre_categoria']?></label>
+                                                <input type="radio" name="idCategoria" value="<?=$keyH['id_categoria']?>">
+                                                <?php
+									                endif;
+								                endforeach;
+								                ?>
+                                            </div>
+                                        </div>
+
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                                 <button class="btn btn-success" name="actualizar">Actualizar</button>
                             </form>
@@ -112,34 +167,66 @@
 
                 <div class="row">
                     <div class="col-4 mx-auto">
-                            <h3 class="text-muted text-center">Agregar Producto</h3>
-                            <div class="card card-body">
-                                <form action="Panel.php" method="POST">
-                                    <div class="form-group">
-                                        <label for="nombre" class=""> Nombre </label>
-                                        <input type="text" name="nombre" value="" class="form-control" placeholder="Colocar Nombre">
-                                        <label for="Precio" class=""> Precio $</label>
-                                        <input type="text" name="precio" value="" class="form-control" placeholder="Colocar Precio">
-                                        <label for="Stock" class=""> Stock </label>
-                                        <input type="text" name="stock" value="" class="form-control" placeholder="Colocar Stock">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="descripcion" class=""> Descripcion </label>
-                                        <textarea class="form-control" placeholder="Actualizar Descripcion" name="descripcion" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group">
+                        <h3 class="text-muted text-center">Agregar Producto</h3>
+                        <div class="card card-body">
+                            <form action="Panel.php" method="POST">
+                                <div class="form-group">
+                                    <label for="nombre" class=""> Nombre </label>
+                                    <input type="text" name="nombre" value="" class="form-control"
+                                        placeholder="Colocar Nombre">
+                                    <label for="Precio" class=""> Precio $</label>
+                                    <input type="text" name="precio" value="" class="form-control"
+                                        placeholder="Colocar Precio">
+                                    <label for="Stock" class=""> Stock </label>
+                                    <input type="text" name="stock" value="" class="form-control"
+                                        placeholder="Colocar Stock">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion" class=""> Descripcion </label>
+                                    <textarea class="form-control" placeholder="Actualizar Descripcion"
+                                        name="descripcion" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="marca">Seleccione una Marca</label>
+                                    <select id="marca" name="marcaP">
                                     <?php 
                                         $marca = new Marcas();
                                         $marcas = $marca->getMarcas($db);
-                                        foreach ($marcas as $key) :?>
-                                        <label for=""><?=$key['nombre']?></label>
-                                        <input type="checkbox" name ="nombre[]" value="<?=$key['id_marca']?>">
-                                    <?php endforeach;?>
+                                        foreach ($marcas as $key) : ?>
+                                        <option value="<?php echo $key["id_marca"] ?>"><?=$key["nombre"]?></option>
+                                    <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <?php 	$Categoria = new Categorias();
+						                        $categoriaPadre = $Categoria->getPadres($db);
+						                        $categoriaHijo = $Categoria->getAllCategoria($db);
+						                        foreach($categoriaPadre as $keyP): ?>
+
+                                        <div class="col-6">
+                                            <div class="card card-body">
+                                                <h5 class="card-title"><?php echo $keyP["nombre_categoria"] ?></h5>
+                                                <?php 
+								                foreach ($categoriaHijo as $keyH) : 
+									                if ($keyH["id_categoria_padre"] == $keyP["id_categoria"]):
+								                ?>
+                                                <label for=""><?=$keyH['nombre_categoria']?></label>
+                                                <input type="radio" name="idCategoria" value="<?=$keyH['id_categoria']?>">
+                                                <?php
+									                endif;
+								                endforeach;
+								                ?>
+                                            </div>
+                                        </div>
+
+                                        <?php endforeach; ?>
                                     </div>
-                                    <button class="btn btn-success" name="nuevoProducto" value="TRUE">Agregar</button>
-                                </form>
-                            </div>
+                                </div>
+                                <button class="btn btn-success" name="nuevoProducto" value="TRUE">Agregar</button>
+                            </form>
                         </div>
+                    </div>
                 </div>
 
                 <?php } else { ?>
@@ -170,11 +257,14 @@
                             <td><?=$key["marca"]?></td>
                             <td><?=$key["categoria"]?></td>
                             <td>
-                                <a href="Panel.php?estado=update&&id=<?php echo $key["id_producto"]?>" class="btn btn-warning"><i class="fas fa-marker"></i></a>
+                                <a href="Panel.php?estado=update&&id=<?php echo $key["id_producto"]?>"
+                                    class="btn btn-warning"><i class="fas fa-marker"></i></a>
                                 <?php if ($key["estado"]==true): ?>
-                                    <a href="Panel.php?estadoLogico=FALSE&&id=<?php echo $key["id_producto"]?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                <a href="Panel.php?estadoLogico=FALSE&&id=<?php echo $key["id_producto"]?>"
+                                    class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                 <?php else: ?>
-                                    <a href="Panel.php?estadoLogico=TRUE&&id=<?php echo $key["id_producto"]?>" class="btn btn-success"><i class="fas fa-check-square"></i></a>
+                                <a href="Panel.php?estadoLogico=TRUE&&id=<?php echo $key["id_producto"]?>"
+                                    class="btn btn-success"><i class="fas fa-check-square"></i></a>
                                 <?php endif; ?>
                             </td>
 
@@ -183,7 +273,7 @@
 
                     </tbody>
                 </table>
-                
+
                 <?php } ?>
 
             </div>
