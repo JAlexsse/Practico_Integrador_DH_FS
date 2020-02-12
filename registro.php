@@ -3,16 +3,20 @@
 require_once 'controladores/controladorHeader.php';
 require_once 'controladores/controladorValidacion.php';
 require_once 'controladores/controladorUsuario.php';
+include_once 'pdo.php';
+include_once 'clases/Personas.php';
+
 
 $erroresRegistro = "";
+
 
 if($_POST) {
     $erroresRegistro = validarFormulario($_POST);
     if(count($erroresRegistro) == 0) {
-        // Guardar en base de datos un array transformado a JSON
-        $elUsuario = armarArrayUsuario($_POST);
-        $elUsuario = json_encode($elUsuario);
-        file_put_contents('json/usuarios.json', $elUsuario . PHP_EOL, FILE_APPEND);
+        // Guardar en base de datos 
+        $usuario = new Personas("", $_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['password']);
+        $usuario->agregar_usuario($db);
+
         header("Location: login.php");
     }
 }

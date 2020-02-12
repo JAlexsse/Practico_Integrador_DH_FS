@@ -11,6 +11,7 @@ private $fecha_de_nacimiento;
 private $descripcion;
 private $imagen_perfil;
 private $favoritos;
+private $nombre_tabla = 'persona';
 
 public function __construct ($id = null, $nombre, $apellido, $email, $password){
     $this->id=$id;
@@ -61,30 +62,53 @@ public function getFechaDeNacimiento(){
 public function setFechaDeNacimiento($fecha_de_nacimiento){
     $this->fecha_de_nacimiento =$fecha_de_nacimiento;
 }
-public function setDescripcion(){
+public function setDescripcion($descripcion){
     $this->descripcion = $descripcion;
 }
 public function getImagenPerfil(){
     return $this->imagen_perfil;
 }
-public function setImagenPerfil(){
+public function setImagenPerfil($imagen_perfil){
      $this->imagen_perfil = $imagen_perfil;
 }
 public function getFavoritos(){
     return $this->favoritos;
 }
 
-public function create($connect) {
-    $query = $connect->prepare("
-    INSERT INTO
-    personas (id,nombre,apellido,email,)
-    values (null,:nombre,:apellido, :email)
-    ");
+public function create($db) {
+    $query = $db->prepare("INSERT INTO personas (id,nombre,apellido, email, contraseña)
+    values (null,:nombre,:apellido, :email, :contraseña)");
+
     $query->bindValue(':nombre',$this->nombre);
     $query->bindValue(':apellido',$this->apellido);
     $query->bindValue(':email',$this->email);
+    $query->bindValue(':contraseña',$this->contraseña);
     $query->execute();
   }
+
+  function agregar_usuario($db){
+    if($_POST){
+      $info = array(
+        'nombre' => $_POST['nombre'],
+        'apellido' => $_POST['apellido'],
+        'email' => $_POST['email'],
+        'password' => password_hash($_POST['password'],PASSWORD_DEFAULT)
+      );
+
+      $query = $db->prepare("INSERT INTO persona (id_persona, nombre, apellido, email, password)
+        VALUES (null, :nombre, :apellido, :email, :password)");
+
+      $query->bindValue(':nombre', $info['nombre']);
+      $query->bindValue(':apellido', $info['apellido']);
+      $query->bindValue(':email', $info['email']);
+      $query->bindValue(':password', $info['password']);
+      
+      $query->execute();
+    }
+  }
+
+
+
 
 }
 
