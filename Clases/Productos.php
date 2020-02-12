@@ -9,9 +9,10 @@ class Productos{
     private $stock;
     private $fechaPublicacion;
     private $Marca;
+    private $estado;
 
-    public function __construct($id=null, $nombre, $descripcion=null, $Categoria, $precio, $stock, $fechaPublicacion=null, $Marca){
-       $this->id= $id;
+    public function __construct($id=null, $nombre=null, $descripcion=null, $precio=null, $stock=null, $fechaPublicacion=null,$Categoria=null, $Marca=null, $estado = true){
+       $this->id= $id; 
        $this->nombre= $nombre;
        $this->descripcion= $descripcion;
        $this->Categoria= $Categoria;
@@ -19,82 +20,71 @@ class Productos{
        $this->stock= $stock;
        $this->fechaPublicacion= $fechaPublicacion;
        $this->Marca= $Marca;
+       $this->estado = $estado;
     }
 
     public function getId(){
         return $this->id;
     }
-    public function setId($id){
+    public function setId(){
          $this->id = $id;
     }
     public function getPrecio(){
         return $this->precio;
    }
-    public function setPrecio($precio){
+    public function setPrecio(){
         $this->precio = $precio;
-   }
-   public function getStock(){
+     }
+    public function getStock(){
         return $this->stock;
-  }
-  public function setStock($stock){
+    }
+     public function setStock(){
      $this->stock = $stock;
-}
-public function setFechaPublicacion($fechaPublicacion){
+    }
+
+    public function setEstado($estado,$id,$conexion){
+        $sql="  update productos
+                set estado = ".$estado." where id_producto = "."$id";
+        $consulta = $conexion->prepare($sql);
+        $consulta->execute();
+    }
+
+public function setFechaPublicacion(){
     $this->fechaPublicacion = $fechaPublicacion;
 }
 public function mostrarImagenes(){
     
 }
 
-public function consulta_stock($db){
-    ///consultas de stock para el negocio, consultas generales,
-    ///la idea no es busquedas por nombres sino por categoria, por grupos,
-    ///para tener idea de numeros generales.
+    public function setProductosPanel($conexion){
+        
+        $sql="  select p.id_producto, p.nombre as nombreProducto, p.precio as precio, p.stock as stock,p.estado as estado, m.nombre as marca, c.nombre_categoria as categoria   
+                from productos p 
+                join marcas m on m.id_marca = p.id_marca 
+                join categorias c on c.id_categoria = p.id_categoria ";
 
-    if($_GET){
-      $info = array(
-        'categoria' => $_GET['categoria'],
-        'marca' => $_GET['marca']
-      );
-
-      if ($info['categoria']!=null and $info['marca']!=null) {
-        $ext = 'SELECT Marcas.nombre AS "Marcas",
-                Categorias.nombre AS "Categorias",
-                COUNT(*) as "Cantidad" FROM Productos
-                INNER JOIN Marcas ON Productos.id_marca = Marca.id
-                INNER JOIN Categorias ON Categorias.id = Productos.id_categoria
-                GROUP BY Marcas.nombre, Categorias.nombre';
-        $query = $connection->prepare($ext);
-        $query->execute();
-        $result = $query->fetchAll();
-        return $result;
-      }
-
-      if ($info['categoria']!=null and $info['marca']=null) {
-        $ext = 'SELECT Categorias.nombre AS "Categorias",
-                COUNT(*) as "Cantidad" FROM Productos
-                INNER JOIN Categorias ON Categorias.id = Productos.id_categoria
-                GROUP BY Categorias.nombre';
-        $query = $connection->prepare($ext);
-        $query->execute();
-        $result = $query->fetchAll();
-        return $result;
-      }
-
-      if ($info['categoria']=null and $info['marca']!=null) {
-        $ext = 'SELECT Marcas.nombre AS "Marcas",
-                COUNT(*) as "Cantidad" FROM Productos
-                INNER JOIN Marcas ON Productos.id_marca = Marca.id
-                GROUP BY Marcas.nombre';
-        $query = $connection->prepare($ext);
-        $query->execute();
-        $result = $query->fetchAll();
-        return $result;
-      }
+        $consulta = $conexion->prepare($sql);  
+        $consulta->execute();
+        $producto = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        return $producto;
     }
-  }
 
-  
+    public function agregar_productos($connection){
+        $query = $connection->prepare("INSERT INTO productos (`id_producto`, `nombre`, `descripcion`, `precio`, `stock`, `id_categoria`, `id_marca`, `estado`) 
+          VALUES (NULL,:nombre, :descripcion, :precio, :stock,:categoria, :marca, :estado)");
+    
+        $query->bindValue(':nombre', $this->nombre);
+        $query->bindValue(':descripcion', $this->descripcion);
+        $query->bindValue(':precio', $this->precio);
+        $query->bindValue(':stock', $this->stock);
+        $query->bindValue(':categoria', $this->Categoria);
+        $query->bindValue(':marca', $this->Marca);
+        $query->bindValue(':estado', $this->estado);
+    
+        $query->execute();
+      }
+
+
 
 }
 
