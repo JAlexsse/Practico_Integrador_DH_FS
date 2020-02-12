@@ -4,7 +4,7 @@ require_once 'controladores/controladorHeader.php';
 require_once 'controladores/controladorValidacion.php';
 require_once 'controladores/controladorUsuario.php';
 require_once 'controladores/pre.php';
-require_once 'php/funciones.php';
+require_once 'pdo.php';
 
 /*pre($_SESSION);
 pre($_COOKIE);
@@ -17,12 +17,12 @@ $erroresLogin = "";
 if($_POST) {
     $erroresLogin = validarFormulario($_POST);
     if(count($erroresLogin) == 0) {
-        $usuariosGuardados = file_get_contents('json/usuarios.json');
-        $usuariosGuardados = explode(PHP_EOL, $usuariosGuardados);
+        $email = $_POST['email'];
+        $query = $db-> prepare( "SELECT id_persona, nombre, apellido, email, password FROM persona WHERE email =:email");
+        $query -> bindvalue(':email', $email);
+        $query->execute();
+        $usuarioFinal = $query->fetch(PDO::FETCH_ASSOC);
 
-        array_pop($usuariosGuardados);
-        foreach($usuariosGuardados as $usuario) {
-            $usuarioFinal = json_decode($usuario, true);
             if($usuarioFinal['email'] == $_POST['email']) {
                 if( password_verify($_POST['password'], $usuarioFinal['password']) ) {
                     $_SESSION['emailUsuario'] = $usuarioFinal['email'];
@@ -41,7 +41,7 @@ if($_POST) {
 
             }
         }
-    }
+    
 
 
 ?>
@@ -93,17 +93,13 @@ if($_POST) {
             <small class="text-danger"><?= isset($erroresLogin['password']) ? $erroresLogin['password'] : "" ?></small>
             <small class="text-danger"><?php
             if ($_POST) {
-
+                $usuario = new Personas("", $_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['password']);
                 $erroresLogin = validarFormulario($_POST);
                 if(count($erroresLogin) == 0) {
-                    $usuariosGuardados = file_get_contents('json/usuarios.json');
-                    $usuariosGuardados = explode(PHP_EOL, $usuariosGuardados);
-
-                    array_pop($usuariosGuardados);
-
-                if(!validarEmail($usuariosGuardados)){
+                    
+                if(!$usuario->validarEmail($db)){
                     echo("el email ingresado no esta registrado");
-                } elseif (!validarPassword($usuariosGuardados) ){
+                } elseif (!$usuario->validarPassword($db) ){
                     echo("el password no coincide");
                 }else{
                     header('location: usuario.php');

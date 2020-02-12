@@ -1,17 +1,16 @@
 <?php
 
 require_once 'controladores/controladorHeader.php';
+require_once 'Clases/Personas.php';
+require_once 'pdo.php';
 
 
 //
 
 
 
-
-
 // Foto perfil //
-
-
+$usuario = new Personas();
 $errores=[];
 
 if(!empty($_FILES['foto-perfil'])){
@@ -115,8 +114,8 @@ if(count($errores)==0){
           <!--descripcion del usuario-->
           <div class="informacion py-3 px-4 col-lg-4 usuario_col">
             <!--nombre de usuario-->
-            <h4 class="titulos-medio px-3">
-                Maria Sharapova
+            <h4 class="titulos-medio px-3"> 
+              <?php $usuario->getNombre($db); ?>
             </h4>
             <!--texto del usuario-->
             <p class="texto-parrafo px-3">I am a person who is positive about every aspect of life.</p>
