@@ -31,30 +31,54 @@ class Productos{
     }
     public function getPrecio(){
         return $this->precio;
-   }
+    }
     public function setPrecio(){
         $this->precio = $precio;
-     }
+    }
     public function getStock(){
         return $this->stock;
     }
-     public function setStock(){
-     $this->stock = $stock;
+    public function setStock(){
+        $this->stock = $stock;
     }
-
     public function setEstado($estado,$id,$conexion){
         $sql="  update productos
                 set estados = ".$estado." where id_producto = "."$id";
         $consulta = $conexion->prepare($sql);
         $consulta->execute();
     }
+    public function setFechaPublicacion(){
+        $this->fechaPublicacion = $fechaPublicacion;
+    }
+    public function mostrarImagenes($conexion){
+        $query = $conexion->prepare(" Select * from galeria where id_producto = ".$_GET["id"]);
+        $query->execute();
+        $arrayImg = $query->fetchall(PDO::FETCH_ASSOC);
+        return $arrayImg;
+    }
+    public function agregarImagenes($conexion){
 
-public function setFechaPublicacion(){
-    $this->fechaPublicacion = $fechaPublicacion;
-}
-public function mostrarImagenes(){
-    
-}
+        $query = $conexion->prepare(" INSERT INTO GALERIA (id_producto,url) VALUES (:id , :url) ");
+
+        $query->bindValue(':id', $_POST["id"]);
+        $query->bindValue(':url','img/PRODUCTOS/Online/'.$_POST["id"] . $_FILES["imagen"]["name"]);
+
+        $query->execute();
+    }
+    public function borrarImagen($conexion){
+        $query = $conexion->prepare("delete from GALERIA where id_galeria = :idGaleria");
+        $query->bindValue(':idGaleria', $_GET["idGaleria"]);
+        $query->execute();
+    }
+    public function imagenTienda($conexion){
+        $query = $conexion->prepare(" update GALERIA set tienda = false where id_producto = :idProducto");
+        $query->bindValue(':idProducto', $_GET["idProducto"]);
+        $query->execute();
+
+        $query = $conexion->prepare(" update GALERIA set tienda = true where id_galeria = :idGaleria");
+        $query->bindValue(':idGaleria', $_GET["idGaleria"]);
+        $query->execute();
+    }
 
     public function setProductosPanel($conexion){
         
@@ -70,6 +94,7 @@ public function mostrarImagenes(){
     }
 
     public function agregar_productos($connection){
+
         $query = $connection->prepare("INSERT INTO productos (`id_producto`, `nombre`, `descripcion`, `precio`, `stock`, `id_categoria`, `id_marca`, `estados`) 
           VALUES (NULL,:nombre, :descripcion, :precio, :stock,:categoria, :marca, :estado)");
     
@@ -82,10 +107,10 @@ public function mostrarImagenes(){
         $query->bindValue(':estado', $this->estado);
     
         $query->execute();
-      }
+    }
 
-      public function actualizar_producto($conexion){
-          $sql= $conexion->prepare ("Update productos set nombre = :nombre, precio = :precio, stock = :stock, descripcion = :descripcion, id_categoria = :categoria, id_marca = :marca
+    public function actualizar_producto($conexion){
+          $query= $conexion->prepare (" update productos set nombre = :nombre, precio = :precio, stock = :stock, descripcion = :descripcion, id_categoria = :categoria, id_marca = :marca
            where id_producto = :id ;");
 
         $query->bindValue(':id', $_POST["id"]);
@@ -98,7 +123,7 @@ public function mostrarImagenes(){
     
         $query->execute();
 
-      }   
+    }   
 
 
 
