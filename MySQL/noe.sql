@@ -496,4 +496,5 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-02-18 14:25:01
-  
+  RENAME TABLE detalledeproducto TO detalle_de_producto;
+  RENAME TABLE detalleventa TO detalle_de_venta;

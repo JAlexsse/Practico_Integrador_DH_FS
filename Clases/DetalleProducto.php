@@ -7,8 +7,9 @@ class DetalleProducto{
    private $cantidad;
    private $precioUnitario;
    private $subTotal;
+   private $nombre_tabla = 'detalle_de_producto';
 
-    public function __construct($id=null, $ProductosPorColor, $DetalleVenta, $cantidad, $precioUnitario){
+    public function __construct($id=null, $ProductosPorColor= null, $DetalleVenta = null, $cantidad = null, $precioUnitario = null){
         $this->id = $id;
         $this->ProductosPorColor = $ProductosPorColor;
         $this->DetalleVenta = $DetalleVenta;

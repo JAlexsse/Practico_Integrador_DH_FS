@@ -204,7 +204,7 @@
                         ?>
                   </div>
                   <div class="col-2 conte-fav">
-                    <a href="#" ><ion-icon name="heart-empty" class="fav"></ion-icon></a>
+                    <a href="carrito.php" ><ion-icon name="heart-empty" class="fav"></ion-icon></a>
                   </div>
                 </div>
               </div> <!-- item header -->
