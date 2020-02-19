@@ -17,7 +17,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="input-id">Id</span>
                             </div>
-                            <input type="text" name="id" value="<?php echo $productoUpda["id_producto"] ?>" class="form-control" aria-label="Recipient's username" aria-describedby="input-id">
+                            <input type="text" readonly name="id" value="<?php echo $productoUpda["id_producto"] ?>" class="form-control" aria-label="Recipient's username" aria-describedby="input-id">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="input-id">Nombre</span>
                             </div>
@@ -25,9 +25,18 @@
                         </div>
                     </div>
                     <div class="custom-file mb-2">
-                        <input type="file" class="custom-file-input" id="customFileLang" lang="es" name="imagen">
+                        <input type="file" multiple class="custom-file-input" id="customFileLang" lang="es" name="imagen">
                         <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
                     </div>
+                    <!--  
+                      $(document).ready(function(){
+                            $('.input-hidden, .input-cv').on('change', function(e){
+                                var file_name = e.target.files[0].name;
+                                var label = $('label[for="'+$(this).attr('id')+'"]');
+                                $(label).text(file_name);
+                            }); 
+                            
+                    -->
                     <button class="btn btn-success" name="subirImg">Subir</button>
                 </form>
         </div>
