@@ -1,3 +1,5 @@
+create database noe;
+use noe;
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: noe
@@ -348,11 +350,11 @@ CREATE TABLE `personas` (
   `apellido` varchar(50) NOT NULL,
   `dni` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `contraseña` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `fechaDeNacimiento` date DEFAULT NULL,
   `descripcion` varchar(200) DEFAULT NULL,
   `imagenPerfil` varchar(50) DEFAULT NULL,
-  `id_roles` int(11) NOT NULL,
+  `id_roles` int(11) DEFAULT NULL,
   `id_localidad` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_persona`),
   KEY `id_roles` (`id_roles`),
@@ -494,3 +496,4 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-02-18 14:25:01
+  

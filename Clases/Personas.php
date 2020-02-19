@@ -11,7 +11,7 @@ private $fecha_de_nacimiento;
 private $descripcion;
 private $imagen_perfil;
 private $favoritos;
-private $nombre_tabla = 'persona';
+private $nombre_tabla = 'personas';
 
 public function __construct ($id = null, $nombre=null, $apellido=null, $email=null, $password=null){
     $this->id=$id;
@@ -23,12 +23,12 @@ public function __construct ($id = null, $nombre=null, $apellido=null, $email=nu
 public function getId (){
     return $this->id;
   }
-public function getNombre ($db){
+public function getNombreCompleto ($db){
 
-    $query = $db-> prepare ("SELECT nombre FROM persona");
+    $query = $db-> prepare ("SELECT nombre, apellido FROM personas");
     $query->execute();
     $usuario = $query->fetch(PDO::FETCH_ASSOC);
-    return $usuario['nombre'];
+    return $usuario['nombre'] ." ".$usuario['apellido'];
     }
 
 
@@ -128,7 +128,7 @@ function validarPassword ($db){
         'password' => password_hash($_POST['password'],PASSWORD_DEFAULT)
       );
 
-      $query = $db->prepare("INSERT INTO persona (id_persona, nombre, apellido, email, password)
+      $query = $db->prepare("INSERT INTO personas (id_persona, nombre, apellido, email, password)
         VALUES (null, :nombre, :apellido, :email, :password)");
 
       $query->bindValue(':nombre', $info['nombre']);

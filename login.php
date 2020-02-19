@@ -18,7 +18,7 @@ if($_POST) {
     $erroresLogin = validarFormulario($_POST);
     if(count($erroresLogin) == 0) {
         $email = $_POST['email'];
-        $query = $db-> prepare( "SELECT id_persona, nombre, apellido, email, password FROM persona WHERE email =:email");
+        $query = $db-> prepare( "SELECT id_persona, nombre, apellido, email, password FROM personas WHERE email =:email");
         $query -> bindvalue(':email', $email);
         $query->execute();
         $usuarioFinal = $query->fetch(PDO::FETCH_ASSOC);
