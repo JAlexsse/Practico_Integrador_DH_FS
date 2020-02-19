@@ -118,8 +118,10 @@ if(count($errores)==0){
               <?php echo $usuario->getNombreCompleto($db); ?>
             </h4>
             <!--texto del usuario-->
-            <p class="texto-parrafo px-3">I am a person who is positive about every aspect of life.</p>
-            <p class="texto-parrafo px-3">There are many things I like to do, to see, and to experience.
+            
+            <p class="texto-parrafo px-3">
+            I am a person who is positive about every aspect of life.
+            There are many things I like to do, to see, and to experience.
             I like to read, I like to write; I like to think, I like to dream;
             I like to talk, I like to listen.
             </p>
@@ -128,19 +130,19 @@ if(count($errores)==0){
           <!--informacion personal-->
           <div class="detalles noe-black text-white py-3 px-4 col-lg-5 usuario_col">
             <h4 class="titulos-medio px-3">Informacion Personal </h4>
-            <!--lista con mail, sexo, fecha de nacimiento y link a wishlist-->
+            <!--lista con mail, dni, fecha de nacimiento y link a wishlist-->
             <div class="row pt-3">
               <div class="col-12 row p-2">
                 <h5 class="col-md-4 texto-parrafo px-4">
                   <strong>Email</strong>
                 </h5>
-                <p class="col-md-8 texto-parrafo px-4">maria_sharapova@email.com</p>
+                <p class="col-md-8 texto-parrafo px-4"><?php echo $usuario->getEmail($db); ?></p>
               </div>
               <div class="col-12 row p-2">
                 <h5 class="col-md-4 texto-parrafo px-4">
-                  <strong>Sexo</strong>
+                  <strong>DNI</strong>
                 </h5>
-                <p class="col-md-8 texto-parrafo px-4">Femenino</p>
+                <p class="col-md-8 texto-parrafo px-4">99.999.999</p>
               </div>
               <div class="col-12 row p-2">
                 <h5 class="col-md-4 texto-parrafo px-4">

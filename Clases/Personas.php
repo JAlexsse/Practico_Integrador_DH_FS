@@ -41,9 +41,15 @@ public function getApellido (){
 public function setApellido ($apellido){
      $this->apellido= $apellido;
 }
-public function getEmail (){
-    return $this->email;
+public function getEmail ($db){
+
+  $query = $db-> prepare ("SELECT email FROM personas");
+  $query-> execute();
+  $usuario = $query->fetch(PDO::FETCH_ASSOC);
+    return $usuario['email'];
+
 } 
+
 public function setEmail($email){
     $this->email = $email;
 }
